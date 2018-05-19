@@ -1,136 +1,136 @@
 ---
-title: "Adding UI"
+title: +ACI-UI+MJKP/VKgMFkwiwAi-
 slug: adding-ui
 ---
 
-Up to this point, we haven't done anything that changes what our app will do when it's run. As we can see from running our app in the simulator, it's still just an empty, blank white screen.
++MFMwjDB+MGcwbzABMKIw1zDqMExbn4hMMFUwjDBfMGgwTTBuUtVPXDBuWQlm9DBvT1UwgjBXMGYwTTB+MFswkzBnMFcwXzAC- +MLcw3zDlMOww/DC/MPxOCjBnMKIw1zDqMJJbn4hMMFkwizBoMI8wSzCLMIgwRjBrMAF6ejBjMH0wZzABdx8wY3Z9MGp1O5diMG4wfjB+MGcwWTAC-
 
-In this section, we'll build the UI for our Magic 8-Ball.
++MFMwbjC7MK8wtzDnMPMwZzBvMAE-Magic 8-Ball+MG4-UI+MJJpy3vJMFcwfjBZMAI-
 
-> [info]
-**What is UI?**
->
-User interface, commonly referred to as UI, are any elements that your app will display on screen to a user. This includes visual elements like text and images as well as interactive elements like buttons, sliders and tabs. In programming, it's also common to refer to UI as your _views_.
++AD4- +AFs-info+AF0-
++ACoAKg-UI+MGgwb09VMEsAKgAq-
++AD4-
++MOYw/DC2MPwwpDDzML8w/DDVMKcw/DC5MG9OAIIsdoQwaw-UI+MGhUfDBwMIwwZjBKMIowATBCMGowXzBuMKIw1zDqMEww5jD8MLYw/DBrW/4wVzBmMLkwrzDqMPww804KMGeIaHk6MFkwi4mBfSAwkmMHMFcwZjBEMH4wWTAC- +MFMwjDBrMG8wATDGMK0wuTDIMIR1O1DPMG4wiDBGMGqJlomadoQwaomBfSAwYDBRMGcwbzBqME8wATDcML8w8zABMLkw6TCkMMAw/DABML8w1jBuMIgwRjBqU8xluVQRYCcwbomBfSAwglQrMH4wjDBmMEQwfjBZMAI- +MNcw7TCwMOkw3zDzMLAwZzBvMAE-UI+MJIAXzDTMOUw/ABfMGgwVzBmU8JxZzBZMIswbjBMTgCCLHaEMGcwWTAC-
 
-# Introducing View Controllers
++ACM- +MNMw5TD8MLMw8zDIMO0w/DDpMPwwblwOUWU-
 
-If you're planning to build iOS apps, you'll need to learn about the `UIViewController`. View controllers are one of the fundamental building blocks of iOS development.
+iOS+MKIw1zDqMJKVi3Z6MFkwi4oIdTswTDBCMIswajCJMAEAYA-UIViewController+AGAwazBkMEQwZltmf9IwWTCLX8WJgTBMMEIwijB+MFkwAg- +MNMw5TD8MLMw8zDIMO0w/DDpMPwwbzAB-iOS+lYt2ejBrMEowUTCLV/pnLHaEMGppy2IQiYF9IDBuTgAwZDBnMFkwAg-
 
-The `UIViewController` is a class that is responsible for _controlling_ it's set of _views_. Each view controller has a root view that acts as a canvas to place other subviews.
++AGA-UIViewController+AGAwbzABTgCQIzBuAF8w0zDlMPwAXzBuAF97oXQGAF8wa5WiMFkwi4ysTvswkoygMGMwZjBEMIswrzDpMLkwZzBZMAI- +VAQw0zDlMPwwszDzMMgw7TD8MOkw/DBrMG8w6zD8MMgw0zDlMPwwTDBCMIowATBTMIwwTE7WMG4wtTDWMNMw5TD8MJKRTX9uMFkwizCtMOMw8zDQMLkwbl95UnIwkmecMF8wVzB+MFkwAg-
 
-<!-- can consider adding jump to definition here for UIViewController view property -->
++ADwAIQ--- can consider adding jump to definition here for UIViewController view property --+AD4-
 
-![Root View Highlighted](assets/root_view_highlighted.png)
++ACEAWw-Root View Highlighted+AF0-(assets/root+AF8-view+AF8-highlighted.png)
 
-As you can see above, both the text label and button are subviews placed on top of the view controller's root view.
++TgowSzCJUgYwSzCLkBowijABMMYwrTC5MMgw6TDZMOswaDDcML8w8zBuTiFluTBvMAEw0zDlMPwwszDzMMgw7TD8MOkw/DBuMOsw/DDIMNMw5TD8MG5OCpDoMGuRTX9uMFUwjDCLMLUw1jDTMOUw/DBnMFkwAg-
 
-As a beginner, you can think of each screen of your app as a view controller. All buttons, text, images are _subviews_ that the corresponding view controller object controls. If the user taps a button, the view controller will be responsible for what happens.
++Uh1fw4AFMGgwVzBmMG8wATCiMNcw6jBuVAR1O5diMJIw0zDlMPwwszDzMMgw7TD8MOkw/DBoMFcwZoADMEgwizBoMEQwRDBnMFcwhzBGMAE- +MNwwvzDzMAEwxjCtMLkwyDABdTtQzzBvMFkweTBmMAFb/l/cMFkwizDTMOUw/DCzMPMwyDDtMPww6TD8MKow1jC4MKcwrzDIMEx7oXQGMJIwWTCLAF8wtTDWMNMw5TD8AF8wZzBZMAI- +MNMw5TD8MLMw8zDIMO0w/DDpMPwwbzABMOYw/DC2MPwwTDDcML8w8zCSML8wwzDXMFcwX1g0VAgwa09VMEx2enUfMFkwizBLMGuVojBXMGaMrE77MJKMoDBEMH4wWTAC-
 
-> [info]
-Although we'll only use a single view controller in this tutorial, you can have any number of view controllers in your app.
++AD4- +AFs-info+AF0-
++MFMwbjDBMOUw/DDIMOowojDrMGcwb1NYTgAwbjDTMOUw/DCzMPMwyDDtMPww6TD8MFcwS09/MEQwfjBbMJMwTDABMKIw1zDqUYUwZzBvMNMw5TD8MLMw8zDIMO0w/DDpMPwwkjBEME8wZDCCii1bmjBnME0wfjBZMAI-
 
-Next, let's build our UI in the default view controller that comes with every _Single View App_ Xcode template.
++ayEwazABMFkweTBmMG4AXw-Single View App+AF8wbg-Xcode+MMYw8zDXMOww/DDIMGtO2DBEMGYwTzCLMMcw1TCpMOswyDDTMOUw/DCzMPMwyDDtMPww6TD8MGcwAQ-UI+MJJpy3vJMFcwfjBXMIcwRjAC-
 
-# Adding UI in Storyboard
++ACM- +MLkwyDD8MOow/DDcMPwwyTBr- UI +MG6P/VKg-
 
-First we'll need to open our storyboard file.
++MH4wWjBv-Storyboard+MNUwoTCkMOswkpWLME9fxYmBMEwwQjCKMH4wWTAC-
 
-> [action]
-In your Project navigator, select the `Main.storyboard` file. You'll see your editor area change to the following:
++AD4- +AFs-action+AF0-
++MNcw7TC4MKcwrzDIMG4wyjDTMLIw/DC/MPwwZzABAGA-Main.storyboard+AGAw1TChMKQw6zCSkHhinjBXMGYwTzBgMFUwRDAC- +MKgwxzCjML8wqDDqMKIwTGshMG4wiDBGMGtZCVMWMFcwfjBZ/xo-
 
-![Main Storyboard Overview](assets/main_storyboard_overview.png)
++ACEAWw-Main Storyboard Overview+AF0-(assets/main+AF8-storyboard+AF8-overview.png)
 
-Each of the highlighted areas is important to building your UI in your Main storyboard file:
++MM8wpDDpMKQwyDBVMIwwZjBEMItUBDCoMOowojBvMAEw4TCkMPMwbg-Storyboard+MNUwoTCkMOswZw-UI+MJJpy3vJMFkwizBrMEIwXzBjMGaRzYmBMGgwajCKMH4wWf8a-
 
-- Document Outline (Orange): displays a vertical view hierarchy of your storyboard file
-- Interface Builder (Blue): displays a visual representation of what your UI will look like
-- Utilities Area (Purple): configure properties, size, and other details of your storyboard elements
-- Object Library (Pink): displays a list of all Apple's pre-built UI components you can use in storyboard
+- Document Outline+/wgwqjDsMPMwuP8J/xo- Storyboard+MNUwoTCkMOswbpaOXGQwkn4mV4uIaHk6MFcwfjBZ-
+- +MKQw8zC/MPww1TCnMKQwuTDTMOswwDD8/wiXUv8J/xo- UI+MG5ZFomzMJKJlomadoQwa4hoeTowVzB+MFk-
+- +MOYw/DDGMKMw6jDGMKMwqDDqMKL/CH0r/wn/Gg- Storyboard+iYF9IDBuMNcw7TDRMMYwozABMLUwpDC6MAEwXTBuTtYwbopzfTAwkmnLYhAwVzB+MFk-
+- Object Library+/wgw1DDzMK//Cf8a- Storyboard+MGdPf3UoMGcwTTCLMAE-Apple+ZeJiEDBu-UI+MLMw8zDdMPwwyDBZMHkwZjBuMOowuTDIMJKIaHk6MFcwfjBZ-
 
-Let's add our Magic 8-Ball _Shake_ button to our view controller.
+Magic 8-Ball+MG4AXzC3MKcw/DCvAF8w3DC/MPMwkjDTMOUw/DCzMPMwyDDtMPww6TD8MGuP/VKgMFcwfjBXMIcwRjAC-
 
-> [action]
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/04-adding-ui/add_button_to_vc.mp4)
->
-Find the `Button` object in the _Object Library_ and drag and drop it onto the root view of your view controller.
++AD4- +AFs-action+AF0-
++ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-adding-ui/add+AF8-button+AF8-to+AF8-vc.mp4)
++AD4-
++AF8-Object Library+AF8wZwBgMNwwvzDzAGAwqjDWMLgwpzCvMMgwkomLMGQwUTABMNMw5TD8MLMw8zDIMO0w/DDpMPwwbjDrMPwwyDDTMOUw/DBuTgowazBTMIwwkjDJMOkwwzCwMFcwATDJMO0wwzDXMFcwZjBPMGAwVTBEMAI-
 
-Next, let's learn more about the _Utilities area_ so we can configure our button to have the right title text.
++ayEwazABMNwwvzDzMGtrYzBXMEQwvzCkMMgw6zDGMK0wuTDIMJJODjBIMIkwjDCLMIgwRjBrMFkwizBfMIEwAQBfMOYw/DDGMKMw6jDGMKMwqDDqMKIAXzBrMGQwRDBmMIIwYzBoW2YwczB+MFcwhzBGMAI-
 
-# Utilities Area
++ACM- +MOYwxjCjMOowxjCjMKgw6jCi-
 
-Just like the _Navigator_, the _Utilities_ pane has multiple different tabs at the top called inspectors.
++AF8wyjDTMLIw/DC/MPwAXzBoVAwwWDBPMAEAXzDmMPwwxjCjMOowxjCjAF8wbjDaMKQw8zBrMG8wATBdMG5OCpDoMGswpDDzMLkw2jCvML8w/DBoVHwwcDCMMIuJB2VwMG51cDBqMIswvzDWMEwwQjCKMH4wWTAC-
 
-![Utilities Inspector Tabs](assets/utilities_tabs.png)
++ACEAWw-Utilities Inspector Tabs+AF0-(assets/utilities+AF8-tabs.png)
 
-The tabs are contextual based on what is actively selected. That means that the tabs in the _Utilities area_ will change based on whatever you last clicked in Xcode.
++ML8w1jBvMAFPVTBMMKIwrzDGMKMw1jBrkHhinjBVMIwwZjBEMIswSzBoMEQwRjCzMPMwxjCvMLkwyDBrXeZT8zBVMIwwfjBZMAI- +MFMwjDBvMGQwfjCKMAEAXzDmMPwwxjCjMOowxjCjMKgw6jCiAF8wbjC/MNYwbzABMEIwajBfMEw-Xcode+MGdnAF+MMGswrzDqMMMwrzBXMF9RhVu5MGtX+jBlMEQwZlkJUxYwWTCLMGgwRDBGYQ9UczBnMFkwAg-
 
-Each inspectors allows you to configure different details and attributes about the selected item.
++VAQwpDDzMLkw2jCvML8w/DBrMIgwYzBmMAGQeGKeMFUwjDBfmAV27jBrlaIwWTCLadgwBTBqinN9MDCEXF5gJzCSWQlm9DBnME0wizCIMEYwazBqMIowfjBZMAI-
 
-## Attributes Inspector
++ACMAIw- +XF5gJzCkMPMwuTDaMK8wvzD8-
 
-First we'll look at the _Attributes Inspector_ which changes the attributes of a selected storyboard object. We can use this to change the title of our button.
++MH4wWjBvMAGQeGKeMFUwjDBf-Storyboard+MKow1jC4MKcwrzDIMG5cXmAnMJJZCWb0MFkwizABAF9cXmAnMKQw8zC5MNowrzC/MPwAXzCSiYswZjB/MH4wVzCHMEYwAg-  +MFMwjDCST38wYzBmMNwwvzDzMG4wvzCkMMgw6zCSWQlm9DBnME0wfjBZMAI-
 
-> [action]
-1. Make sure you click on the button and that it's actively selected. Remember the _Utilities_ pane is contextual so it will change based on what is selected. ![Select Button](assets/select_button.png)
-1. Next, navigate to the _Attributes Inspector_ tab in the _Utilities area_. It is the 4th icon from the left. ![Open Attributes Inspector](assets/attributes_inspector.png)
-1. Last, find the title field and change it from the default text `Button` to `Shake It!`. ![Set Button Title](assets/set_btn_title.png)
++AD4- +AFs-action+AF0-
+1. +MFcwYzBLMIow3DC/MPMwkjCvMOowwzCvMFcwZjABMKIwrzDGMKMw1jBrkHhinjBVMIwwZjBEMIswUzBoMJJ4uoqNMFcwZjBPMGAwVTBEMAI- +AF8w5jD8MMYwozDqMMYwowBf- +MG4w2jCkMPMwbzCzMPMwxjCvMLkwyDBrT51bWDBZMIswgjBuMGcwQjCKMAFPVTBMkHhinjBVMIwwXzBLMGswiDBjMGZZCVMWMFkwizBoMEQwRjBTMGgwkomaMEgwZjBKME0wfjBXMIcwRjAC- +ACEAWw-Select Button+AF0-(assets/select+AF8-button.png)
+1. +ayEwazABAF8w5jD8MMYwozDqMMYwozCoMOowogBfMG4AX1xeYCcwpDDzMLkw2jCvML8w/ABf- +ML8w1jBreftS1TBXMGYwTzBgMFUwRDAC- +XeZQdDBLMIllcDBIMGY-4+MGR27jBuMKIwpDCzMPMwZzBZMAI- +ACEAWw-Open Attributes Inspector+AF0-(assets/attributes+AF8-inspector.png)
+1. +ZwBfjDBrMAEwvzCkMMgw6zDVMKMw/DDrMMkwkomLMGQwUTBmMAEwxzDVMKkw6zDIMMYwrTC5MMgwZzBCMIsAYA-Button+AGAwSzCJAGA-Shake It+ACEAYDBrWQlm9DBXMGYwTzBgMFUwRDAC- +ACEAWw-Set Button Title+AF0-(assets/set+AF8-btn+AF8-title.png)
 
-You should now see a squished button with the `Shake It!` title.
++MFkwizBoMAEAYA-Shake It+ACEAYDBoMEQwRjC/MKQwyDDrMExivDBXj7wwfjCMMF8w3DC/MPMwTIhoeTowVTCMMIswbzBaMGcwWTAC-
 
-![Squished Button](assets/squished_button.png)
++ACEAWw-Squished Button+AF0-(assets/squished+AF8-button.png)
 
-We'll fix this next using the _Size Inspector_.
++ayEwazABAF8wtTCkMLowpDDzMLkw2jCvML8w/ABfMJJPfzBjMGYwUzCMMJJP7mtjMFcwfjBZMAI-
 
-## Size Inspector
++ACMAIw- +MLUwpDC6MKQw8zC5MNowrzC/MPw-
 
-Right now our shake button is squished because the new title text is longer than the width of the button. To fix that we'll change the _frame_ of the button.
++TsowbjBoMFMwjTABMLcwpzD8MK8w3DC/MPMwbl5FMIgwijCCZbAwVzBEML8wpDDIMOswxjCtMLkwyDBuZbkwTJV3MEQwbjBnMAEw3DC/MPMwTDBNMIUwRjBPMGQwanK2YUswZzBZMAI- +MFMwjDCST+5rYzBZMIswazBvMAEw3DC/MPMwbgBfMNUw7DD8MOAAXzCSWQlm9DBXMH4wWTAC-
 
-The _frame_ of an object refers to a object's X and Y position and it's size (height and width.)
++MKow1jC4MKcwrzDIMG4- +AF8w1TDsMPww4ABfMG8wATCqMNYwuDCnMK8wyDBu-X+MEowiDBz-Y+MG5PTX9uMGgwXTBuMLUwpDC6/wia2DBVMGheRf8JMJJTwnFnMFcwZjBEMH4wWTAC-
 
-We can view our current skip button's frame in the _Size Inspector_.
++AF8wtTCkMLowpDDzMLkw2jCvML8w/ABfMGcwbzABc/5XKDBuMLkwrTDDMNcw3DC/MPMwbjDVMOww/DDgMJKJizCLMFMwaDBMMGcwTTB+MFkwAg-
 
-> [action]
-First, navigate to the _Size Inspector_ in the utilities area. ![Size Inspector Active](assets/size_inspector_active.png)
->
-You can view and edit the current frame of the selected storyboard object under it's _View_ section. ![Size Inspector View Section](assets/size_inspector_view_section.png)
++AD4- +AFs-action+AF0-
++MH4wWjABMOYw/DDGMKMw6jDGMKMwqDDqMKIwZwBfMLUwpDC6MKQw8zC5MNowrzC/MPwAXzBreftS1TBXMH4wWTAC- +ACEAWw-Size Inspector Active+AF0-(assets/size+AF8-inspector+AF8-active.png)
++AD4-
++AF8w0zDlMPwAXzC7MK8wtzDnMPNO5U4LMGeQeGKeMFUwjDBf-Storyboard+MKow1jC4MKcwrzDIMG5z/lcoMG4w1TDsMPww4DCSlbKJpzBXMAF96JbGMGcwTTB+MFkwAg- +ACEAWw-Size Inspector View Section+AF0-(assets/size+AF8-inspector+AF8-view+AF8-section.png)
 
-A simpler, but less precise way of changing our button's frame is by selecting it your cursor and dragging. You can drag the center of the object to move as well as the corners of it's bounds to resize it.
++MNwwvzDzMG4w1TDsMPww4DCSWQlm9DBZMItluWzVMGgwVzBmMAEwgjBjMGgwtzDzMNcw6zBnMFkwTDABa2N4umAnMGtrIDBRMIswbjBvMAEwqzD8ML0w6zBnkHhinjBXMGYwyTDpMMMwsDBZMItluWzVMGcwWTAC- +MKow1jC4MKcwrzDIMG5OLV/DMJIwyTDpMMMwsDBXMGZ5+1LVMFcwAViDdUx92jBuloUwkjDJMOkwwzCwMFcwZjC1MKQwulkJZvQwWTCLMFMwaDBMMGcwTTB+MFkwAg-
 
-> [action]
-Change your skip button's frame to be centered and positioned along the bottom of the Interface Builder view controller.
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/04-adding-ui/resize_button.mp4)
++AD4- +AFs-action+AF0-
++MLkwrTDDMNcw3DC/MPMwbjDVMOww/DDgMJJZCWb0MFcwZk4tWS4wa39uME0wATCkMPMwvzD8MNUwpzD8MLkw0zDrMMAw/DBuMNMw5TD8MLMw8zDIMO0w/DDpMPxOC5DoMGtsvzBjMGaRTX9uMFcwfjBZMAI-
++AD4-
++ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-adding-ui/resize+AF8-button.mp4)
 
-The positioning doesn't have to be perfect, but if you want to be more precise you can use the _Size Inspector_.
++W4x0pzBqkU1/bjBnMEIwi1/FiYEwbzBCMIowfjBbMJMwTDABMIIwYzBoa2N4ujBrMFcwXzBEWDRUCDBvMAEAXzC1MKQwujCkMPMwuTDaMK8wvzD8AF8wklIpdSgwZzBNMH4wWTAC-
 
-> [info]
-In this tutorial, we'll be setting a pre-defined frame for each of our subviews. That means that if the user is using a simulator or iPhone with a different screen size, our UI will be incorrectly sized.
->
-This is ok _for now_. This tutorial is more focused on making sure you get a lay of the land with Xcode and iOS development. In the next Tip Calculator tutorial, you'll learn about using tools like auto-layout and stack views to create dynamically re-sizable views.
++AD4- +AFs-info+AF0-
++MFMwbjDBMOUw/DDIMOowojDrMGcwbzABVAQwtTDWMNMw5TD8MGuVojBXMGYwATBCMIkwSzBYMIFbmn+pMFUwjDBfMNUw7DD8MOAwkootW5owVzBmMEQwTTB+MFkwAg- +MFMwjDBvMGQwfjCKMAEw5jD8MLYw/DBMdXAwajCLdTuXYjC1MKQwujBuMLcw3zDlMOww/DC/MPwwfjBfMG8-iPhone+MJJPf3UoMFkwi1g0VAgwAQ-UI+MG4wtTCkMLowb04Na2N4ujBrii1bmjBVMIwwizBoMEQwRmEPVHMwZzBZMAI-
++AD4-
++AF9OyjBuMGgwUzCNMG8AXzBTMIwwZw-OK+MGcwWTAC- +MFMwbjDBMOUw/DDIMOowojDrMG8-Xcode+MGg-iOS+lYt2ejBrYWMwjDCLMFMwaDBrcSZwuTCSX1MwZjBmMEQwfjBZMAI- +ayEwbjDBMMMw14oIe5dqXzDBMOUw/DDIMOowojDrMGcwbzAB-Auto-layout+MIQwuTC/MMMwrzDTMOUw/DBuMIgwRjBqMMQw/DDrMJJPfzBjMGYwATDAMKQwyjDfMMMwrzBrMLUwpDC6MEyKv2V0MFUwjDCLMNMw5TD8MG5PXGIQZbls1TCSW2YwczB+MFkwAg-
 
-# Adding a Label
++ACM- +MOkw2TDrMG6P/VKg-
 
-To complete our UI, we'll also need to add a label to display the Magic 8-Ball's answers.
+UI+MJJbjGIQMFUwWzCLMGswbzAB-Magic 8-Ball+MG5W3ntUMJKIaHk6MFkwizDpMNkw6zCCj/1SoDBZMItfxYmBMEwwQjCKMH4wWTAC-
 
-> [action]
-From the _Object Library_ find the label and drag it onto center of the view controller's root view.
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/04-adding-ui/add_label_to_vc.mp4)
++AD4- +AFs-action+AF0-
++AF8-Object Library+AF8wSzCJMOkw2TDrMJKJizBkMFEwATDTMOUw/DCzMPMwyDDtMPww6TD8MG4w6zD8MMgw0zDlMPwwazDJMOkwwzCwMFcwZjBPMGAwVTBEMAI-
++AD4-
++ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-adding-ui/add+AF8-label+AF8-to+AF8-vc.mp4)
 
-Next, we'll change the size and attributes of our label.
++ayEwazABMOkw2TDrMG4wtTCkMLowaFxeYCcwklkJZvQwVzB+MFkwAg-
 
-> [action]
-1. Select the label and open the _Attributes Inspector_ in the _Utilities area_. ![Label Attributes](assets/label_attributes.png)
-1. Change the `Text` attribute from the default `Label` placeholder to `Have a question?`. This will be the new default text that the app starts with every time the app is opened. ![Change Label Text](assets/change_label_text.png)
-1. Resize the label so that it fits the new text. ![Resize Label](assets/resize_label.png)
-1. In the _Attributes Inspector_ change the text alignment to _Center_. ![Change Text Alignment](assets/change_text_alignment.png)
-1. Last, change the _Font_ attribute from `System 17.0` to `System Bold 28.0`. ![Change Font](assets/change_font_attribute.png)
++AD4- +AFs-action+AF0-
+1. +MOkw2TDrMJKQeGKeMFcwZjABAF8w5jD8MMYwozDqMMYwozCoMOowogBfMGcAX1xeYCcwpDDzMLkw2jCvML8w/ABfMJKVizBEMGYwTzBgMFUwRDAC- +ACEAWw-Label Attributes+AF0-(assets/label+AF8-attributes.png)
+1. +AGA-Text+AGBcXmAnMJIwxzDVMKkw6zDIMG4AYA-Text+AGAwaDBEMEYw1zDsMPwwuTDbMOswwDD8MEswiQBg-Have a question?+AGAwa1kJZvQwVzBmME8wYDBVMEQwAg- +MFMwjDBvMAEwojDXMOowTJWLMEswjDCLMF8wczBriGh5OjBVMIwwizDHMNUwqTDrMMgwbjDGMK0wuTDIMGswajCKMH4wWTAC- +ACEAWw-Change Label Text+AF0-(assets/change+AF8-label+AF8-text.png)
+1. +ZbAwXzBqMMYwrTC5MMgwa1QIMI8wWzBmMOkw2TDrMG4wtTCkMLowklkJZvQwVzBmME8wYDBVMEQwAg- +ACEAWw-Resize Label+AF0-(assets/resize+AF8-label.png)
+1. +AF9cXmAnMKQw8zC5MNowrzC/MPwAXw- +MGcwATDGMK0wuTDIMG4wojDpMKQw4TDzMMgwkgBf-Center+AF8wa1kJZvQwVzBmME8wYDBVMEQwAg- +ACEAWw-Change Text Alignment+AF0-(assets/change+AF8-text+AF8-alignment.png)
+1. +ZwBfjDBrMAEAXw-Font+AF8wblxeYCcwkgBg-System 17.0+AGAwSzCJAGA-System Bold 28.0+AGAweDBoWQlm9DBXMGYwTzBgMFUwRDAC- +ACEAWw-Change Font+AF0-(assets/change+AF8-font+AF8-attribute.png)
 
-We've just finished setting up the UI for our app. Let's take a second to build and run to see our progress.
++ecEwXzBhMG4wojDXMOowbg-UI+ii1bmjBMW4xOhjBXMH4wVzBfMAKQMmNXcrZswTCSeLqKjTBZMIswXzCBMAEwYTCHMGMwaDDTMOswyTBXMGYwAVufiEwwVzBmMH8wfjBXMIcwRjAC-
 
-> [action]
-Build and run your app on the iPhone 7 simulator. You'll see the following:
->
-![Storyboard UI Finished](assets/storyboard_ui_finished.png)
++AD4- +AFs-action+AF0-
+iPhone 7+MG4wtzDfMOUw7DD8ML8w/E4KMGcwojDXMOowkjDTMOswyTBXMAFbn4hMMFcwfjBZMAI- +ayEwblGFW7kwTIhoeTowVTCMMH4wWf8a-
++AD4-
++ACEAWw-Storyboard UI Finished+AF0-(assets/storyboard+AF8-ui+AF8-finished.png)
 
-We've laid out our UI using Interface Builder. Next, we'll look at connecting our views to our Swift source files. As you might imagine, without connecting our storyboard objects to code, our app won't be able do much.
++MKQw8zC/MPww1TCnMKQwuTDTMOswwDD8MJJPfzBjMGY-UI+MJJegzBSMH4wVzBfMAI- +ayEwazDTMOUw/DBo-Swift+ML0w/DC5MNUwoTCkMOswkjBkMGowUjCLZbls1TCSW2YwczB+MFcwhzBGMAI- +MFRg81DPMG6QGjCKMAE-Storyboard+MG4wqjDWMLgwpzCvMMgwkjCzMPwwyTBrY6V9mjBXMGowUTCMMHAwATCiMNcw6jBrMG8wQjB+MIowZzBNMIswUzBoMG8wQjCKMH4wWzCTMAI-

@@ -1,73 +1,73 @@
 ---
-title: "Intro to Magic 8-Ball"
+title: "マジック8ボールの紹介"
 slug: intro-magic8
 ---
 
-Welcome to the first of the Make School's iOS app tutorials series! This tutorial introduces you to the basics of building iOS apps by building your first app: a Magic 8-Ball!
+これはMake SchoolのiOSアプリのチュートリアルシリーズの第一回目です。ようこそ！このチュートリアルは、あなたにとって初めてのアプリ「Magic 8-Ball」の開発を通じて、iOSアプリ開発の基本を紹介します！
 
-## What's A Magic 8-Ball?
-If you're not familiar with the Magic 8-Ball, it's an 8-Ball with _mysterious_ fortune-telling powers. You can use it by asking simple yes or no questions and shaking the 8-ball for an answer.
+## Magic 8-Ballとは何ですか？
+Magic 8-Ballについてよく知らないあなたのために説明すると、8-Ballには神秘的な占いの力が備わっています。8-ballを振ることで二択の質問の答えを得ることができます。
 
 ![Magic 8-Ball](assets/magic_8_ball.png)
 
-For example:
+例えば：
 
-Q: Will _insert your name here_ become an iOS developer?
+Q： ここにあなたの名前を挿入してくださいはiOS 開発者になるでしょうか？
 
-_shakes 8-ball_
+_8-ballを振る_ 
 
 ![Magic 8-Ball Answer](assets/signs_point.jpg)
 
-Pretty useful huh? When you're finished with the tutorial, you'll be able to use your new Magic 8-Ball app to make all of life's important decisions!
+かなり便利じゃありませんか？ チュートリアルを終えたら、ピカピカのMagic 8-Ball アプリを使って、人生の大事な決断を下せるようになります！
 
-# Who Is This For?
+# これは誰のためのものですか?
 
-Beginners (little to no previous iOS experience) who want to get started by building their first iOS app.
+初のiOSアプリ開発を通じて入門したい初心者（以前のiOS経験が少しまたは皆無）。
 
-## What You Should Already Know
+## 既に知っているべきこと
 
-Beginners are expected to have a basic understanding of the Swift programming language. If you haven't been introduced to Swift yet, or even need a refresher, it's recommend to check out Make School's _Getting Started With Swift_ tutorial first.
+初心者は、Swiftのプログラミング言語の基礎を理解していることが想定されています。まだSwiftの紹介を受けていない場合は、またはおさらいが必要な場合は、まずMake Schoolの _Swift_ 入門チュートリアルを受講することをオススメします。
 
-## Estimated Completion Time:
+## 推定完了時刻：
 
-1 hour
+1 時間
 
-# What We're Building
+# 私たちが作っているもの
 
-We'll start our journey into iOS by building a simple Magic 8-Ball app.
+単純なMagic 8-Ball アプリを開発することで、iOSに入門しましょう。
 
 ![Finished App Flow](assets/finished_app_flow.png)
 
-You can see the app's flow in the designs above.
+上記のデザインでアプリの流れを見ることができます。
 
-1. The user will open the app from our app icon
-2. The user is then presented with a prompt to think of a question to ask the Magic 8-Ball
-3. Finally, the user can either tap the **Shake** button or rage-shake their phone for an answer.
+1. ユーザーはアプリアイコンからアプリを開きます
+2. 次に、ユーザーに対して、Magic 8-Ballに尋ねる質問を考えるよう指示が出されます。
+3. 最後に、ユーザーは **シェーク** ボタンをタップするか、回答を求めて電話を精一杯振ることができます。
 
-# What You'll Learn
+# 学習する内容
 
-By the end of this tutorial, you will:
+このチュートリアルが終わるまでに、以下ができるようになります：
 
-- create a new Xcode project
-- add an app icon to your app
-- navigate and become familiar with Xcode
-- build a really, **really** simple UI
-- write code that randomly generates an answer
+- 新たな Xcode プロジェクトを作成する
+- アプリにアプリアイコンを追加する
+- Xcodeをナビゲートし、詳しくなる
+- 本当に、**本当に** シンプルな UIを構築する
+- 無作為に回答を生成するコードを書く
 
-# Important: Read Me!
+# 重要で：読んでください！
 
-Now that I have your attention...
+あなたに注目してもらえたところで一言...
 
-To succeed as an iOS developer and build awesome apps, you'll need to know more than just code. This tutorial will introduce new topics like _getting to know Xcode_ and _creating UI with Interface Builder_, many which don't involve writing code. This might seem irrelevant at first, however you won't be able to build iOS apps without learning about these subjects first.
+iOS開発者として成功し、すばらしいアプリを開発するには、コードについて知っているだけでは足りません。このチュートリアルでは _Xcode_ について知る やインターフェイスビルダーを使ってUIを作成するなど、多くの場合コードを書かない新しいトピックを紹介します。最初は無関係に思えるかもしれませんが、こういった内容について学ばないと、iOSアプリを開発できるようにはなりません。
 
-As you go through the tutorial, pay attention when learning to use Xcode. Xcode will be your bread and butter. The more fluent you are with it, the easier it'll be to build beautiful, well-executed apps.
+チュートリアルを進めていくにあたって、Xcodeの使い方を学ぶときにはよく注意してください。Xcodeは欠かせない存在になります。Xcodeに慣れ親しむにつれて、美しく、しっかりした機能のアプリをもっと簡単に開発できるようになります。
 
-Most importantly, make sure you're having fun. Building iOS apps is challenging, but also extremely rewarding. There's no feeling like watching your own apps come to life and feeling the pride from knowing you built it yourself!
+一番大事なのは楽しむことです。iOSアプリを開発するのは難関ですが、非常にやりがいのあることでもあります。自分のアプリに生命が吹き込まれる様子を目にして、あなたが開発者なのだと誇らしく感じる実感は格別です。
 
-# If You Get Stuck
+# 行き詰まった場合は
 
-"Sometimes, magic is just someone spending more time on something than anyone else might reasonably expect." - Teller (Penn & Teller)
+「魔法というのは、他の誰もが当たり前のように思っているよりも多くの時間を何かに費やしているというだけだったりします。」 - テラー（Penn & Teller社）
 
-Getting stuck when coding (and debugging) is a natural part of the programming process. If you find yourself stuck on a problem or lost, pause for a moment and take a breath. Maybe take a walk. Then retrace your steps (in the tutorial, not the walk.) Make sure you've follow each step of the tutorial. It's easy to make typos or to accidentally skip over important steps.
+コーディング（そしてデバッギング）の最中に行き詰まってしまうのは、プログラミングのプロセスにおいてごく自然なことです。何か問題に悩んだり、迷ってしまったら、少し休んで一息つきましょう。散歩をするのもいいかもしれません。その後で、今までの足取りを見直してみましょう（散歩ではなくチュートリアルです）。チュートリアルの各ステップに従ったことを確認してください。タイピングミスをしたり、うっかりと重要な手順を飛ばしてしまうことはよくあります。
 
-If you want to compare your code to the solution, you can find it [here](https://github.com/MakeSchool-Tutorials/Magic-8Ball-Swift4-Solution).
+あなたのコードと解答を比べたい場合は、解答を参照することができます [こちら](https://github.com/MakeSchool-Tutorials/Magic-8Ball-Swift4-Solution).

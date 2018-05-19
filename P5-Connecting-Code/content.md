@@ -1,302 +1,302 @@
 ---
-title: "Connecting Code"
+title: +ACIwszD8MMkwbmOlfZoAIg-
 slug: connecting-code
 ---
 
-In this section, we'll take a look at how our storyboard connects to code. When you run the app now, you'll notice that when we click _shake button_ in the simulator, nothing happens.
++MFMwbjC7MK8wtzDnMPMwZzBvMAE-Storyboard+MGgwszD8MMkwTDBpMEYwZDBqMEwwizBuMEswkomLMGYwfzB+MFkwAg- +c/5mQnC5MGcwojDXMOowklufiEwwWTCLMGgwATC3MN8w5TDsMPwwvzD8UYUwZwBfMLcwpzD8MK8w3DC/MPMAXzCSMK8w6jDDMK8wVzBmMIJPVTCCjXcwUzCJMGowRDBTMGgwa2wXMGUwTzBnMFcwhzBGMAI-
 
-That's because our app won't do anything if we don't write any code. You can think of the code you write as instructions that tell the app what to do when a user is using it. When there aren't any instructions, the app won't do anything.
++MFMwjDBvMAFPVTCCMLMw/DDJMJJm+DBLMGowRDBoMAF5wTBfMGEwbjCiMNcw6jBvT1UwgjBXMGowRDBLMIkwZzBZMAI- +MEIwajBfMExm+DBPMLMw/DDJMG8wATDmMPwwtjD8MEwwojDXMOowkk9/MGMwZjBEMIswaDBNMGswATCiMNcw6jB4T1UwkjBZMHkwTTBLTx0wSDCLYwd5OjBuMIgwRjBqMIIwbjBnMFkwAg- +Ywd5OjBMMGowRDBoMAEwojDXMOowb09VMIIwVzB+MFswkzAC-
 
-In the example of responding to a button tap, we'll need to write code to tell the app what to do when a user taps the _shake button_.
++MNwwvzDzMG4wvzDDMNcwa1v+X9wwWTCLT4swZzBvMAEw5jD8MLYw/DBMAF8wtzCnMPwwrzDcML8w8wBfMJIwvzDDMNcwVzBfZkIwazABMKIw1zDqMGtPVTCSMFkweTBNMGowbjBLMJJPHTBIMIswszD8MMkwkmb4ME9fxYmBMEwwQjCKMH4wWTAC-
 
-# How Is It Connected?
++ACM- +MGkwRmOlfZowVTCMMGYwRDB+MFkwS/8f-
 
-One of the most biggest sticking points for beginners is understanding how your code is connected to storyboard. Xcode connects your storyboard to Swift code by using a combination of the _Identity Inspector_, _IBOutlets_ and _IBActions_.
++Uh1fw4AFMExnADCCMGQwfjBlME0whDBZMERwuTBuTgAwZDBvMAEwszD8MMkwTA-Storyboard+MGgwaTBGMGQwajBMMIswbjBLMJJ0BonjMFkwizBTMGgwZzBZMAI- Xcode+MGcwbwBfMKIwpDDHMPMwxjCjMMYwozCkMPMwuTDaMK8wvzD8AF8wAQ- +AF8-IBOutlets+AF8wXTBXMGYAXw-IBActions+AF8wbn1EMH9UCDCPMFswkk9/MGMwZjAB-Storyboard+MJI-Swift+MLMw/DDJMGswZDBqMFIwfjBZMAI-
 
-In order to see this, we'll first need to learn about the _Assistant Editor_.
++MFMwjDCSdAaJ4zBZMIswazBvMAEwfjBaAF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMGswZDBEMGZbZjB2X8WJgTBMMEIwijB+MFkwAg-
 
-On the right side of your toolbar, there are two groups of 3 buttons that you can toggle. We'll focus on the first group on the left first.
++MMQw/DDrMNAw/DBuU/NQdDBrMG8wATDIMLAw6zBnME0wiw-3+MGQwbjDcML8w8zBrMIgwYzBmactiEDBVMIwwZjBEMIswsDDrMPww1zBM-2+MGQwQjCKMH4wWTAC- +MH4wWjBvXeZQdDBuZwBSHTBuMLAw6zD8MNcwa2zodu4wVzB+MFkwAg-
 
-![Editor Modes](assets/editor_modes.png)
++ACEAWw-Editor Modes+AF0-(assets/editor+AF8-modes.png)
 
-The three buttons highlighted above allow you to toggle your editor mode. Only one of these modes can be active at a time.
++TuVOCjBnMM8wpDDpMKQwyDBVMIwwZjBEMIs-3+MGQwbjDcML8w8zBrMIgwijABMKgwxzCjML8w4jD8MMkwkjDIMLAw6zBnME0wfjBZMAI- +TgBepjBrMKIwrzDGMKMw1jBqcrZhSzBrMGowjDCLMG4wbzABMFMwjDCJMG4w4jD8MMkwbjBGMGFOADBkMGAwUTBnMFkwAg-
 
-As you can see, the first button, or the _Standard Editor_, is already active. That's because we've already been using the _Standard Editor_ this whole time. The _Standard Editor_ doesn't do anything fancy. It simply gives you a single, large editor window to focus on a single file.
++MFSJpzBukBowijABZwBSHTBuMNwwvzDzMAEwfjBfMG8AXzC5ML8w8zDAMPwwyTCoMMcwozC/AF8wbzBZMGcwazCiMK8wxjCjMNYwanK2YUswZzBZMAI- +MFMwjDBvMAFOyjB+MGcwWjBjMGgAXzC5ML8w8zDAMPwwyTCoMMcwozC/AF8wkk9/MGMwZjBNMF8wSzCJMGcwWTAC- +AF8wuTC/MPMwwDD8MMkwqDDHMKMwvwBf- +MG9PVTCCYkswbo+8MJMwYDBTMGgwkjBXMH4wWzCTMAI- +MFMwbjCoMMcwozC/MG9TWH0UMGswAVNYTgAwZ1knV4swbjCoMMcwozC/MKYwozDzMMkwpjCSiGh5OjBXMGYwAVNYTgAwbjDVMKEwpDDrMJJT1jCKYnEwRDB+MFkwAg-
 
-The second button set the editor mode to the _Assistant Editor_. This editor mode is for opening and editing multiple files side-by-side.
+2+MGR27jBuMNwwvzDzMG8wATCoMMcwozC/MOIw/DDJMJIAXzCiMLcwuTC/MPMwyDCoMMcwozC/AF8wa4otW5owVzB+MFkwAg- +MFMwbjCoMMcwozC/MOIw/DDJMG8wAYkHZXAwbjDVMKEwpDDrMJKVizBEMGaWozCKVAgwjzBbMGd96JbGMFkwizBfMIEwbjCCMG4wZzBZMAI-
 
-> [action]
-If you haven't already, toggle the button from the _Standard Editor_ to the _Assistant Editor_. You should see the following:
->
-![Assistant Editor Active](assets/assistant_editor_active.png)
++AD4- +AFs-action+AF0-
++MH4wYDBuWDRUCDBvMAEAXzC5ML8w8zDAMPwwyTCoMMcwozC/AF8wSzCJAF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMHgwaDDcML8w8zCSMMgwsDDrMFcwZjBPMGAwVTBEMAI- +ayEwbjCIMEYwa4hoeTowVTCMMH4wWTAC-
++AD4-
++ACEAWw-Assistant Editor Active+AF0-(assets/assistant+AF8-editor+AF8-active.png)
 
-The first thing you might notice, is the lack of screen space for each open file when we use the _Assistant Editor_. We can make this better by hiding unneeded Xcode tools like the _Navigator_. You can do this by using the second group of buttons on the far right-side of the toolbar.
++ZwBSHTBrbBcwZTBPMEswgjBXMIwwfjBbMJMwTDABAF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMJJPfzBGZkIwAZWLMEQwZjBEMItUBDDVMKEwpDDrMG51O5diMLkw2jD8MLkwTGsgWYIwVzBmMEQwfjBZMAI- +MFMwbnK2YUswkmU5VYQwWTCLMGswbzABAF8wyjDTMLIw/DC/MPwAXzBuMIgwRjBqTg2JgTBq-Xcode+MMQw/DDrMJKXXohoeTowazBXMH4wVzCHMEYwAg- +MFMwjDBvMAEwxDD8MOsw0DD8MG5nAFPzeu8wazBCMIs-2+MGR27jBuMLAw6zD8MNcwbjDcML8w8zCST38wYzBmW59lvTBnME0wfjBZMAI-
 
-![Display Xcode Areas](assets/display_xcode_areas.png)
++ACEAWw-Display Xcode Areas+AF0-(assets/display+AF8-xcode+AF8-areas.png)
 
-You can use these buttons to toggle between hiding and displaying the _Navigator_, _Debugger_ and _Utilities_ areas. Let's go ahead and close the _Navigator area_ for a little more screen real-estate.
++MFMwjDCJMG4w3DC/MPMwkk9/MGMwZjABAF8wyjDTMLIw/DC/MPwAXzABAF8wxzDQMMMwrDD8AF8wAQBfMOYw/DDGMKMw6jDGMKMAXzBul16IaHk6MGiIaHk6MJIwyDCwMOswZzBNMH4wWTAC- +MF0wjDBnMG8wATCCMEZcETBXdTuXYjBrT1mI1TCSYwEwXzBbMIswXzCBMAEAXzDKMNMwsjD8ML8w/DCoMOowogBfMJKViTBYMH4wVzCHMEYwAg-
 
-> [action]
-Close the _Navigator_ pane by clicking on the first of the buttons. Keep the _Utilities area_ open as we'll need it soon.
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/05-connecting-code/hide_navigator.mp4)
++AD4- +AFs-action+AF0-
++ZwBSHTBuMNwwvzDzMJIwrzDqMMMwrzBXMGY- +AF8wyjDTMLIw/DC/MPwAXw- +MHowpDDzMJKViTBYMH4wVzCHMEYwAg- +AF8w5jD8MMYwozDqMMYwozCoMOowogBfMG8wWTBQMGtfxYmBMGswajCLMG4wZzABlYswRDBfMH4wfjBrMFcwZjBKMEQwZjBPMGAwVTBEMAI-
++AD4-
++ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-connecting-code/hide+AF8-navigator.mp4)
 
-When working with the _Assistant Editor_, it's often helpful to hide areas of Xcode that we aren't using to free up more screen space.
++AF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMGdPXGltMJIwVzBmMEQwi2ZCMAFPfzBjMGYwRDBqMEQ-Xcode+MG4wqDDqMKIwkpdeiGh5OjBrMFkwizBoMAF1O5diMG4wuTDaMPwwuTCSMIIwYzBoeLpP3TBnME0wizBuMGdPv1IpMGAwaDBEMEYwUzBoMEwwiDBPMEIwijB+MFkwAg-
 
-Now that we know how to display two different files side-by-side, we'll look at how Xcode knows to connect our storyboard view controller to our `ViewController.swift` source file.
+2+MGQwbjDVMKEwpDDrMJJOJjB5MGaIaHk6MFkwi2W5bNUwTFIGMEswYzBfMG4wZzAB-Xcode+MEwwaTBGMIQwYzBm-Storyboard+MNMw5TD8MLMw8zDIMO0w/DDpMPwwaABg-ViewController.swift+AGAwvTD8MLkw1TChMKQw6zBuY6V9mjCSio2LWDBZMIswbjBLiYswZjB/MH4wVzCHMEYwAg-
 
-# Identity Inspector
++ACM- +MKIwpDDHMPMwxjCjMMYwozCkMPMwuTDaMK8wvzD8-
 
-> [action]
-1. In the _Document Outline_ in your storyboard, select the _View Controller_ storyboard object. ![Document Outline](assets/document_outline_select_vc.png)
-2. Next, open the _Identity Inspector_ in the _Utilities area_. ![Identity Inspector Active](assets/identity_inspector_active.png)
++AD4- +AFs-action+AF0-
+1. Storyboard+MG4AXw-Document Outline+AF8wZzABAF8-View Controller+AF8wbg-Storyboard+MKow1jC4MKcwrzDIMJKQeGKeMFcwZjBPMGAwVTBEMAI- +ACEAWw-Document Outline+AF0-(assets/document+AF8-outline+AF8-select+AF8-vc.png)
+2. +ayEwazABAF8w5jD8MMYwozDqMMYwozCoMOowogBfMGcAXzCiMKQwxzDzMMYwozDGMKMwpDDzMLkw2jCvML8w/ABfMJKVizBEMGYwTzBgMFUwRDAC- +ACEAWw-Identity Inspector Active+AF0-(assets/identity+AF8-inspector+AF8-active.png)
 
-In the _Identity Inspector_, you should see a section that specifies currently selected storyboard view controller's custom class.
++MKIwpDDHMPMwxjCjMMYwozCkMPMwuTDaMK8wvzD8AF8wZzBvMAFz/lcokHhinjBVMIwwZjBEMIs-Storyboard+MNMw5TD8MLMw8zDIMO0w/DDpMPwwbjCrMLkwvzDgMK8w6TC5MJJjB1uaMFkwizC7MK8wtzDnMPMwTIhoeTowVTCMMIswbzBaMGcwWTAC-
 
-![Custom Class Section](assets/custom_class_section.png)
++ACEAWw-Custom Class Section+AF0-(assets/custom+AF8-class+AF8-section.png)
 
-Looking at both the `ViewController.swift` file and the _Identity Inspector_, you'll notice that the _Class_ name matches. This is how you can set and define custom behavior for your storyboard object.
++AGA-ViewController.swift+AGAw1TChMKQw6zBoAF8wojCkMMcw8zDGMKMwxjCjMKQw8zC5MNowrzC/MPwAXzBuTiFluTCSU8JxZzBZMIswaDABAF8wrzDpMLkAX1QNMExOAIH0MFkwizBTMGgwTDCPMEswizBnMFcwhzBGMAI- +MFMwjDBMMAE-Storyboard+MKow1jC4MKcwrzDIMG4wqzC5ML8w4IhMUtUwkootW5owVzABW5p/qTBZMItluWzVMGcwWTAC-
 
-![Connected Class](assets/connected_class.png)
++ACEAWw-Connected Class+AF0-(assets/connected+AF8-class.png)
 
-> [info]
-We don't need to set this up for this project because the _Single View App_ template had this pre-configured for us. For future projects, you'll need to configure each custom view controller's class in the _Identity Inspector_ to connect storyboard view controllers to their respective Swift source file.
++AD4- +AFs-info+AF0-
++AF8-Single View App+AF8- +MMYw8zDXMOww/DDIMEwwQjCJMEswWDCBii1bmjCSiEwwajBjMGYwRDBfMG4wZzABMFMwbjDXMO0wuDCnMK8wyDBnMG+KLVuaMG5fxYmBMG8wQjCKMH4wWzCTMAI- +TspfjDBuMNcw7TC4MKcwrzDIMGcwbzABAF8wojCkMMcw8zDGMKMwxjCjMKQw8zC5MNowrzC/MPwAXzBrVCswfjCMMItUBDCrMLkwvzDgMNMw5TD8MLMw8zDIMO0w/DDpMPwwbjCvMOkwuTCSactiEDBXMGYwAQ-Storyboard+MNMw5TD8MLMw8zDIMO0w/DDpMPwwkjBdMIwwXjCMMG4-Swift+ML0w/DC5MNUwoTCkMOswa2OlfZowWTCLX8WJgTBMMEIwijB+MFkwAg-
 
-# IBOutlets
++ACM- IBOutlets
 
-In our storyboard view controller, we previously added a label and a button. To implement our logic (the instructions for our Magic 8-Ball), we need some way to reference our label and button.
+Storyboard+MNMw5TD8MLMw8zDIMO0w/DDpMPwwZzABUk0wazDpMNkw6zBoMNwwvzDzMJKP/VKgMFcwfjBXMF8wAg- +MO0wuDDDMK//CA-Magic 8-Ball+MGtb/jBZMItjB3k6/wkwklufiMUwWTCLMGswbzABMOkw2TDrMGgw3DC/MPMwklPCcWcwWTCLZbls1TBMX8WJgTBnMFkwAg-
 
-To solve this problem, we'll need to create IBOutlets.
++MFMwblVPmEwwkonjbHowWTCLMGswbzAB-IBOutlets+MJJPXGIQMFkwi1/FiYEwTDBCMIowfjBZMAI-
 
-IBOutlets create a connection from our storyboard subview objects (like labels, buttons, image views) to our Swift code. The allow us to reference that we can manipulate programmatically.
+IBOutlets +MG8wAQ-Storyboard+MLUw1jDTMOUw/DCqMNYwuDCnMK//CE+LMEgwcDABMOkw2TDrMAEw3DC/MPMwAXU7UM8w0zDlMPwwajBp/wkwSzCJMAE-Swift+MLMw/DDJMGtb/jBZMIswszDNMK8wtzDnMPMwkk9cYhAwVzB+MFkwAg- +MFMwjDBrMIgwijABMNcw7TCwMOkw4DBnU8JxZzBuZM1PXDBMU++A/TBrMGowijB+MFkwAg-
 
-> [action]
-First to create some more screen space, let's close the _Utilities_ pane using the toolbar. Your Xcode IDE should look like the following:
->
-![Assistant Editor Active](assets/assistant_editor_active_2.png)
++AD4- +AFs-action+AF0-
++MH4wWjABdTuXYjBuMLkw2jD8MLkwkjCCMGMwaFiXMIQwWTBfMIEwATDEMPww6zDQMPwwkk9/MGMwZgBfMOYw/DDGMKMw6jDGMKMAXzDaMKQw8zCSlYkwWDB+MFcwhzBGMAI- Xcode IDE+MG9rITBuMIgwRjBriGh5OjBVMIwwizBvMFowZzBZMAI-
++AD4-
++ACEAWw-Assistant Editor Active+AF0-(assets/assistant+AF8-editor+AF8-active+AF8-2.png)
 
-With our `Main.storyboard` and `ViewController.swift` files open side by side, let's create our first IBOutlet.
++AGA-Main.storyboard+AGAwaABg-ViewController.swift+AGAw1TChMKQw6zBMTiYwkzBnlYswSzCMMGYwRDCLcrZhSzBnMAE- +ZwBSHTBu-IBOutlet+MJJPXGIQMFcwfjBXMIcwRjAC-
 
-> [action]
-Create an IBOutlet for your answer label.
->
-Select the answer label in _Interface Builder_. Next hold down control and click-drag from your storyboard label into your `ViewController.swift` file. In the resulting prompt, name your new IBOutlet `answerLabel`. ![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/05-connecting-code/answer_label_iboutlet.mp4)
++AD4- +AFs-action+AF0-
++Vt57VDDpMNkw63UoMGs-IBOutlet+MJJPXGIQMFcwfjBXMIcwRjAC-
++AD4-
++AF8wpDDzML8w/DDVMKcw/DC5MNMw6zDAMPwAXzBnVt57VDDpMNkw6zCSkHhinjBXMH4wVzCHMEYwAg- +ayEwazABMLMw8zDIMO0w/DDrMJJivDBXMGowTDCJMAE-Storyboard+MOkw2TDrMEswiQBg-ViewController.swift+AGAw1TChMKQw6zB4MGgwrzDqMMMwrzBXMGowTDCJMMkw6TDDMLAwVzBmME8wYDBVMEQwAg- +fVBnnDBuMNcw7TDzMNcwyDBnMAFlsDBXMEQ-IBOutlet+AGA-answerLabel+AGAwa1QNUk0wkk7YMFEwZjBPMGAwVTBEMAI- +ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-connecting-code/answer+AF8-label+AF8-iboutlet.mp4)
 
-Repeat the same process for the _shake button_.
+ +AF8wtzCnMPwwrzDcML8w8wBfMGswZDBEMGYwglQMMFhiS5gGMJJ+cDCKj9QwVzBmME8wYDBVMEQwAg-
 
-> [challenge]
-Create a new IBOutlet called `shakeButton` for your storyboard button in your `ViewController.swift` file.
++AD4- +AFs-challenge+AF0-
+Storyboard+MNwwvzDzdSgwawBg-shakeButton+AGAwaDBEMEZlsDBXMEQ-IBOutlet+MJIAYA-ViewController.swift+AGAw1TChMKQw61GFMGdPXGIQMFcwZjBPMGAwVTBEMAI-
 
-<!-- break -->
++ADwAIQ--- break --+AD4-
 
-> [solution]
-Select the shake button in _Interface Builder_. Then hold down the control button and click-drag from the storyboard button into your `ViewController.swift` file.
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/05-connecting-code/button_iboutlet.mp4)
++AD4- +AFs-solution+AF0-
++AF8wpDDzML8w/DDVMKcw/DC5MNMw6zDAMPwAXzBnMLcwpzD8MK8w3DC/MPMwkpB4Yp4wVzBmME8wYDBVMEQwAg- +MF0wjDBLMIkwszDzMMgw7TD8MOsw3DC/MPMwkmK8MFcwajBMMIkwAQ-Storyboard+MNwwvzDzMEswiQBg-ViewController.swift+AGAw1TChMKQw6zB4MAEwrzDqMMMwrzBXMGowTDCJMMkw6TDDMLAwVzBmME8wYDBVMEQwAg-
++AD4-
++ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-connecting-code/button+AF8-iboutlet.mp4)
 
-We've created both IBOutlets so that we can reference and access our label and button in our `ViewController.swift` file.
++AGA-ViewController.swift+AGAw1TChMKQw6zBnMAEw6TDZMOswhDDcML8w8zCSU8JxZzBXMAEwojCvMLswuTBMMGcwTTCLMIgwRjAB-IBOutlet+MJJOIWW5T1xiEDBXMH4wVzBfMAI-
 
-Next, we'll look at responding when a user taps the _shake button_ using a IBAction.
++ayEwazABMOYw/DC2MPwwTABfMLcwpzD8MK8w3DC/MPMAXzCSML8wwzDXMFcwX2ZCMG5TzV/cMJIwAQ-IBAction+MJJPfzBjMGZpHIoOMFcwZjBEME0wfjBZMAI-
 
-# IBAction
++ACM- IBAction
 
-An IBAction is a method that is called when the user interacts with a UI object. Creating an IBAction is very similar to creating an IBOutlet.
+IBAction +MG8wATDmMPwwtjD8MEw-UI+MKow1jC4MKcwrzDIMGgwhDCKMGgwijCSMFkwi2ZCMGtUfDBzUfowVTCMMIsw4TC9MMMwyTBnMFkwAg-  IBAction +MG5PXGIQMG8wAQ-IBOutlet+MG5PXGIQMGswaDBmMIIwiDBPTzwwZjBEMH4wWTAC-
 
-Let's create an IBAction for when a user taps on the _shake button_.
++MOYw/DC2MPwwTABfMLcwpzD8MK8w3DC/MPMAXzCSML8wwzDXMFcwX2ZCMG4wXzCBMG4-IBAction+MJJPXGIQMFcwfjBXMIcwRjAC-
 
-> [action]
-Create a IBAction from your _shake button_ in your view controller source file: ![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/05-connecting-code/button_ibaction.mp4)
->
-Step-by-step:
->
-1. Select the _shake button_.
-1. Hold the control and click-drag from the storyboard button into your view controller source file as if you were to create a IBOutlet.
-1. When prompted to name your IBOutlet, change the connection type from `Outlet` to `Action` using the dropdown menu.
-1. Name the IBAction, `shakeButtonTapped`.
++AD4- +AFs-action+AF0-
+Create a IBAction from your +AF8-shake button+AF8- in your view controller source file: +ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-connecting-code/button+AF8-ibaction.mp4)
++AD4-
++MLkwxjDDMNcw0DCkMLkwxjDDMNf/Gg-
++AD4-
+1.  +AF8wtzCnMPwwrzDcML8w8wBfMJKQeGKeMFcwZjBPMGAwVTBEMAI-
+1. +MLMw8zDIMO0w/DDrMNwwvzDzMJJivDBVMEgwAQ-IBOutlet+MJJPXGIQMFkwizBLMG4wiDBGMGswAQ-Storyboard+MNwwvzDzMEswiTDTMOUw/DCzMPMwyDDtMPww6TD8ML0w/DC5MNUwoTCkMOsweDABMK8w6jDDMK8wVzBmMMkw6TDDMLAwVzBmME8wYDBVMEQwAg-
+1. IBOutlet+MGtUDVJNMJJO2DBRMIsw1zDtMPMw1zDIMExR+jBfMIkwATDJMO0wwzDXMMAwpjDzMOEwyzDlMPwwkk9/MGMwZjABMLMwzTCvMLcw5zDzMG4wvzCkMNcwkgBg-Outlet+AGAwSzCJAGA-Action+AGAwa1kJZvQwVzBmME8wYDBVMEQwAg-
+1. IBAction+MGsAYA-shakeButtonTapped+AGAwaFQNTtgwUTBmME8wYDBVMEQwAg-
 
-You'll notice this creates a new function within your view controller. Whenever the _shake button_ is tapped, this function will be called.
++MF0wRjBZMIswaDABMNMw5TD8MLMw8zDIMO0w/DDpMPwwbk4tMGtlsDBXMERqX4D9MExPXGIQMFUwjDCLMFMwaDBrbBcwZTBPMGcwVzCHMEYwAg- +AF8wtzCnMPwwrzDcML8w8wBfMEwwvzDDMNcwVTCMMIswaDABMEQwZDBnMIIwUzBulaJlcDBMVHwwc1H6MFUwjDB+MFkwAg-
 
-To see this in action, let's print some text in the debug console each time the _shake button_ is tapped.
++MFMwjDBMW5+WmzBrUtUwT1n/MJJ4uoqNMFkwizBfMIEwAQBfMLcwpzD8MK8w3DC/MPMAXzBMML8wwzDXMFUwjDCLMF8wczBrMAEwxzDQMMMwsDCzMPMwvTD8MOswazDGMK0wuTDIMJKIaHk6MFUwWzCLMIgwRjBrMFcwfjBXMIcwRjAC-
 
-## Print Debugging
++ACMAIw- +MMcw0DDDMLAwbjDXMOow8zDI-
 
-Up to this point, we haven't really discussed or used the debugger. The debugger is an extremely powerful tool that allows us to figure out bugs in our app. In our case, we'll just be printing a simple log to the debug console when a user interacts with our button.
++MFMwjDB+MGcwATDHMNAwwzCsMPwwazBkMEQwZopxMFcwXzCKMAEwUzCMMJJPfzBjMF8wijBZMIswUzBoMG8wQjCKMH4wWzCTMGcwVzBfMAI- +MMcw0DDDMKww/DBvMAEwSzBqMIpfN1KbMGowxDD8MOswZzABMKIw1zDqMGtUKzB+MIwwizDQMLAwknZ6iYswZzBNMIswiDBGMGswVzBmME8wjDB+MFkwAjBTMG5YNFQIMAEw5jD8MLYw/DBMMNwwvzDzMGgwhDCKMGgwijBXMF8waDBNMGswATDHMNAwwzCwMLMw8zC9MPww6zB4fCFTWDBqMO0wsDCSiGh5OjBZMIswYDBRMGcwWTAC-
 
-To start, we'll need to add a print statement within our IBAction `shakeButtonTapped`.
++MH4wWjBvMAE-IBAction +MG4AYA-shakeButtonTapped+AGBRhTBnMAE-print+MLkwxjD8MMgw4TDzMMgwko/9UqAwWTCLX8WJgTBMMEIwijB+MFkwAg-
 
-> [action]
-In your `ViewController.swift`, modify `shakeButtonTapped(_:)` to the following:
->
-```
-@IBAction func shakeButtonTapped(_ sender: Any) {
-    print("shake it like a polaroid picture!")
-}
-```
++AD4- +AFs-action+AF0-
++AGA-ViewController.swift+AGAwZzABAGA-shakeButtonTapped(+AF8-:)+AGAwkmshMG4wiDBGMGtZCWb0MFcwZjBPMGAwVTBE/xo-
++AD4-
++AGAAYABg-
++AEA-IBAction func shakeButtonTapped(+AF8- sender: Any) +AHs-
+    print(+ACI-shake it like a polaroid picture+ACEAIg-)
++AH0-
++AGAAYABg-
 
-Now, let's run the app and try it out.
++MFUwZjABMKIw1zDqMJJbn4hMMFcwZopmMFcwZjB/MH4wVzCHMEYwAg-
 
-Once the app launches and you see the UI, click on the _shake button_. In your Xcode debugger, you should see your print statements show up each time you press the shake button!
++MKIw1zDqMEyNd1LVMFUwjDBm-UI+MEyIaHk6MFUwjDBfMIkwAQBfMLcwpzD8MK8w3DC/MPMAXzCSMK8w6jDDMK8wVzBmME8wYDBVMEQwAg- Xcode+MMcw0DDDMKww/DBnMG8wATC3MKcw/DCvMNwwvzDzMJJivDBZMF8wczBr-print+MLkwxjD8MMgw4TDzMMgwTIhoeTowVTCMMIswbzBaMGcwWf8B-
 
-![Print Debugging](assets/print_debugging.png)
++ACEAWw-Print Debugging+AF0-(assets/print+AF8-debugging.png)
 
-As you can see, our `shakeButtonTapped(_:)` is called each time the user taps the button.
++MFSJpzBukBowijABMOYw/DC2MPwwTDDcML8w8zCSML8wwzDXMFkwizBfMHMwawBg-shakeButtonTapped(+AF8-:)+AGAwTFR8MHNR+jBVMIwwfjBZMAI-
 
-# Changing Label Text
++ACM- +MOkw2TDrMG4wxjCtMLkwyDCSWQlm9A-
 
-We've managed to print a log to the console when the button is tapped. Let's take it one step further and change the label text on button tap.
++MNwwvzDzMEwwvzDDMNcwVTCMMF8waDBNMGswATCzMPMwvTD8MOswazDtMLAwkohoeTowZzBNMIswiDBGMGswVzB+MFcwXzAC- +MIIwRk4Aa2lRSDBrkDIwkzBnMAEw3DC/MPMwvzDDMNdOCjBuMOkw2TDrMMYwrTC5MMgwklkJZvQwVzB+MFcwhzBGMAI-
 
-> [action]
-In `ViewController.swift`, add the following line of code to `shakeButtonTapped(_:)`:
->
-```
-@IBAction func shakeButtonTapped(_ sender: Any) {
-    print("shake it like a polaroid picture!")
->
-    answerLabel.text = "button was tapped"
-}
-```
++AD4- +AFs-action+AF0-
++AGA-ViewController.swift+AGAwZzABTuVOCzBuMLMw/DDJMG6ITDCSAGA-shakeButtonTapped(+AF8-:)+AGAwa4/9UqAwVzB+MFcwhzBG/xo-
++AD4-
++AGAAYABg-
++AEA-IBAction func shakeButtonTapped(+AF8- sender: Any) +AHs-
+    print(+ACI-shake it like a polaroid picture+ACEAIg-)
++AD4-
+    answerLabel.text +AD0- +ACI-button was tapped+ACI-
++AH0-
++AGAAYABg-
 
-Build and run the app again. Tap the _shake button_ and you should see the answer label change to the following text:
++MKIw1zDqMJIwgjBGTgBepjDTMOswyTBXMGZbn4hMMFcwfjBXMIcwRjAC- +AF8wtzCnMPwwrzDcML8w8wBfMJIwvzDDMNcwWTCLMGgwAVbee1Qw6TDZMOswb2shMG4wxjCtMLkwyDBrWQlTFjBXMGaIaHk6MFUwjDCLMG8wWjBnMFn/Gg-
 
-![Changed Text](assets/changed_text.png)
++ACEAWw-Changed Text+AF0-(assets/changed+AF8-text.png)
 
-Here's what we did:
++MFMwjDB+MGcwazABayEwbk9caW0wkm4IMH4wWzB+MFcwX/8a-
 
-Each `UILabel` has a text attribute that can be changed and updated. This will also update the UI on the screen. When `shakeButtonTapped(_:)` was called, we set the text property of our label to a new string.
++VAQAYA-UILabel+AGAwazBvMAFZCWb0MAFm9GWwMFkwizBTMGgwbjBnME0wizDGMK0wuTDIXF5gJzBMMEIwijB+MFkwAg- +dTuXYk4KMG4-UI+MIJm9GWwMFcwfjBZMAI- +AGA-shakeButtonTapped(+AF8-:)+AGAwTFR8MHNR+jBVMIwwXzBoME0wATDpMNkw6zBuMMYwrTC5MMgw1zDtMNEwxjCjMJJlsDBfMGplh1tXUhcwa4otW5owVzB+MFcwXzAC-
 
-With our new knowledge of handling button interactions and changing the label text, we now can implement our logic of randomly selecting displaying a magic 8 ball answer.
++MNwwvzDzMG5S1U9cMIQw6TDZMOswxjCtMLkwyDBuWQlm9DBrlaIwWTCLZbAwVzBEd+WLWDCST38wYzBmMAE-Magic 8-Ball+MG5W3ntUMJJxIU9ccLowa5B4Yp4wV4hoeTowWTCLMO0wuDDDMK8wklufiMUwWTCLMFMwaDBMMGcwTTB+MFkwAg-
 
-# Implementing Our Logic
++ACM- +MO0wuDDDMK8wblufZb0-
 
-We now have all the tools of implementing our Magic 8-Ball. First, let's close the _Assistant Editor_ and return to the _Standard Editor_.
++MFMwjDBnMAE-Magic 8-Ball+MJJbn4jFMFkwizDEMPww6zBMMFkweTBmY8MwRDB+MFcwXzAC- +MH4wWjABAF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMJKViTBYMAEAXzC5ML8w8zDAMPwwyTCoMMcwozC/AF8wa2I7MIowfjBZMAI-
 
-> [action]
-Use the _Project navigator_ to display `ViewController.swift` in the _Standard Editor_.
++AD4- +AFs-action+AF0-
++AF8wuTC/MPMwwDD8MMkwqDDHMKMwvwBfMGswZwBg-ViewController.swift+AGAwkohoeTowWTCLMGswbzABAF8w1zDtMLgwpzCvMMgwyjDTMLIw/DC/MPwAXzCST391KDBXMH4wWTAC-
 
-Next, let's implement our logic. First, we'll add an instance variable that is an array of strings containing all possible answers of our Magic 8-Ball. Feel free to add in some of your own!
++ayEwazDtMLgwwzCvMJJbn4jFMFcwfjBXMIcwRjAC- +MH4wWjBvMAEwpDDzMLkwvzDzMLlZCWVwMJKP/VKgMFcwfjBZMAIwUzCMMG8wAQ-Magic 8-Ball+MG5T74D9MGpW3ntUMFkweTBmMJJUKzCAZYdbV1IXMG6RTVIXMGcwWTAC- +MGkwRjBeMFSB6nUxMGty7IHqMG4wgjBuMJKP/VKgMFcwZjBPMGAwVTBE/wE-
 
-> [action]
-Add the following array of strings above our IBOutlets:
->
-```
-class ViewController: UIViewController {
->
-    // MARK: - Properties
->
-    let answers = ["Yes, definitely", "It is certain", "Without a doubt", "Yes", "Most likely", "Sure, why not?", "Same", "Tell me more", "Out to lunch", "Reply hazy, try again", "Ask again later", "The cake is a lie", "42", "TMI", "Very doubtful", "Don't count on it", "My reply is no", "Absolutely not"]
->
-    @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var shakeButton: UIButton!
->
-    // ... rest of code
-}
-```
->
-For your convenience, here's a the plain text version of the answers array code above:
->
-let answers = ["Yes, definitely", "It is certain", "Without a doubt", "Yes", "Most likely", "Sure, why not?", "Same", "Tell me more", "Out to lunch", "Reply hazy, try again", "Ask again later", "The cake is a lie", "42", "TMI", "Very doubtful", "Don't count on it", "My reply is no", "Absolutely not"]
++AD4- +AFs-action+AF0-
+IBOutlets+MG5OCjBrMAFrITBuZYdbV1IXMG6RTVIXMJKP/VKgMFcwZjBPMGAwVTBE/xo-
++AD4-
++AGAAYABg-
+class ViewController: UIViewController +AHs-
++AD4-
+    // MARK: - +MNcw7TDRMMYwow-
++AD4-
+    let answers +AD0- +AFsAIjBvMEQwATCCMGEwjTCTACI-, +ACJ4ulufMGcwWQAi-, +ACKVk5BVMEQwQjCKMH4wWzCTACI-, +ACIwbzBEACI-, +ACIwSzBqMIowbni6c4cwZzBZACI-, +ACIwSDBIMAEwXTBGMFcwfjBXMIcwRjBL/x8AIg-, +ACJUDDBYMGcwWQAi-, +ACIwgjBjMGiAXjBLMFswZjBPMGAwVTBEACI-, +ACIwYTCHMGMwaDBKMEswVzBEACI-, +ACIwYTCHMGMwaGAqMFcwRDBuMGcwATCCMEZOAF6mimYwVzBmMH8wZjBPMGAwVTBEACI-, +ACIwQjBoMGcwgjBGTgBepozqVU8wVzBmME8wYDBVMEQAIg-, +ACIwsTD8MK0wajCTMGZWGAAi-, +ACI-42+ACI-, +ACIwXTCMMG+KADBEkE4wTgAi-, +ACIwSzBqMIp1kTCPMFcwRAAi-, +ACJP4XUoMFcwajBEMGcAIg-, +ACJ7VDBIMG8wzjD8MGcwWQAi-, +ACJ9dlv+MGsw4DDqACIAXQ-
++AD4-
+    +AEA-IBOutlet weak var answerLabel: UILabel+ACE-
+    +AEA-IBOutlet weak var shakeButton: UIButton+ACE-
++AD4-
+    // ... +a4swijBuMLMw/DDJ-
++AH0-
++AGAAYABg-
++AD4-
++U8KAAzB+MGcwazABTuVOCjBuVt57VDBukU1SFzBuMNcw7DD8MPMwxjCtMLkwyHJIMG9rITBukBowijBnMFn/Gg-
++AD4-
+let answers +AD0- +AFsAIjBvMEQwATCCMGEwjTCTACI-, +ACJ4ulufMGcwWQAi-, +ACKVk5BVMEQwQjCKMH4wWzCTACI-, +ACIwbzBEACI-, +ACIwSzBqMIowbni6c4cwZzBZACI-, +ACIwSDBIMAEwXTBGMFcwfjBXMIcwRjBL/x8AIg-, +ACJUDDBYMGcwWQAi-, +ACIwgjBjMGiAXjBLMFswZjBPMGAwVTBEACI-, +ACIwYTCHMGMwaDBKMEswVzBEACI-, +ACIwYTCHMGMwaGAqMFcwRDBuMGcwATCCMEZOAF6mimYwVzBmMH8wZjBPMGAwVTBEACI-, +ACIwQjBoMGcwgjBGTgBepozqVU8wVzBmME8wYDBVMEQAIg-, +ACIwsTD8MK0wajCTMGZWGAAi-, +ACI-42+ACI-, +ACIwXTCMMG+KADBEkE4wTgAi-, +ACIwSzBqMIp1kTCPMFcwRAAi-, +ACJP4XUoMFcwajBEMGcAIg-, +ACJ7VDBIMG8wzjD8MGcwWQAi-, +ACJ9dlv+MGsw4DDqACIAXQ-
 
-With our new array of answers, we can randomly select an item in our array whenever the shake button is tapped and change the text of the answer label to display it.
++Vt57VDBukU1SFzCSZbAwXzBrdShhDzBXMF8waDBTMI0wZzABMLcwpzD8MK8w3DC/MPMwTDC/MMMw1zBVMIwwX1g0VAgwazABMFMwbpFNUhcwa1QrMH4wjDCLmAV27jCScSFPXHC6MGuQeGKeMFcwAYhoeTowVTCMMItW3ntUMOkw2TDrMG4wxjCtMLkwyDCSWQlm9DBnME0wizCIMEYwazBqMIowfjBZMAI-
 
-> [action]
-To randomly choose an answer, we can use the `arc4random_uniform(_:)` method. Change `shakeButtonTapped` in our view controller to the following:
->
-```
-@IBAction func shakeButtonTapped(_ sender: UIButton) {
++AD4- +AFs-action+AF0-
++cSFPXHC6MGtW3ntUMJKQeGKeMFkwizBrMG8wAQBg-arc4random+AF8-uniform(+AF8-:)+AGAw4TC9MMMwyTCST38wRjBTMGgwTDBnME0wfjBZMAI- +MNMw5TD8MLMw8zDIMO0w/DDpMPwwbgBg-shakeButtonTapped+AGAwkk7lTgswa1kJZvQwVzBmME8wYDBVMET/Gg- 
++AD4-
++AGAAYABg-
++AEA-IBAction func shakeButtonTapped(+AF8- sender: UIButton) +AHs-
     // 1
-    let maxIndex = UInt32(answers.count)
+    let maxIndex +AD0- UInt32(answers.count)
     // 2
-    let randomIndex = Int(arc4random_uniform(maxIndex))
->
+    let randomIndex +AD0- Int(arc4random+AF8-uniform(maxIndex))
++AD4-
     // 3
-    answerLabel.text = answers[randomIndex]
-}
-```
->
-Let's break down our code step by step above:
->
-1. We determine the `maxIndex` that will be used to specify the upper bound when we randomly generate an index in our answers array. We have to cast to of type `UInt32` because the method `arc4random_uniform` accepts a argument of type `UInt32`.
-1. We use `arc4random_uniform` to randomly generate a index of an answer. We cast it back to of type `Int` because we'll need an integer in order to retrieve the item in our array at the specified index.
-1. Last, we set the answer's label text to match the randomly generated answer.
+    answerLabel.text +AD0- answers+AFs-randomIndex+AF0-
++AH0-
++AGAAYABg-
++AD4-
++MFMwjDB+MGcwbjCzMPwwyTCSMLkwxjDDMNcwVDBoMGtSBonjMFcwfjBXMIcwRv8a-
++AD4-
+1. +Vt57VDBukU1SF1GFMGdxIU9ccLowazCkMPMwxzDDMK8wuTCSdR9iEDBZMIuWmzABTgqWUDCScnlbmjBZMIswXzCBMGtPf3UoMFUwjDCLAGA-maxIndex+AGAwkmx6W5owVzB+MFkwAg- +AGA-arc4random+AF8-uniform+AGAw4TC9MMMwyTBvAGA-UInt32+AGBXizBuXxVlcDCSU9cwUVFlMIwwizBfMIEwAQBg-UInt32+AGBXizBrMK0w4zC5MMgwVzBqMFEwjDBwMGowijB+MFswkzAC-
+1. +Vt57VDBuMKQw8zDHMMMwrzC5MJJxIU9ccLowa3UfYhAwWTCLMGswbzABAGA-arc4random+AF8-uniform+AGAwkk9/dSgwVzB+MFkwAg- +YwdbmjBuMKQw8zDHMMMwrzC5MGeRTVIXMG5OLTBumAV27jCSiq0wf1H6MFkwazBvZXRlcDBMX8WJgTBqMG4wZzABAGA-Int+AGBXizBrMK0w4zC5MMgwV3b0MFcwfjBZMAI- 
+1. +ZwBfjDBrMAFW3ntUMOkw2TDrMG4wxjCtMLkwyDBoMAFxIU9ccLowa3UfYhAwVTCMMF9W3ntUMGgwkk4AgfQwVTBbMH4wWTAC-
 
-Build and run the app!
++MKIw1zDqMJIw0zDrMMkwVzBmW5+ITDBXMH4wVzCHMEb/AQ-
 
-Ask the Magic 8-Ball a couple questions and test that it works.
+Magic 8-Ball+MGs-2+MGQwezBpjOpVTzCSMFcwZjABUtVPXDCSMMYwuTDIMFcwfjBXMIcwRjAC-
 
-Congrats, we've implemented the basic Magic 8-Ball functionality.
++MEowgTBnMGgwRjBUMFYwRDB+MFkwAg-Magic 8-Ball+MG5X+mcsdoQwampfgP0wklufiMUwVzB+MFcwXzAC-
 
-Before we move on, let's take it one step further and implement the shake functionality that comes with a standard Magic 8-Ball.
++ayEwa3n7MItSTTBrMAEwgjBGTgBraVFIMHiQMjCTMGcwAVf6Zyx2hDBq-Magic 8-Ball+MGtO2FxeMFkwizC3MKcw/DCval+A/TCSW5+IxTBXMH4wVzCHMEYwAg-
 
-# Implementing the Shake Gesture
++ACM- +MLcwpzD8MK8wbjC4MKcwuTDBMOMw/DBuW59lvQ-
 
-The iPhone by default has implemented certain methods you can override to listen and act on certain events the user takes.
+iPhone+MG8wATDmMPwwtjD8MGt2enUfMFkwi3J5W5owbjCkMNkw8zDIMJJT1zBRU9YwijABMFMwjDBrV/owZTBPiExS1TCSjXcwUzBZMF8wgTBrMKow/DDQMPww6TCkMMkwZzBNMItyeVuaMG4w4TC9MMMwyTCSMMcw1TCpMOswyDBnW5+IxTBXMGYwRDB+MFkwAg-
 
-For the shake gesture, we can override a system implemented function and place our own functionality so that the label changes if the user shakes their app.
++MLcwpzD8MK8wbjC4MKcwuTDBMOMw/DBrlaIwVzBmMG8wATC3MLkwxjDgMGswiDBjMGZbn4jFMFUwjDBflaJlcDCSMKow/DDQMPww6TCkMMkwVzABcuyB6jBual+A/TBoU9Ywimb/MEgwfjBZMAIwUzCMMGswiDCKMAEw5jD8MLYw/DBMMKIw1zDqMJIwtzCnMPwwrzBZMIswaDDpMNkw6zBMWQkwjzCLMIgwRjBrMGowijB+MFkwAg-
 
-> [action]
-Add the following method to your view controller:
->
-```
-override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-    guard motion == .motionShake else { return }
->
-    let maxIndex = UInt32(answers.count)
-    let randomIndex = Int(arc4random_uniform(maxIndex))
->
-    answerLabel.text = answers[randomIndex]
-}
-```
->
-As you can see, we override the `motionEnded(_:with:)` event and check for the `.motionShake` event. If triggered, we run the same logic to randomly select and display an answer.
++AD4- +AFs-action+AF0-
++TuVOCzBuMOEwvTDDMMkwkjDTMOUw/DCzMPMwyDDtMPww6TD8MGuP/VKgMFcwZjBPMGAwVTBE/xo-
++AD4-
++AGAAYABg-
+override func motionEnded(+AF8- motion: UIEventSubtype, with event: UIEvent?) +AHs-
+    guard motion +AD0APQ- .motionShake else +AHs- return +AH0-
++AD4-
+    let maxIndex +AD0- UInt32(answers.count)
+    let randomIndex +AD0- Int(arc4random+AF8-uniform(maxIndex))
++AD4-
+    answerLabel.text +AD0- answers+AFs-randomIndex+AF0-
++AH0-
++AGAAYABg-
++AD4-
++MFSJpzBukBowijABAGA-motionEnded(+AF8-:with:)+AGAwpDDZMPMwyDCSMKow/DDQMPww6TCkMMkwVzABAGA-.motionShake+AGAwpDDZMPMwyDCSMMEwpzDDMK8wVzBmMEQwfjBZMAI- +MMgw6jCsMPwwVTCMMIswaDABVAwwWDDtMLgwwzCvMJJbn4hMMFcwZjABcSFPXHC6MGtW3ntUMJKQeDBziGh5OjBXMH4wWTAC-
 
-# Keeping Things DRY
++ACM- +Tn5x5XK2YUswkk/dMGQ-
 
-One general rule of thumb for programming is keeping things _DRY_. DRY stands for Don't Repeat Yourself. In other words, you shouldn't be copying and pasting the same code over and over in your codebase.
++MNcw7TCwMOkw3zDzMLAwa5WiMFkwi04Agix2hDBqfUyaE1JHMG8wAQBf-DRY+AF8wkluIMIswUzBoMGcwWTAC- DRY+MGgwbzABMAw-Don't Repeat Yourself+/whUDDBYMFMwaDCSfnAwio/UMFUwajBEMFMwaP8JMA0wkmEPVHMwVzB+MFkwAg- +MGQwfjCKMAEwszD8MMkw2TD8MLkwZzBvVAwwWDCzMPwwyTCST1VepjCCT1VepjCCMLMw1DD8/wYw2jD8MLkwyDBZMHkwTTBnMG8wajBEMGgwRDBGMFMwaDBnMFkwAg-
 
-> [info]
-Why do you think copying and pasting your code in multiple places is bad practice?
++AD4- +AFs-info+AF0-
++MLMw/DDJMJKJB2VwMG5YNGJAMGcwszDUMPz/BjDaMPwwuTDIMFkwizBuMExgqjBEf9JhYzBqMG4wbzABMGowXDBgMGhgHTBEMH4wWTBL/x8-
 
-In our current logic, you can see that we have the same logic for randomly choosing and display an answer twice. We can refactor this to a single method and call this method from both the shake event and button tap instead.
++c/5XKDBuMO0wuDDDMK8wZzBvMAE-2+Vt5xIU9ccLowa1bee1QwkpB4MJMwZ4hoeTowWTCLMG4wazABVAwwWDDtMLgwwzCvMEwwQjCLMFMwaDBMMI8wSzCKMH4wWTAC- +MFMwjDCSU1hOADBuMOEwvTDDMMkweDDqMNUwoTCvML8w6jDzMLAwVzBmMAFO4zCPMIowazC3MKcw/DCvMG4wpDDZMPMwyDBoMNwwvzDzMG4wvzDDMNcwbk4hZbkwSzCJMFMwbjDhML0wwzDJMJJUfDBzUfowWTBTMGgwTDBnME0wfjBZMAI-
 
-> [action]
-In `ViewController.swift` add the following method:
->
-```
-func generateAnswer() {
-    let maxIndex = UInt32(answers.count)
-    let randomIndex = Int(arc4random_uniform(maxIndex))
->
-    answerLabel.text = answers[randomIndex]
-}
-```
++AD4- +AFs-action+AF0-
++AGA-ViewController.swift+AGAwazBKMEQwZk7lTgswbmW5Xw8wko/9UqAwVzB+MFn/Gg-
++AD4-
++AGAAYABg-
+func generateAnswer() +AHs-
+    let maxIndex +AD0- UInt32(answers.count)
+    let randomIndex +AD0- Int(arc4random+AF8-uniform(maxIndex))
++AD4-
+    answerLabel.text +AD0- answers+AFs-randomIndex+AF0-
++AH0-
++AGAAYABg-
 
-Next we can refactor our code to use our new `generateAnswer` method:
++ayEwazABMLMw/DDJMJIw6jDVMKEwrzC/MOow8zCwMFcwZjABZbAwVzBEAGA-generateAnswer+AGAw4TC9MMMwyTCSUil1KDBZMIswUzBoMEwwZzBNMH4wWf8a-
 
-> [action]
-Change both `shakeButtonTapped(_:)` and `motionEnded(_:with:)` to the following respectively:
->
-```
-@IBAction func shakeButtonTapped(_ sender: Any) {
++AD4- +AFs-action+AF0-
++AGA-shakeButtonTapped(+AF8-:)+AGAwSjCIMHMAYA-motionEnded(+AF8-:with:)+AGAwbk4hZbkwkjBdMIwwXjCMMAFrITBuMIgwRjBrWQlm9DBXMGYwTzBgMFUwRP8a-
++AD4-
++AGAAYABg-
++AEA-IBAction func shakeButtonTapped(+AF8- sender: Any) +AHs-
     generateAnswer()
-}
->
-override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-    guard motion == .motionShake else { return }
->
++AH0-
++AD4-
+override func motionEnded(+AF8- motion: UIEventSubtype, with event: UIEvent?) +AHs-
+    guard motion +AD0APQ- .motionShake else +AHs- return +AH0-
++AD4-
     generateAnswer()
-}
-```
++AH0-
++AGAAYABg-
 
-Run your app and test out your new Magic 8-Ball. Be sure to test both your new shake gesture and the existing button tap logic.
++MKIw1zDqMJJbn4hMMFcwZjABZbAwVzBE-Magic 8-Ball+MJIwxjC5MMgwVzB+MFkwAg- +X8UwWjABZbAwVzBEMLcwpzD8MK8wbjC4MKcwuTDBMOMw/DBoZeJbWDBuMNwwvzDzML8wwzDXMG4w7TC4MMMwrzBuTiFluTCSMMYwuTDIMFcwZjBPMGAwVTBEMAI-
 
-To test the shake gesture in the iPhone 7 simulator, make sure the simulator is active and select the hardware menu. In the dropdown, you will see an option for `Shake Gesture`.
+iPhone 7+MLcw3zDlMOww/DC/MPwwZzC3MKcw/DCvMLgwpzC5MMEw4zD8MJIwxjC5MMgwWTCLMGswbzABX8UwWjC3MN8w5TDsMPwwvzD8MExnCVK5MGcwQjCLMFMwaDCSeLqKjTBXMAEwzzD8MMkwpjCnMKIw4TDLMOUw/DCSkHhinjBXMGYwTzBgMFUwRDAC- +MMkw7TDDMNcwwDCmMPMwazBvMAEAYA-Shake Gesture+AGAwbjCqMNcwtzDnMPMwTDBCMIowfjBZMAI-
 
-![Simulator Shake](assets/simulator_shake.png)
++ACEAWw-Simulator Shake+AF0-(assets/simulator+AF8-shake.png)
 
-## Wrapping Up
++ACMAIw- +MH4waDCB-
 
-In this last section, we took the UI we built in storyboard and hooked it up to our code. We looked at the relationship between storyboard and Swift source files and how they communicate on a basic level.
++MFMwbmcAX4wwbjC7MK8wtzDnMPMwZzBvMAE-Storyboard+MGeVi3Z6MFcwXw-UI+MJJT1jCKTgowUjBmMAEwszD8MMkweDBoMGQwajBSMH4wVzBfMAI- Storyboard+MGg-Swift+ML0w/DC5MNUwoTCkMOswbpWiT8IwATBdMFcwZjBTMIwwiTBMV/pnLHaEMGow7DDZMOswZzBpMEaQGk/hMFkwizBuMEswkmkcig4wVzB+MFcwXzAC-
 
-We figured out how to respond to some basic user gestures (button taps and shakes) and finally implemented some logic for our Magic 8-Ball to work.
++MOYw/DC2MPwwblf6Zyx2hDBqMLgwpzC5MMEw4zD8/wgw3DC/MPMwbjC/MMMw1zBoMLcwpzD8MK//CTBrW/5f3DBZMItluWzVMJJ6gTBNa2IwgTBmMAE-Magic 8-Ball+MJJS1U9cMFUwWzCLMO0wuDDDMK8wkjCIMEYwhDBPW5+IxTBXMH4wVzBfMAI-
 
-In the next section, we'll wrap up by reviewing what we learned.
++ayEwbjC7MK8wtzDnMPMwZzBvMAFOyjB+MGdbZjCTMGAwUzBoMJKJi3b0MFcwZjB+MGgwgTCSiEwwRDB+MFkwAg-

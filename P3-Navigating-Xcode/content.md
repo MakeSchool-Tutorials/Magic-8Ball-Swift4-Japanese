@@ -1,127 +1,127 @@
 ---
-title: "Navigating Xcode"
+title: "Xcodeのナビゲート"
 slug: navigating-xcode
 ---
 
-Let's take a look around our newly created Xcode project. All of the files and settings in our current Xcode project are the default configurations when a project is created from the _Single View App_ template.
+新しく作成した Xcode プロジェクトの周囲を見てみましょう。現在のXcodeプロジェクトのすべてのファイルと設定は、 _Single View App_ のテンプレートからプロジェクトが作成された時に、デフォルトとなる構成です。
 
-To see what's in our project and navigate file to file, we'll need to using the _Navigator_.
+プロジェクトの内容を見て、ファイルからファイルへとナビゲートするには、ナビゲーターを使用する必要があります。
 
-# Navigator
+# ナビゲーター
 
 ![Xcode Navigator](assets/navigator_pane.png)
 
-The navigator pane contains multiple tabs (call navigator) for many different tools in Xcode.
+ナビゲーターのペインには、Xcodeの多くの様々なツールのための複数のタブが含まれています（ナビゲーターと呼ばれています）。
 
-You can change tabs by clicking on the different icons at the very top of the navigator pane.
+ナビゲーターペインの最上部にある別々のアイコンをクリックすると、タブを変更できます。
 
 ![Navigator Top Tabs](assets/navigator_tabs.png)
 
-Each of these navigator tabs are useful tools that you'll eventually learn to use. Some of the most important ones are:
+これらのナビゲータータブは、どれも便利なツールであり、使い方は後々学びます。その中でも特に重要なものは次の通りです：
 
-- _Project navigator_: navigate and change files
-- _Find navigator_: search through your project to find files
-- _Issue navigator_: locate and fix warnings and errors in your project
+- プロジェクトナビゲーター： ファイルをナビゲートし、変更する
+- 検索ナビゲーター: ファイルを見つけるためにプロジェクト全体を検索する
+- 問題ナビゲーター： プロジェクトの警告やエラーを見つけ、修復する
 
-In this tutorial, we'll only focus on the first tab, the _Project navigator_, but you'll learn about all of them eventually.
+このチュートリアルでは、最初のタブであるプロジェクトナビゲーターだけに焦点を当てますが、他のものについてもいずれ学ぶことになります。
 
 <!-- include issues navigator? -->
 
-## Project Navigator
+## プロジェクトナビゲーター
 
-The project navigator helps you navigate and organize your project files. In other words, it makes it easier to find and open different files in the same project.
+プロジェクトナビゲーターは、プロジェクトファイルをナビゲートし、整理するのに役に立ちます。つまり、同じプロジェクト内の様々なファイルを見つけて開くのがもっと簡単になるということです。
 
 > [action]
-In your Navigator pane, make sure you have the project navigator tab active. If you don't, click on the first navigator tab. It has an icon that looks like a file. ![Project Navigator Tab](assets/project_navigator_tab.png)
+ナビゲーターペインでは、必ずプロジェクトナビゲーターを有効にしてください。有効ではない場合は、最初のナビゲータータブをクリックしてください。ファイルのような外見のアイコンが付いています。![Project Navigator Tab](assets/project_navigator_tab.png)
 
-With your Project navigator tab active, you should see your project's files right below the Navigator tabs:
+プロジェクトナビゲーターのタブがアクティブな状態だと、ナビゲーターのタブのすぐ下でプロジェクトのファイルを見つけられるはずです：
 
 ![Project Navigator Active](assets/project_navigator_active.png)
 
-Let's look at some of the different files in our project.
+プロジェクトのさまざまなファイルをいくつか見てみましょう。
 
-# Xcode Project File
+# Xcode プロジェクトファイル
 
 > [action]
-In the navigator, select the Xcode project file at the very top of the project navigator. You should see the following:
+ナビゲーターでは、プロジェクトナビゲーターの最上部でXcodeプロジェクトファイルを選択してください。次のように表示されます。
 >
 ![Xcode Project Details](assets/xcode_project_details.png)
 
 <!-- break -->
 
 > [info]
-You'll notice, whenever you choose a file in the _Project navigator_, the _Editor area_ will update with the corresponding file. In addition, the _Utilities area_ will also change to match the options available for the active file. Switch back and forth between a couple files if you want to test it out.
+プロジェクトナビゲーターでファイルを選択すると、いつでもエディタエリアが対応するファイルと一緒に更新されることに気づくでしょう。さらに、ユーティリティエリアもまた、有効なファイルに関して利用できるオプションと一致するように変化します。お望みであれば、2つのファイルの間を行き来してテストしてみましょう。
 
-In the project details, you can configure your app's settings. For example, let's go through the process of changing the app's name that is displayed on the home screen of a user's iPhone.
+プロジェクトの詳細では、アプリの設定を構成することができます。例えば、ユーザーのiPhoneホーム画面に表示されるアプリ名を変更するプロセスを進めてみましょう。
 
 > [action]
-To get a better idea of what we're changing, run the app on the iPhone 7 simulator. You'll see the blank white screen as you saw earlier.
+何を変更しているのかについて理解を深めるために、iPhone 7シミュレーター上でアプリを実行します。先ほどと同じように空っぽで真っ白な画面が表示されます。
 >
-Next, press command-shift-h. This will take you to the home screen of your iPhone 7 simulator.
+次にcommand-shift-hキーを押してください。これにより、iPhone 7シミュレーターのホーム画面に移動するはずです。
 >
 ![Home App Display](assets/home_app_display.png)
 
-As you can see above, the app icon is the default blank app icon that comes with new projects. In addition, our project name is by default the product name that we set when creating the project. We'll eventually change both, but first let's change the app's _Display Name_.
+以上からわかるように、現在のアプリのアイコンは新しいプロジェクトに付いてくるデフォルトの空白のアプリアイコンです。また、プロジェクト名は、デフォルトで、プロジェクトを作成したときに設定した製品名になっています。いずれは両方とも変更しますが、まずは、アプリの _Display Name_ を変更しましょう。
 
-Back in Xcode, we can change the app's display name by editing the _Display Name_ field in our project details. Make sure the Xcode project file is active in your Project navigator.
+Xcodeに戻って、プロジェクト詳細の _Display Name_ フィールドでアプリの表示名を変更できます。プロジェクトナビゲーターでXcodeプロジェクトファイルが有効になっていることを確認してください。
 
 > [action]
-Set the app's display name from the default `MagicEightBall` to `Magic 8-Ball`.
+アプリの表示名をデフォルトの`MagicEightBall`から`Magic 8-Ball`に変更してください。
 >
 ![Edit Display Name](assets/edit_display_name.png)
 
-Done! That was easy.
+完了です！ 簡単でしたね。
 
-Before getting to changing the app's icon, let's take a look at some other types of files.
+アプリのアイコンを変更する前に、他のファイルの種類をいくつか見てみましょう。
 
-# Swift Source Files
+# Swiftソースファイル
 
-In your Project navigator, select the file nested under your Xcode project file named `AppDelegate.swift`.
+プロジェクトナビゲーターで、Xcodeプロジェクトファイルの下でネスト化された`AppDelegate.swift`という名前のファイルを選択してください。
 
 ![App Delegate Active](assets/app_delegate_active.png)
 
-Files with the `.swift` extension are Swift source files. The code you write will be in Swift source files.
+`.swift`という拡張子の付いたファイルは、Swiftソースファイルです。あなたの書いたコードは、Swiftソースファイルの中にあります。
 
-The _App Delegate_ is an important object that is responsible for handling your app lifecycle. If you look at the some of the method names in the file, you'll see names like:
+_App Delegate_ はアプリのライフサイクルの取り扱いに関して責任を負っている重要なオブジェクトです。該当するファイルに含まれるメソッドの名前のいくつかに注目すると、次のような名前に気づきます：
 
-- application(_:didFinishLaunchingWithOptions:)
-- applicationWillResignActive(_:)
-- applicationWillTerminate(_:)
+- `application(_:didFinishLaunchingWithOptions:)``
+- `applicationWillResignActive(_:)`
+- `applicationWillTerminate(_:)`
 
-As you can guess, all of these methods happen when your app changes _state_ such as when your app first launches, when it's put into the background, or when it's terminated. Although we won't add anything in here for this tutorial, you can add code here to customize your app behavior when important app lifecycle events happen.
+察しがつく通り、これらのメソッドはすべて、アプリがステートを変更した時に発生します。たとえば、アプリが初めて起動したとき、バックグラウンドに移ったとき、または終了したときなどです。このチュートリアルに関してはここでは何も追加しませんが、コードを追加して、重要なアプリライフサイクルのイベントが発生したときのアプリの動作をカスタマイズすることができます。
 
-# Asset Catalog
+# アセットのカタログ
 
-Now, let's get back to changing our app icon.
+さて、アプリのアイコンの変更に戻りましょう。
 
 > [action]
-From the Project navigator, select the `Assets.xcassets` file. Within the editor area, you'll see a single asset placeholder named _AppIcon_. Normally, you'll see a list of all your app's assets in the _Asset Catalog_.
+プロジェクトナビゲーターから、`Assets.xcassets`ファイルを選択してください。エディタエリアの中に、 _AppIcon_ という名前の単一アセットプレースホルダーがあります 。通常は、_Asset Catalog_ でアプリのアセットすべてのリストを閲覧します。
 >
-In your Asset Catalog, select the empty _AppIcon_ placeholder asset. You will see a bunch of empty placeholders for your app icon in multiple different sizes and devices.
+アセットカタログで、空の _AppIcon_ プレースホルダーアセットを選択してください。アプリアイコン用の空のプレースホルダーを複数の寸法及びデバイスにおいて沢山見るでしょう。
 >
 ![App Icon Asset Empty](assets/app_icon_asset_empty.png)
 
-If you're wondering why there are so many empty app icon placeholders, it's to support different resolutions and sizes of different devices.
+なぜこんなにたくさん空のアプリアイコンのプレースホルダーがあるのかと不思議に思うかもしれませんが、これは異なるデバイスの、様々な解像度やサイズに対応するためです。
 
-For our Magic 8-Ball app, we'll only add the app icon images to be displayed on the home screen. When you're really submitting your app to the App Store, you'll need to make sure to account for all the relevant app icon sizes.
+Magic 8-Ballアプリでは、ホーム画面に表示されるアプリのアイコン画像だけ追加します。本当にApp Storeにアプリを提出する場合は、関連するアプリのアイコンサイズすべてに対応する必要があります。
 
 > [action]
-Go ahead and download the Magic 8-Ball app icon images by [clicking here](https://www.dropbox.com/s/cs880nu9xi0qlq6/magic_app_icon.zip?dl=1). After downloading and unzipping your image assets, drag and drop the `app_icon@2x.png` into `iPhone App iOS 7-11 60pt` @2x empty placeholder. Repeat and do the same for `app_icon@3x.png`.
+Magic 8-Ballアプリのアイコン画像をダウンロードしてください [こちらをクリックしてください](https://www.dropbox.com/s/cs880nu9xi0qlq6/magic_app_icon.zip?dl=1)。画像のアセットをダウンロードして解凍した後は、`app_icon@2x.png`を `iPhone App iOS 7-11 60pt` @2xの空のプレースホルダーにドラッグして、ドロップしてください。`app_icon@3x.png`についても同じ作業を繰り返してください。
 
-When you're finished, your _AppIcon_ image set should look like the following:
+作業が済むと、 _AppIcon_ の画像セットは次のように表示されるはずです：
 
 ![App Icon Set](assets/app_icon_set.png)
 
-You've successfully added a custom app icon to your Magic 8-Ball app!
+Magic 8-Ballアプリに、カスタムアプリアイコンを追加できました！
 
 > [info]
-After adding your Magic 8-Ball app icon, you'll notice some new warnings appear. These appear because our Xcode project is expecting additional version of our app icon for the App Store and the iPad device. It's ok to ignore these warnings for this tutorial.
+Magic 8-Ballアプリのアイコンを追加すると、新しい警告が表示されることに気づくでしょう。XcodeプロジェクトはApp StoreやiPadデバイス用のアプリアイコンの追加バージョンを予期しているため、これらが表示されます。このチュートリアルでは、これらの警告を無視して構いません。
 
-# Testing Our Changes
+# 変更をテストする
 
-To make sure our changes have worked, let's run the app. Remember, we haven't changed what the app does, so when we run the app it'll still be a blank, empty white screen.
+変更がうまく動作することを確認するため、アプリを実行してみましょう。アプリの動作は変更していないので、アプリを実行すると、真っ白で空っぽの画面が表示されることに注意しましょう。
 
 > [action]
-Run the app by pressing the Run button in the toolbar or the CMD-r shortcut. With the app active in the simulator, press command-shift-h. You should see the simulator return to the iPhone homescreen with your new app icon and display name!
+ツールバーのRunボタンを押すか、CMD-rショートカットでアプリを実行します。アプリがシミュレーターで有効になっている状態で、command-shift-hを押します。シミュレーターは新しいアプリアイコンと表示名でiPhoneのホーム画面に戻ります！
 >
 ![Home Screen Styled](assets/home_screen_styled.png)

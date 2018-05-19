@@ -1,71 +1,71 @@
 ---
-title: "Conclusion"
+title: "結論"
 slug: conclusion
 ---
 
-Congrats! You've just built your first iOS app.
+おめでとうございます！たった今、初めてのiOSアプリを完成しました。
 
 ![Finished App](assets/finished_app_flow.png)
 
-You taken your first steps on your journey to become an iOS developer.
+あなたはiOS開発者となる道のりの第一歩を踏み出しました。
 
-In this tutorial, you were introduced to many new concepts in Xcode and iOS development. To recap, you learned how to...
+このチュートリアルでは、XcodeやiOS開発の新しいコンセプトをたくさん学びました。振り返ってみると、次のことを学びました。
 
-- create new Xcode projects
-- use different tools of Xcode
-- build simple user interfaces (UI) using _Interface Builder_
-- connect storyboard to code with the _Identity Inspector_, IBOutlets and IBActions
-- implement app logic for your Magic 8-Ball
+- 新しい Xcode プロジェクトを作成する
+- Xcodeのさまざまなツールを使用する
+- インターフェースビルダーを使って、シンプルなユーザーインターフェース（UI）を構築する
+- アイデンティティインスペクター、IBOutlets、IBActionsで、Storyboardとコードをつなげる
+- Magic 8-Ballのアプリのロジックを実装する
 
-Try to remember and visualize what you did for each of these steps in your head.
+頭の中で、これらの手順に関して何をしたかを思い出して、視覚化してみましょう。
 
-## Where To Go From Here?
+## これからどうしたらいいのでしょうか？
 
-If it went by in a blur, don't worry. You'll need to keep practicing, but eventually these steps will be drilled into your head once you go through the process on your own a few times...
+どうもはっきりしないまま終わってしまったとしても、心配無用です。練習を続ける必要はありますが、何回か自分でプロセスをこなしていくと、これらの手順が次第に頭の中に染み込んでいきます。
 
-Which leads us to your next challenge!
+これが、次の課題へ私たちを導いてくれます！
 
-# A Challenge Approaches
+# チャレンジが近づく
 
-To quote Zig Ziglar, "Repetition is the mother of learning."
+ジグ・ジグラーの言葉を借りれば、「繰り返しは学習の母」なのです。
 
-To really learn iOS development, we'll have to put the new skills we learned to the test. We'll want to keep repeating and practicing these foundational steps until we know them by memory.
+本当にiOS開発を学ぶには、新しく学んだスキルをテストする必要があります。暗記するまで、こういった基礎的な手順を繰り返して練習したいものです。
 
-## The Challenge
+## 課題
 
-Coming up with new ideas for apps can be hard. To help out, you're going to creating a startup idea generator. This app will require many of the same skills and concepts you learned during the Magic 8-Ball tutorial.
+アプリのアイディアを新しく思いつくのは難しいことがあります。そんな状態の助け舟となるように、スタートアップのアイディア生成アプリを作りましょう。このアプリでは、Magic 8-Ballのチュートリアルで学んだのと同じスキルやコンセプトの多くが必要とされます。
 
-Try completing this challenge on your own. Refer back to the tutorial only when you get stuck.
+このチャレンジを自分で達成してみましょう。チュートリアルを参照するのは、行き詰まったときだけにしてください。
 
-## App Design
+## アプリのデザイン
 
 ![Startup Idea Generator Design](assets/startup_generator_design.png)
 
-Here's an example screenshot for the final app. Feel free to get creative and add your style into app design.
+これは最終的なアプリのスクリーンショット例です。創造性を自由に発揮して、あなたのスタイルをアプリのデザインに加えましょう。
 
-## Specs
+## 仕様
 
-Similar to the Magic 8-Ball app, you're project will revolve around randomly generated content. This time around, you'll be generating new content for two labels instead of one.
+Magic 8-Ballアプリと同様に、このプロジェクトは無作為に生成されたコンテンツを中心に展開します。今回は、1つではなく2つのラベル用に新しいコンテンツを作ります。
 
-The first label will be set from an array of strings.
+最初のラベルは、文字列の配列から設定されます。
 
-Your array will containing the names of existing startups. You can use the array below or generate your own:
+配列には既存のスタートアップの名前が含まれます。以下の配列を使うか、自分で生成することができます：
 
 ```
 ["Make School", "Uber", "Netflix", "Facebook", "Google", "Kickstarter", "Spotify", "Airbnb", "Snapchat", "YouTube", "Dropbox", "Amazon", "Craigslist", "Tinder", "Instagram", "Tesla", "Twitter", "SpaceX"]
 ```
 
-The second label will be also set from an array of strings. This time, the array will contain the names of random industries, animals or categories. You can use the array below or generate your own:
+2つ目のラベルも、文字列の配列から設定されます。今回は、配列には無作為な産業、動物、またはカテゴリーの名前が含まれます。以下の配列を使うか、自分で生成することができます：
 
 ```
 ["Dogs", "Books", "Gamers", "Star Wars", "Bitcoin", "Goats", "Zombies", "Rich People", "Swimmers", "Florida", "Vampires", "Dragons", "Internet of Things", "Mars", "Cryptocurrency", "Mosquito Repellent", "Fidget Spinners", "Sun Screen", "Water Bottles", "Lost Travelers", "Superheroes"]
 ```
 
-Your app will generate new startup idea whenever the user taps the generate button or shakes the phone.
+ユーザーが生成ボタンをタップするか、電話機を振るたびに、新しいスタートアップのアイディアを生成します。
 
 > [info]
-**Pitch That**
+**ピッチしよう**
 >
-Another fun way to make use of this app (when you're done) is by practicing your pitching skills with friends. Take turns generating startup ideas with your app and pretend to give a 1 minute pitch to your friends. Your friends can act as investors. At the end of each round, everyone can decide who got funding and who didn't.
+このアプリのもう一つの楽しい使い方は（完成したら）、友達と一緒にピッチスキルの練習をすることです。アプリで順番にスタートアップのアイディアを生成して、友達に向けて1分間のピッチをするマネをしてみましょう。友達は投資家の役割を演じます。各ラウンドの最後に、誰が資金調達を受けて、誰が受けないかを決めましょう。
 
-Good luck the challenge! Remember, you can look back on the tutorial or your previous code if you get stuck.
+チャレンジの幸運を祈ります！行き詰まったらチュートリアルを見返したり、過去のコードを見直したりできるのをお忘れなく。

@@ -1,207 +1,207 @@
 ---
-title: "Creating Your First Xcode Project"
+title: "最初のXcodeプロジェクトを作成する"
 slug: new-xcode-project
 ---
 
-Most of this tutorial will be devoted towards learning about Xcode. In this section, we'll have our first introduction to Xcode and go through the process of creating a new Xcode project for our app.
+このチュートリアルの大部分ではXcodeについて学んでいきます。このセクションではXcodeを初紹介し、私たちのアプリのための新しいXcodeプロジェクトを作成する手順をこなしていきます。
 
-## What is Xcode?
+## Xcodeとは何ですか？
 
-Xcode is an _Integrated Development Environment_ (IDE) for developing apps in the Apple ecosystem. We'll be focusing on iOS apps, but you can also make apps for macOS, watchOS, and tvOS apps. IDEs (like Xcode) contain and integrate many powerful tools that make software development easier for programmers.
+Xcodeとは、 Appleのエコシステム内でアプリを開発する_統合開発環（Integrated Development Environment）_（IDE）です。iOS アプリに焦点を当てますがmacOS、watchOS、tvOS のアプリのためにもアプリを作成することができます。IDE（Xcodeなど）には、プログラマーのソフトウェア開発を簡単にしてくれる強力なツールがたくさん含まれ、統合されています。
 
-As you learn to build apps in Xcode, you'll use many of these tools. Tools that you'll use commonly on a daily basis might include:
+Xcodeでのアプリ開発について学ぶ際には、これらのツールの多くを使うことになります。日常的によく使うツールには、次のものが含まれるかもしれません：
 
-- **Source Code Editor:** write and edit code
-- **Interface Builder:** build and visualize user interfaces (UI) without code
-- **Debugger:** test, catch and debug problems in your code
-- **Compiler:** helps you find mistakes in your code and offers "Fix-its" suggestions
-- **Assistant Editor:** edit multiple files in Xcode side-by-side
-- **Simulator:** test and run your app on a simulated iPhone on your computer
+- **ソースコードエディタ：** コードを書いて編集します
+- **インターフェースビルダー：** コードを書かずにユーザーインターフェース（UI）を開発し、可視化させます
+- **デバッガー：** コードの問題をテスト、発見、デバッグします
+- **コンパイラ：** コード内の間違いを発見する補助をし、「Fix-it」という修正提案を表示します
+- **アシスタントエディタ：** Xcodeの複数のファイルを隣り合わせに並べて編集します
+- **シミュレーター：** コンピューターでシミュレートされたiPhone上でアプリをテストし、実行します
 
-We'll go through each of these tools more in-depth as we build our Magic 8-Ball.
+Magic 8-Ballの開発を進めていく中で、これらのツールのそれぞれについて深く学んでいきます。
 
 > [info]
-Remember, Xcode contains many more tools that the ones listed above. In this tutorial, we limit our focus to learn about only the most important Xcode tools for building simple iOS apps.
+Xcodeには上記のツール以外にもまだまだたくさんツールが含まれていることを覚えておきましょう。このチュートリアルではシンプルなiOSアプリを開発するにあたって最も重要となるXcodeのツールだけを学ぶように焦点を絞ります。
 
-# Your First Xcode Project
+# 初めての Xcode プロジェクト
 
-Firsts are always special. Now that we know a little more about Xcode, we'll begin by creating our _first_ Xcode project.
+初体験というのは何であっても特別なものです。Xcodeについて少し学んだところで、_初の_Xcodeプロジェクトの作成を始めましょう。
 
-Get familiar with this process! You'll repeat it over and over whenever you start a new app.
+このプロセスに慣れましょう！ 新たなアプリを開始する度に、何度も何度も繰り返すことになります。
 
 > [action]
-Create a new Xcode project:
+新しい Xcode プロジェクトの作成：
 >
-1. Open _Xcode_ on your computer. You should see the following launch window after you open Xcode ![Launch Window](assets/xcode_launch_window.png)
-1. Next, from the launch window's quick options click `Create a new Xcode project` ![Create New Project](assets/create_new_project.png)
-1. You should see the following prompt to select a template for your new project. Under _iOS_, select _Single View App_ ![Select Template](assets/select_template.png)
-1. With your selected template, click _Next_. You should see a new prompt for your project details ![Set Project Details](assets/set_project_details.png)
+1. コンピューター上で _Xcode_ を開きます。You should see the following launch window after you open Xcode ![Launch Window](assets/xcode_launch_window.png)
+1. 次に、起動ウィンドウのクイックオプションから `Create a new Xcode project`をクリックしてください！[Create New Project](assets/create_new_project.png)
+1. 新しいプロジェクトのテンプレートを選択するように促す次のようなプロンプトが表示されるはずです。Under _iOS_, select _Single View App_ ![Select Template](assets/select_template.png)
+1. テンプレートを選択した状態で、 _Next_ をクリックしてください。You should see a new prompt for your project details ![Set Project Details](assets/set_project_details.png)
 
-In this new prompt, we'll set some basic info and details that Xcode needs to create a new project.
+この新しいプロンプトでは、新しいプロジェクトを作成するためにXcodeが必要とする基本情報や詳細を設定します。
 
 > [action]
-In the project details prompt, enter the following information:
+プロジェクトの詳細に関するプロンプトでは、以下の情報を入力してください：
 >
 ![Filled Project Details](assets/filled_project_details.png)
 >
-If you need a step-by-step breakdown:
+ステップバイステップの分析が必要な場合は：
 >
-1. In the _Product Name_ field, enter `MagicEightBall`. This is what Xcode will name your project in your file directory. To prevent potential name-related problems, it's best to stick with alphanumeric characters (letters and numbers) and avoid special characters.
-1. In the _Team_ dropdown menu, set it as `None`. If you already have an `Apple Developer Team`, you can select that instead.
-1. In the _Organization Name_, you can enter one of the following: your name, your fake company name, or _Make School_.
-1. In the _Organization Identifier_, set it as _com.makeschool_. If you own a domain name, you can set this field as your reverse domain name. For example, if you own the domain name _happycarrot.com_, you would put _com.happycarrot_ as your identifier.
-1. The _Bundle Identifier_ will be automatically generated from your _Organization Identifier_ and _Product Name_. Apple uses the bundle identifier to uniquely identify each app in the _App Store_.
-1. In the _Language_ dropdown menu, make sure it's set to `Swift`.
-1. Finally, leave all three checkboxes unchecked. We won't use _Core Data_ or testing in this tutorial. Those are more advanced topics we'll cover at another time.
+1. _Product Name_ フィールドに、`MagicEightBall`と入力してください。これがファイルディレクトリにおけるあなたのプロジェクトの名前になります。名前に関する潜在的な問題を防ぐため、英数字（文字と数字）を使い、特殊文字を避けるのが一番です。
+1._Team_のドロップダウンメニューは、`None`に設定してください。`Apple Developer Team`がすでにある場合は、これを代わりにを選択することもできます。
+1. _Organization Name_ には、次のいずれかを入力できます。自分の名前、仮の会社名、または _Make School_ です。
+1. _Organization Identifier_ は、 _com.makeschool_ と設定してください。ドメイン名を持っている場合は、このフィールドをリバースドメイン名として設定することができます。例えば、 _happycarrot.com_ というドメイン名を持っている場合は、識別子として _com.happycarrot_ と入力することになります。
+1. _Bundle Identifier_ は、あなたの _Organization Identifier_ と _Product Name_ から自動的に生成されます。AppleはバンドルIDを使用して、 _App Store_ で各アプリを一意的に特定します。
+1. _Language_ のドロップダウンメニューが、`Swift`に設定されているようにしてください。
+1. 最後に、3つのチェックボックスすべてからチェックを外してください。このチュートリアルでは、 _Core Data_ もいずれのテストも使いません。これらはより上級の話題です。別の機会に紹介します。
 
 <!-- break -->
 
 > [action]
-To finish up and create our new project:
+作業を完了して、新しいプロジェクトを作成するには：
 >
-1. After filling out your project details above, click _Next_. ![Project Details Next](assets/project_details_next.png)
-1. Xcode will now prompt you to select where you'd like to store your project. Using the file navigator, choose to a place on your computer to store your project. If you don't have a place in mind, you can use your `Documents` folder. ![Select Project Location](assets/select_project_location.png)
-1. Make sure you keep the _Source Control_ checkbox selected for _Create Git repository on my Mac_. ![Enabled Source Control](assets/check_source_control.png)
-1. After you've selected a project location and verified that the _Source Control_ checkbox is selected, click the `Create` button. ![Create Project](assets/create_project.png)
+1. 上のプロジェクト詳細を記入したら、 _Next_ をクリックしてください。![Project Details Next](assets/project_details_next.png)
+1. Xcodeは次に、どこへプロジェクトを保存したいかたずねます。ファイルナビゲーターを使って、コンピューター上でプロジェクトを保存したい場所を選択してください。特定の場所が思いつかない場合は、`Documents`フォルダを使用することができます。![Select Project Location](assets/select_project_location.png)
+1. _Create Git repository on my Mac(Git保管庫をマイマックに作成する)_ の時は必ずソースコントロールチェックボックスが選択された状態にしていてください。![Enabled Source Control](assets/check_source_control.png)
+1. プロジェクトの位置を選択し、 _Source Control_ チェックボックスが選択された状態であることを確認した後で、`Create`ボタンをクリックしてください。![Create Project](assets/create_project.png)
 
-Congrats! Meet your first new project. You should see the following:
-
-![Newly Created Project](assets/just_created_project.png)
-
-Can you feel the sparks? I think this is the start of something special.
-
-# Getting To Know Xcode
-
-As we build our Magic 8-Ball app, we'll learn about Xcode and how to harness it's power. Before moving onto the next section, we'll go over a brief overview for each of the main areas of Xcode and how to run our newly created app in the simulator.
-
-Picking up where we left off, you should see something similar to the following:
+おめでとうございます！ あなたの初のプロジェクトができました。次のように表示されます。
 
 ![Newly Created Project](assets/just_created_project.png)
 
-Woah! At first glance, you'll notice there's a lot going on. Tabs, buttons, panels and text fields everywhere!
+ワクワクしませんか？ これは何か特別なことの始まりだと思います。
 
-If you feel overwhelmed, take a deep breath. We'll walk through this together.
+# Xcodeについて知る
 
-## Xcode Main Areas
+Magic 8-Ballアプリの開発を通じて、Xcodeについて、そしてその能力を活用する方法について学んでいきます。次のセクションに移る前に、 Xcodeの主な部分をそれぞれ簡単に紹介していきます。また、新しく作成したアプリをシミュレーター上で実行する方法についても紹介しましょう。
 
-Xcode is broken down 4 main areas + a toolbar:
+以前に終了した場所から再開すると、次のような状態になるはずです。
+
+![Newly Created Project](assets/just_created_project.png)
+
+すごい！ 一目見ただけで、いろいろなことが起こっているのがわかります。タブ、ボタン、パネル、テキストフィールドがいたるところにありますね！
+
+びっくりしてしまったら、深呼吸しましょう。一緒にこの道を歩んでいきましょう。
+
+## Xcode の主要なエリア
+
+Xcodeは主に4つのエリアと、ツールバー1つから成り立っています。
 
 ![Xcode Areas](assets/xcode_areas.png)
 
-Here's a quick breakdown of each of the areas above:
+次に上記の各エリアを簡単に分解してみました：
 
-1. **Toolbar (Green):** displays key information about project, expand/collapse other areas, run project
-1. **Navigator (Orange):** find files, search in your project, manage source control, navigate errors
-1. **Editor Area (Red):** write code, build UI with storyboard, change project settings
-1. **Utilities (Purple):** gives info about files, set properties of items in Interface Builder
-1. **Debug Area (Blue):** test and debug your code at runtime
+1. **ツールバー（緑）：** プロジェクトに関する主要な情報を表示し、他のエリアを拡張したり畳んだりし、プロジェクトを実行します
+1. **ナビゲーター（オレンジ）：** ファイルを見つけ、プロジェクト内で検索をし、ソースコントロールを管理し、エラーをナビゲートします
+1. **エディタエリア（赤色）：** コードを書き、StoryboardでUIを構築し、プロジェクトの設定を変更します
+1. **ユーティリティ（紫色）：** ファイルに関する情報を提供し、インターフェースビルダーの各項目のプロパティを設定します
+1. **デバッグエリア（青）：** 実行時に、コードをテストし、デバッグします
 
-Each area has many more tools and features built-in, so don't think of the summary above as a comprehensive list. We've just highlighted the key functions of each part of Xcode.
+各エリアにはもっとたくさんツールや機能が組み込まれています。以上の要約は、すべてを網羅したリストではありません。Xcode各部分の主な機能を強調しただけです。
 
-# The Toolbar
+# ツールバー
 
-The Xcode toolbar provides easy access to information and buttons that you'll use often. You can see it at the very top of your Xcode IDE: ![Xcode Toolbar](assets/xcode_toolbar.png)
+Xcodeのツールバーは、よく使う情報やボタンへ簡単にアクセスできるようにしてくれます。あなたはXcode IDEの一番上にそれを見ることができます：！[Xcode Toolbar](assets/xcode_toolbar.png)
 
-Let's go over some of the most important parts of the toolbar and figure out how to run our app.
+ツールバーで最も肝心な部分をいくつか紹介します。そしてアプリの実行方法を理解しましょう。
 
-## Xcode Status Bar
+## Xcode のステータスバー
 
-In the center of the toolbar, you'll see the Xcode status bar:
+ツールバーの中心には、Xcodeのステータスバーが表示されます：
 
 ![Status Bar](assets/toolbar_status_bar.png)
 
-The status bar provides helpful information about your project. It'll change and update as you use Xcode.
+ステータスバーは、あなたのプロジェクトに関する役立つ情報を提供してくれます。Xcodeの使用に伴い、変更、更新されます。
 
-For example, if Xcode finds warnings or errors when it _builds_ (more on this soon) your project, it'll display it in the status bar. You can see this below:
+例えば、プロジェクトのビルド時にXcodeが警告やエラーを見つけた場合、これはステータスバーに表示されます。次のように表示されるはずです：
 
 ![Status Bar Errors](assets/status_bar_errors.png)
 
-Notice the yellow warning icon and the red error icon on the right side of the status bar.
+ステータスバー右側にある黄色の警告アイコンと赤色のエラーアイコンに注目しましょう。
 
-## Showing / Hiding Xcode Areas
+## Xcodeのエリアを表示 / 非表示
 
-You can also hide and display the _Navigator_, _Debugger_ and _Utilities_ based on which tools you're using at the moment. This can be done by toggling the buttons of the far right side of the toolbar:
+その時点で使用しているツールに基づいて、ナビゲーター、デバッガー、ユーティリティを非表示したり、表示したりできます。これはツールバーの一番右側のボタンをトグルすることによって行えます：
 
 ![Display Xcode Areas](assets/display_xcode_areas.png)
 
-If your computer doesn't have a large screen, it's often helpful to hide these areas when you're not using them so you can focus on the areas you are using. We'll see this in action later in the tutorial.
+ご利用のコンピューターの画面が小さい場合は、これらのエリアを使っていないときに非表示にすると便利です。こうすることで、使用しているエリアに集中できるようになります。チュートリアル後半でこれが実際に動作する様子を確認します。
 
-# Running Our App
+# アプリを実行
 
-Let's go through the process of running our app on the simulator.
+シミュレーター上で私たちのアプリを実行するプロセスを検討していきましょう。
 
 > [info]
-We're specifically using the iPhone 7 simulator for convenience right now. In the future, you can use any simulator of your choice or even your own device.
+今のところ、便宜上iPhone 7のシミュレーターを指定して使用しています。将来的には、選択したシミュレーターをどれでも、または自分のデバイスを使用できるようになります。
 
-Take a look at the group of buttons on the left-hand side. You should see:
+左側の一連のボタンを見てください。次のように表示されるはずです：
 
 ![Toolbar Run Group](assets/toolbar_run_group.png)
 
-These buttons and controls allow you to _build_ and run your app on either a simulator or your iPhone.
+これらのボタンやコントロールにより、シミュレーター上またはご利用のiPhone上でアプリをビルドし、実行できるようになります。
 
 > [info]
-**What is the build process?**
+**ビルドのプロセスとは何か**
 >
-The build process, also referred to as building, is the series of tasks that must be completed in order to turn your code into an app that can be run on a device (or simulator.)
+ビルドのプロセスは、単にビルディングとも呼ばれますが、あなたのコードを何らかのデバイス（またはシミュレーター）上で実行できるアプリへ変換するために完了しなくてはならない一連のタスクです。
 >
-One of these tasks is _compiling_ your code. This means that the compiler turns your Swift code into machine-code (instructions that your computers can read.) During this process, the compiler may find errors with your code. If it does, the build process will fail and Xcode will display the errors in the status bar as shown previously.
+これらの作業の一つは、コードのコンパイルです。これは、コンパイラがあなたのSwiftのコードをマシンコード（コンピューターが読み取れる指示）に変換することを意味しています。このプロセスの間、コンパイラーはコードにエラーを見つける可能性があります。その場合、ビルドプロセスは失敗に終わり、Xcodeはステータスバーに以前に表示されたようなエラーを表示します。
 
-## Scheme Dropdown
+## スキームドロップダウン
 
 ![Scheme Dropdown](assets/toolbar_scheme_dropdown.png)
 
-The _Scheme_ dropdown menu will allow you to edit and manage multiple _schemes_. A _scheme_ tells Xcode **what** to build and run when you press the _Run_ button. As a beginner, you don't need to worry about dealing with multiple schemes.
+_Scheme_ のドロップダウンメニューにより、複数のスキームを編集、管理できるようになります。 _Run_ ボタンを押すと、スキーム はXcodeに対して、 **何を**ビルドして実行すべきなのかを伝えます。初心者は複数のスキームの取り扱いに関して心配する必要はありません。
 
-The second half of the scheme dropdown allows you to specific a simulator or device that you want your selected scheme to run on. For us, we want to run our app on an _iPhone 7_ simulator.
+スキームのドロップダウンの後半部分では、選択したスキームを実行したいシミュレーターまたはデバイスを指定できます。私たちは _iPhone 7_ のシミュレーターでアプリを実行することを望んでいます。
 
-Click on the right-side of the _Scheme_ dropdown to see a full list of options. If you connect your iPhone to your computer, you'll see your device show up as an option as well.
+_Scheme_ のドロップダウンの右側をクリックして、すべてのオプションのリストをご覧ください。iPhoneをご利用のコンピューターに接続すると、ご利用のデバイスもまたオプションとして表示されます。
 
-![Scheme Dropdown](assets/toolbar_scheme_dropdown_open.png)
+![スキームドロップダウン](assets/toolbar_scheme_dropdown_open.png)
 
-Let's change the device our scheme will run on.
+スキームが実行されるデバイスを変更しましょう。
 
 > [action]
-Change your scheme to build and run on the _iPhone 7_ simulator. Click on the second half of the scheme dropdown menu and select _iPhone 7_ simulator.
+_iPhone 7_ のシミュレーター上でビルド、実行するために、スキームを変更してください。スキームのドロップダウンメニューの後半をクリックして、_iPhone 7_ のシミュレーターを選択してください。
 >
-![Select iPhone 7 Scheme](assets/iphone_7_scheme.png)
+![iPhone 7スキームを選択](assets/iphone_7_scheme.png)
 
-With our simulator set, we can move on to build and run our project.
+シミュレーターが決定したら、プロジェクトのビルドと実行へ進めます。
 
-## Run Button
+## 実行ボタン
 
-![Run Button](assets/toolbar_run_btn.png)
+![実行ボタン](assets/toolbar_run_btn.png)
 
-If you haven't guessed already, the _Run_ button will build and run your active scheme on the selected device. Since we selected the _iPhone 7_ simulator in the previous step, our app will run on the iPhone 7 simulator.
+まだ気付いていない場合、 _Run_ ボタンは選択されたデバイス上で有効なスキームをビルドし、実行します。ここまでの手順では _iPhone 7_ シミュレーターを選択したので、アプリはiPhone 7シミュレーター上で実行されます。
 
 > [action]
-Click the _Run_ button now and watch Xcode build and run your empty project. In the future, you can also use the keyboard shortcut command-r (CMD-r) to run your project.
+次に _Run_ ボタンをクリックして、Xcodeが空のプロジェクトをビルドし、実行する様子を観察してください。将来的には、キーボードのショートカットのcommand-r（CMD-R）を同時に押すことでプロジェクトを実行できます。
 
 <!-- break -->
 
 > [info]
-The first time you run your app, you may see a dialog that asks for your password: ![Debug Permission](assets/debug_dialog.png)
+初めてアプリケーションを実行するときに、パスワードを尋ねるダイアログが表示されることがあります。[Debug Permission](assets/debug_dialog.png)
 >
-Enter and click `Continue`. This permission is necessary to run your app using the _debugger_ (more on this later.)
+パスワードを入力して`続ける`をクリックしてください。デバッガー(これについては後ほど詳しく紹介します）を使用してアプリを実行するには許可が必要です。
 
-If all goes well, you'll see a simulator with your app launch:
+すべてがうまくいくと、アプリの起動時にシミュレーターが表示されます：
 
 ![Empty Simulator](assets/empty_simulator.png)
 
-If you're wondering why there's just a blank white screen, it's because we haven't added anything to our app yet. As we develop our app, we'll see the changes and functionality appear when we run our app.
+なぜ空っぽで真っ白の画面なのだろうと不思議に思っていませんか。これは、まだアプリに何も加えていないからです。アプリの開発を進めるにつれて、アプリを実行する際に変更や機能が目に見えるようになります。
 
-## Stop Button
+## 停止ボタン
 
 ![Stop Button](assets/toolbar_stop_btn.png)
 
-The _Stop_ button (looks like a square) will stop the instance of your app if it's currently running.
+_Stop_ ボタン（正方形のように見えます）は、アプリが現在実行されている場合、アプリのインスタンスを停止します。
 
 > [action]
-Click the _Stop_ button to terminate the running instance of your app on the simulator. For future reference, the keyboard shortcut command-. (CMD-.) will stop your app.
+_Stop_ ボタンをクリックすると、シミュレーター上でアプリのインスタンスの実行を終了します。将来の参考に、キーボードのショートカット （CMD-.） はアプリを停止します。
 
-You'll see that the simulator will stop running your app.
+シミュレーターはアプリの実行を止めます。
 
-# Progress So Far
+# これまでの進歩
 
-At this point, you've created your first Xcode project and run the empty new project in the simulator. As we move forward, we'll keep running our app on the simulator to check that our project is working as expected.
+この時点で、あなたは初めてのXcodeプロジェクトを作成し、シミュレーター上で空の新規プロジェクトを実行しました。先へ進む前に、シミュレーター上でアプリの実行を続けて、期待通りプロジェクトが動作するか確認しましょう。
 
-Next, let's we'll learn about the _Project Navigator_, the different type of files in Xcode and how to add an app icon to our project!
+次に、プロジェクトナビゲーター、Xcodeの様々なファイルのタイプ、またプロジェクトにアプリのアイコンを追加する方法について学びましょう。
