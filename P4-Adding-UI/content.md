@@ -1,136 +1,136 @@
----
-title: +ACI-UI+MJKP/VKgMFkwiwAi-
+﻿---
+title: "UIを追加する"
 slug: adding-ui
 ---
 
-+MFMwjDB+MGcwbzABMKIw1zDqMExbn4hMMFUwjDBfMGgwTTBuUtVPXDBuWQlm9DBvT1UwgjBXMGYwTTB+MFswkzBnMFcwXzAC- +MLcw3zDlMOww/DC/MPxOCjBnMKIw1zDqMJJbn4hMMFkwizBoMI8wSzCLMIgwRjBrMAF6ejBjMH0wZzABdx8wY3Z9MGp1O5diMG4wfjB+MGcwWTAC-
+これまでは、アプリが実行されたときの動作の変更は何もしてきませんでした。シミュレーター上でアプリを実行するとわかるように、空っぽで、真っ白な画面のままです。
 
-+MFMwbjC7MK8wtzDnMPMwZzBvMAE-Magic 8-Ball+MG4-UI+MJJpy3vJMFcwfjBZMAI-
+このセクションでは、Magic 8-BallのUIを構築します。
 
-+AD4- +AFs-info+AF0-
-+ACoAKg-UI+MGgwb09VMEsAKgAq-
-+AD4-
-+MOYw/DC2MPwwpDDzML8w/DDVMKcw/DC5MG9OAIIsdoQwaw-UI+MGhUfDBwMIwwZjBKMIowATBCMGowXzBuMKIw1zDqMEww5jD8MLYw/DBrW/4wVzBmMLkwrzDqMPww804KMGeIaHk6MFkwi4mBfSAwkmMHMFcwZjBEMH4wWTAC- +MFMwjDBrMG8wATDGMK0wuTDIMIR1O1DPMG4wiDBGMGqJlomadoQwaomBfSAwYDBRMGcwbzBqME8wATDcML8w8zABMLkw6TCkMMAw/DABML8w1jBuMIgwRjBqU8xluVQRYCcwbomBfSAwglQrMH4wjDBmMEQwfjBZMAI- +MNcw7TCwMOkw3zDzMLAwZzBvMAE-UI+MJIAXzDTMOUw/ABfMGgwVzBmU8JxZzBZMIswbjBMTgCCLHaEMGcwWTAC-
+> [info]
+**UIとは何か**
+>
+ユーザーインターフェースは一般的にUIと呼ばれており、あなたのアプリがユーザーに対してスクリーン上で表示する要素を指しています。これには、テキストや画像のような視覚的な要素だけではなく、ボタン、スライダー、タブのような双方向性の要素も含まれています。プログラミングでは、UIをビューとして参照するのが一般的です。
 
-+ACM- +MNMw5TD8MLMw8zDIMO0w/DDpMPwwblwOUWU-
+# ビューコントローラーの導入
 
-iOS+MKIw1zDqMJKVi3Z6MFkwi4oIdTswTDBCMIswajCJMAEAYA-UIViewController+AGAwazBkMEQwZltmf9IwWTCLX8WJgTBMMEIwijB+MFkwAg- +MNMw5TD8MLMw8zDIMO0w/DDpMPwwbzAB-iOS+lYt2ejBrMEowUTCLV/pnLHaEMGppy2IQiYF9IDBuTgAwZDBnMFkwAg-
+iOSアプリを開発する計画があるなら、`UIViewController`について学習する必要があります。ビューコントローラーは、iOS開発における基本的な構成要素の一つです。
 
-+AGA-UIViewController+AGAwbzABTgCQIzBuAF8w0zDlMPwAXzBuAF97oXQGAF8wa5WiMFkwi4ysTvswkoygMGMwZjBEMIswrzDpMLkwZzBZMAI- +VAQw0zDlMPwwszDzMMgw7TD8MOkw/DBrMG8w6zD8MMgw0zDlMPwwTDBCMIowATBTMIwwTE7WMG4wtTDWMNMw5TD8MJKRTX9uMFkwizCtMOMw8zDQMLkwbl95UnIwkmecMF8wVzB+MFkwAg-
+`UIViewController`は、一連のビューの管理に関する責任を負っているクラスです。各ビューコントローラーにはルートビューがあり、これが他のサブビューを配置するキャンバスの役割を果たします。
 
-+ADwAIQ--- can consider adding jump to definition here for UIViewController view property --+AD4-
+<!-- can consider adding jump to definition here for UIViewController view property -->
 
-+ACEAWw-Root View Highlighted+AF0-(assets/root+AF8-view+AF8-highlighted.png)
+![Root View Highlighted](assets/root_view_highlighted.png)
 
-+TgowSzCJUgYwSzCLkBowijABMMYwrTC5MMgw6TDZMOswaDDcML8w8zBuTiFluTBvMAEw0zDlMPwwszDzMMgw7TD8MOkw/DBuMOsw/DDIMNMw5TD8MG5OCpDoMGuRTX9uMFUwjDCLMLUw1jDTMOUw/DBnMFkwAg-
+上から分かる通り、テキストラベルとボタンの両方は、ビューコントローラーのルートビューの上部に配置されるサブビューです。
 
-+Uh1fw4AFMGgwVzBmMG8wATCiMNcw6jBuVAR1O5diMJIw0zDlMPwwszDzMMgw7TD8MOkw/DBoMFcwZoADMEgwizBoMEQwRDBnMFcwhzBGMAE- +MNwwvzDzMAEwxjCtMLkwyDABdTtQzzBvMFkweTBmMAFb/l/cMFkwizDTMOUw/DCzMPMwyDDtMPww6TD8MKow1jC4MKcwrzDIMEx7oXQGMJIwWTCLAF8wtTDWMNMw5TD8AF8wZzBZMAI- +MNMw5TD8MLMw8zDIMO0w/DDpMPwwbzABMOYw/DC2MPwwTDDcML8w8zCSML8wwzDXMFcwX1g0VAgwa09VMEx2enUfMFkwizBLMGuVojBXMGaMrE77MJKMoDBEMH4wWTAC-
+初心者としては、アプリの各画面をビューコントローラーとして考えるといいでしょう、 ボタン、テキスト、画像はすべて、対応するビューコントローラーオブジェクトが管理をするサブビューです。ビューコントローラーは、ユーザーがボタンをタップした場合に何が発生するかに関して責任を負います。
 
-+AD4- +AFs-info+AF0-
-+MFMwbjDBMOUw/DDIMOowojDrMGcwb1NYTgAwbjDTMOUw/DCzMPMwyDDtMPww6TD8MFcwS09/MEQwfjBbMJMwTDABMKIw1zDqUYUwZzBvMNMw5TD8MLMw8zDIMO0w/DDpMPwwkjBEME8wZDCCii1bmjBnME0wfjBZMAI-
+> [info]
+このチュートリアルでは単一のビューコントローラーしか使いませんが、アプリ内ではビューコントローラーをいくつも設定できます。
 
-+ayEwazABMFkweTBmMG4AXw-Single View App+AF8wbg-Xcode+MMYw8zDXMOww/DDIMGtO2DBEMGYwTzCLMMcw1TCpMOswyDDTMOUw/DCzMPMwyDDtMPww6TD8MGcwAQ-UI+MJJpy3vJMFcwfjBXMIcwRjAC-
+次に、すべての _Single View App_ のXcodeテンプレートに付いてくるデフォルトビューコントローラーで、UIを構築しましょう。
 
-+ACM- +MLkwyDD8MOow/DDcMPwwyTBr- UI +MG6P/VKg-
+# ストーリーボードに UI の追加
 
-+MH4wWjBv-Storyboard+MNUwoTCkMOswkpWLME9fxYmBMEwwQjCKMH4wWTAC-
+まずはStoryboardファイルを開く必要があります。
 
-+AD4- +AFs-action+AF0-
-+MNcw7TC4MKcwrzDIMG4wyjDTMLIw/DC/MPwwZzABAGA-Main.storyboard+AGAw1TChMKQw6zCSkHhinjBXMGYwTzBgMFUwRDAC- +MKgwxzCjML8wqDDqMKIwTGshMG4wiDBGMGtZCVMWMFcwfjBZ/xo-
+> [action]
+プロジェクトのナビゲーターで、`Main.storyboard`ファイルを選択してください。エディタエリアが次のように変化します：
 
-+ACEAWw-Main Storyboard Overview+AF0-(assets/main+AF8-storyboard+AF8-overview.png)
+![Main Storyboard Overview](assets/main_storyboard_overview.png)
 
-+MM8wpDDpMKQwyDBVMIwwZjBEMItUBDCoMOowojBvMAEw4TCkMPMwbg-Storyboard+MNUwoTCkMOswZw-UI+MJJpy3vJMFkwizBrMEIwXzBjMGaRzYmBMGgwajCKMH4wWf8a-
+ハイライトされている各エリアは、メインのStoryboardファイルでUIを構築するにあたって重要となります：
 
-- Document Outline+/wgwqjDsMPMwuP8J/xo- Storyboard+MNUwoTCkMOswbpaOXGQwkn4mV4uIaHk6MFcwfjBZ-
-- +MKQw8zC/MPww1TCnMKQwuTDTMOswwDD8/wiXUv8J/xo- UI+MG5ZFomzMJKJlomadoQwa4hoeTowVzB+MFk-
-- +MOYw/DDGMKMw6jDGMKMwqDDqMKL/CH0r/wn/Gg- Storyboard+iYF9IDBuMNcw7TDRMMYwozABMLUwpDC6MAEwXTBuTtYwbopzfTAwkmnLYhAwVzB+MFk-
-- Object Library+/wgw1DDzMK//Cf8a- Storyboard+MGdPf3UoMGcwTTCLMAE-Apple+ZeJiEDBu-UI+MLMw8zDdMPwwyDBZMHkwZjBuMOowuTDIMJKIaHk6MFcwfjBZ-
+- Document Outline（オレンジ）： Storyboardファイルの階層を縦型表示します
+- インターフェイスビルダー（青）： UIの外観を視覚的に表示します
+- ユーティリティエリア（紫）： Storyboard要素のプロパティ、サイズ、その他の詳細を構成します
+- Object Library（ピンク）： Storyboardで使用できる、Apple既成のUIコンポートすべてのリストを表示します
 
-Magic 8-Ball+MG4AXzC3MKcw/DCvAF8w3DC/MPMwkjDTMOUw/DCzMPMwyDDtMPww6TD8MGuP/VKgMFcwfjBXMIcwRjAC-
+Magic 8-Ballのシェークボタンをビューコントローラーに追加しましょう。
 
-+AD4- +AFs-action+AF0-
-+ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-adding-ui/add+AF8-button+AF8-to+AF8-vc.mp4)
-+AD4-
-+AF8-Object Library+AF8wZwBgMNwwvzDzAGAwqjDWMLgwpzCvMMgwkomLMGQwUTABMNMw5TD8MLMw8zDIMO0w/DDpMPwwbjDrMPwwyDDTMOUw/DBuTgowazBTMIwwkjDJMOkwwzCwMFcwATDJMO0wwzDXMFcwZjBPMGAwVTBEMAI-
+> [action]
+![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/04-adding-ui/add_button_to_vc.mp4)
+>
+_Object Library_ で`ボタン`オブジェクトを見つけ、ビューコントローラーのルートビューの上にこれをドラッグし、ドロップしてください。
 
-+ayEwazABMNwwvzDzMGtrYzBXMEQwvzCkMMgw6zDGMK0wuTDIMJJODjBIMIkwjDCLMIgwRjBrMFkwizBfMIEwAQBfMOYw/DDGMKMw6jDGMKMwqDDqMKIAXzBrMGQwRDBmMIIwYzBoW2YwczB+MFcwhzBGMAI-
+次に、ボタンに正しいタイトルテキストを与えられるようにするため、ユーティリティエリアについてもっと学びましょう。
 
-+ACM- +MOYwxjCjMOowxjCjMKgw6jCi-
+# ユティリティエリア
 
-+AF8wyjDTMLIw/DC/MPwAXzBoVAwwWDBPMAEAXzDmMPwwxjCjMOowxjCjAF8wbjDaMKQw8zBrMG8wATBdMG5OCpDoMGswpDDzMLkw2jCvML8w/DBoVHwwcDCMMIuJB2VwMG51cDBqMIswvzDWMEwwQjCKMH4wWTAC-
+ナビゲーターと同じく、ユーティリティのペインには、その上部にインスペクターと呼ばれる複数の異なるタブがあります。
 
-+ACEAWw-Utilities Inspector Tabs+AF0-(assets/utilities+AF8-tabs.png)
+![Utilities Inspector Tabs](assets/utilities_tabs.png)
 
-+ML8w1jBvMAFPVTBMMKIwrzDGMKMw1jBrkHhinjBVMIwwZjBEMIswSzBoMEQwRjCzMPMwxjCvMLkwyDBrXeZT8zBVMIwwfjBZMAI- +MFMwjDBvMGQwfjCKMAEAXzDmMPwwxjCjMOowxjCjMKgw6jCiAF8wbjC/MNYwbzABMEIwajBfMEw-Xcode+MGdnAF+MMGswrzDqMMMwrzBXMF9RhVu5MGtX+jBlMEQwZlkJUxYwWTCLMGgwRDBGYQ9UczBnMFkwAg-
+タブは、何がアクティブに選択されているかというコンテクストに左右されます。これはつまり、ユーティリティエリアのタブは、あなたがXcodeで最後にクリックした内容に基づいて変化するという意味です。
 
-+VAQwpDDzMLkw2jCvML8w/DBrMIgwYzBmMAGQeGKeMFUwjDBfmAV27jBrlaIwWTCLadgwBTBqinN9MDCEXF5gJzCSWQlm9DBnME0wizCIMEYwazBqMIowfjBZMAI-
+各インスペクターによって、選択された項目に関する様々な詳細や属性を変更できるようになります。
 
-+ACMAIw- +XF5gJzCkMPMwuTDaMK8wvzD8-
+## 属性インスペクター
 
-+MH4wWjBvMAGQeGKeMFUwjDBf-Storyboard+MKow1jC4MKcwrzDIMG5cXmAnMJJZCWb0MFkwizABAF9cXmAnMKQw8zC5MNowrzC/MPwAXzCSiYswZjB/MH4wVzCHMEYwAg-  +MFMwjDCST38wYzBmMNwwvzDzMG4wvzCkMMgw6zCSWQlm9DBnME0wfjBZMAI-
+まずは、選択されたStoryboardオブジェクトの属性を変更する、属性インスペクターを見てみましょう。これを使ってボタンのタイトルを変更できます。
 
-+AD4- +AFs-action+AF0-
-1. +MFcwYzBLMIow3DC/MPMwkjCvMOowwzCvMFcwZjABMKIwrzDGMKMw1jBrkHhinjBVMIwwZjBEMIswUzBoMJJ4uoqNMFcwZjBPMGAwVTBEMAI- +AF8w5jD8MMYwozDqMMYwowBf- +MG4w2jCkMPMwbzCzMPMwxjCvMLkwyDBrT51bWDBZMIswgjBuMGcwQjCKMAFPVTBMkHhinjBVMIwwXzBLMGswiDBjMGZZCVMWMFkwizBoMEQwRjBTMGgwkomaMEgwZjBKME0wfjBXMIcwRjAC- +ACEAWw-Select Button+AF0-(assets/select+AF8-button.png)
-1. +ayEwazABAF8w5jD8MMYwozDqMMYwozCoMOowogBfMG4AX1xeYCcwpDDzMLkw2jCvML8w/ABf- +ML8w1jBreftS1TBXMGYwTzBgMFUwRDAC- +XeZQdDBLMIllcDBIMGY-4+MGR27jBuMKIwpDCzMPMwZzBZMAI- +ACEAWw-Open Attributes Inspector+AF0-(assets/attributes+AF8-inspector.png)
-1. +ZwBfjDBrMAEwvzCkMMgw6zDVMKMw/DDrMMkwkomLMGQwUTBmMAEwxzDVMKkw6zDIMMYwrTC5MMgwZzBCMIsAYA-Button+AGAwSzCJAGA-Shake It+ACEAYDBrWQlm9DBXMGYwTzBgMFUwRDAC- +ACEAWw-Set Button Title+AF0-(assets/set+AF8-btn+AF8-title.png)
+> [action]
+1. しっかりボタンをクリックして、アクティブに選択されていることを確認してください。ユーティリティのペインはコンテクストに依存するものであり、何が選択されたかによって変化するということを覚えておきましょう。![Select Button](assets/select_button.png)
+1. 次に、ユーティリティエリアの属性インスペクタータブに移動してください。左側から数えて4つ目のアイコンです。![Open Attributes Inspector](assets/attributes_inspector.png)
+1. 最後に、タイトルフィールドを見つけて、デフォルトテキストである`Button`から`Shake It!`に変更してください。![Set Button Title](assets/set_btn_title.png)
 
-+MFkwizBoMAEAYA-Shake It+ACEAYDBoMEQwRjC/MKQwyDDrMExivDBXj7wwfjCMMF8w3DC/MPMwTIhoeTowVTCMMIswbzBaMGcwWTAC-
+すると、`Shake It!`というタイトルが押し込まれたボタンが表示されるはずです。
 
-+ACEAWw-Squished Button+AF0-(assets/squished+AF8-button.png)
+![Squished Button](assets/squished_button.png)
 
-+ayEwazABAF8wtTCkMLowpDDzMLkw2jCvML8w/ABfMJJPfzBjMGYwUzCMMJJP7mtjMFcwfjBZMAI-
+次に、サイズインスペクターを使ってこれを修正します。
 
-+ACMAIw- +MLUwpDC6MKQw8zC5MNowrzC/MPw-
+## サイズインスペクター
 
-+TsowbjBoMFMwjTABMLcwpzD8MK8w3DC/MPMwbl5FMIgwijCCZbAwVzBEML8wpDDIMOswxjCtMLkwyDBuZbkwTJV3MEQwbjBnMAEw3DC/MPMwTDBNMIUwRjBPMGQwanK2YUswZzBZMAI- +MFMwjDCST+5rYzBZMIswazBvMAEw3DC/MPMwbgBfMNUw7DD8MOAAXzCSWQlm9DBXMH4wWTAC-
+今のところ、シェークボタンの幅よりも新しいタイトルテキストの方が長いので、ボタンがきゅうくつな状態です。これを修正するには、ボタンのフレームを変更します。
 
-+MKow1jC4MKcwrzDIMG4- +AF8w1TDsMPww4ABfMG8wATCqMNYwuDCnMK8wyDBu-X+MEowiDBz-Y+MG5PTX9uMGgwXTBuMLUwpDC6/wia2DBVMGheRf8JMJJTwnFnMFcwZjBEMH4wWTAC-
+オブジェクトのフレームは、オブジェクトのXおよびYの位置とそのサイズ（高さと幅）を参照しています。
 
-+AF8wtTCkMLowpDDzMLkw2jCvML8w/ABfMGcwbzABc/5XKDBuMLkwrTDDMNcw3DC/MPMwbjDVMOww/DDgMJKJizCLMFMwaDBMMGcwTTB+MFkwAg-
+サイズインスペクターでは、現在のスキップボタンのフレームを見ることができます。
 
-+AD4- +AFs-action+AF0-
-+MH4wWjABMOYw/DDGMKMw6jDGMKMwqDDqMKIwZwBfMLUwpDC6MKQw8zC5MNowrzC/MPwAXzBreftS1TBXMH4wWTAC- +ACEAWw-Size Inspector Active+AF0-(assets/size+AF8-inspector+AF8-active.png)
-+AD4-
-+AF8w0zDlMPwAXzC7MK8wtzDnMPNO5U4LMGeQeGKeMFUwjDBf-Storyboard+MKow1jC4MKcwrzDIMG5z/lcoMG4w1TDsMPww4DCSlbKJpzBXMAF96JbGMGcwTTB+MFkwAg- +ACEAWw-Size Inspector View Section+AF0-(assets/size+AF8-inspector+AF8-view+AF8-section.png)
+> [action]
+まず、ユーティリティエリアでサイズインスペクターに移動します。![Size Inspector Active](assets/size_inspector_active.png)
+>
+ビューセクション以下で選択されたStoryboardオブジェクトの現在のフレームを閲覧し、編集できます。![Size Inspector View Section](assets/size_inspector_view_section.png)
 
-+MNwwvzDzMG4w1TDsMPww4DCSWQlm9DBZMItluWzVMGgwVzBmMAEwgjBjMGgwtzDzMNcw6zBnMFkwTDABa2N4umAnMGtrIDBRMIswbjBvMAEwqzD8ML0w6zBnkHhinjBXMGYwyTDpMMMwsDBZMItluWzVMGcwWTAC- +MKow1jC4MKcwrzDIMG5OLV/DMJIwyTDpMMMwsDBXMGZ5+1LVMFcwAViDdUx92jBuloUwkjDJMOkwwzCwMFcwZjC1MKQwulkJZvQwWTCLMFMwaDBMMGcwTTB+MFkwAg-
+ボタンのフレームを変更する方法として、もっとシンプルですが、正確性に欠けるのは、カーソルで選択してドラッグする方法です。オブジェクトの中心をドラッグして移動し、境界線の隅をドラッグしてサイズ変更することができます。
 
-+AD4- +AFs-action+AF0-
-+MLkwrTDDMNcw3DC/MPMwbjDVMOww/DDgMJJZCWb0MFcwZk4tWS4wa39uME0wATCkMPMwvzD8MNUwpzD8MLkw0zDrMMAw/DBuMNMw5TD8MLMw8zDIMO0w/DDpMPxOC5DoMGtsvzBjMGaRTX9uMFcwfjBZMAI-
-+AD4-
-+ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-adding-ui/resize+AF8-button.mp4)
+> [action]
+スキップボタンのフレームを変更して中央に置き、インターフェースビルダーのビューコントローラー下部に沿って配置します。
+>
+![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/04-adding-ui/resize_button.mp4)
 
-+W4x0pzBqkU1/bjBnMEIwi1/FiYEwbzBCMIowfjBbMJMwTDABMIIwYzBoa2N4ujBrMFcwXzBEWDRUCDBvMAEAXzC1MKQwujCkMPMwuTDaMK8wvzD8AF8wklIpdSgwZzBNMH4wWTAC-
+完璧な配置である必要はありませんが、もっと正確にしたい場合は、サイズインスペクターを利用できます。
 
-+AD4- +AFs-info+AF0-
-+MFMwbjDBMOUw/DDIMOowojDrMGcwbzABVAQwtTDWMNMw5TD8MGuVojBXMGYwATBCMIkwSzBYMIFbmn+pMFUwjDBfMNUw7DD8MOAwkootW5owVzBmMEQwTTB+MFkwAg- +MFMwjDBvMGQwfjCKMAEw5jD8MLYw/DBMdXAwajCLdTuXYjC1MKQwujBuMLcw3zDlMOww/DC/MPwwfjBfMG8-iPhone+MJJPf3UoMFkwi1g0VAgwAQ-UI+MG4wtTCkMLowb04Na2N4ujBrii1bmjBVMIwwizBoMEQwRmEPVHMwZzBZMAI-
-+AD4-
-+AF9OyjBuMGgwUzCNMG8AXzBTMIwwZw-OK+MGcwWTAC- +MFMwbjDBMOUw/DDIMOowojDrMG8-Xcode+MGg-iOS+lYt2ejBrYWMwjDCLMFMwaDBrcSZwuTCSX1MwZjBmMEQwfjBZMAI- +ayEwbjDBMMMw14oIe5dqXzDBMOUw/DDIMOowojDrMGcwbzAB-Auto-layout+MIQwuTC/MMMwrzDTMOUw/DBuMIgwRjBqMMQw/DDrMJJPfzBjMGYwATDAMKQwyjDfMMMwrzBrMLUwpDC6MEyKv2V0MFUwjDCLMNMw5TD8MG5PXGIQZbls1TCSW2YwczB+MFkwAg-
+> [info]
+このチュートリアルでは、各サブビューに関して、あらかじめ定義されたフレームを設定していきます。これはつまり、ユーザーが異なる画面サイズのシミュレーターまたはiPhoneを使用する場合、UIのサイズは不正確に設定されるという意味です。
+>
+今のところはこれでOKです。このチュートリアルはXcodeとiOS開発に慣れることに焦点を当てています。次のチップ計算機チュートリアルでは、Auto-layoutやスタックビューのようなツールを使って、ダイナミックにサイズが調整されるビューの作成方法を学びます。
 
-+ACM- +MOkw2TDrMG6P/VKg-
+# ラベルの追加
 
-UI+MJJbjGIQMFUwWzCLMGswbzAB-Magic 8-Ball+MG5W3ntUMJKIaHk6MFkwizDpMNkw6zCCj/1SoDBZMItfxYmBMEwwQjCKMH4wWTAC-
+UIを完成させるには、Magic 8-Ballの回答を表示するラベルも追加する必要があります。
 
-+AD4- +AFs-action+AF0-
-+AF8-Object Library+AF8wSzCJMOkw2TDrMJKJizBkMFEwATDTMOUw/DCzMPMwyDDtMPww6TD8MG4w6zD8MMgw0zDlMPwwazDJMOkwwzCwMFcwZjBPMGAwVTBEMAI-
-+AD4-
-+ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-adding-ui/add+AF8-label+AF8-to+AF8-vc.mp4)
+> [action]
+_Object Library_ からラベルを見つけ、ビューコントローラーのルートビューにドラッグしてください。
+>
+![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/04-adding-ui/add_label_to_vc.mp4)
 
-+ayEwazABMOkw2TDrMG4wtTCkMLowaFxeYCcwklkJZvQwVzB+MFkwAg-
+次に、ラベルのサイズと属性を変更します。
 
-+AD4- +AFs-action+AF0-
-1. +MOkw2TDrMJKQeGKeMFcwZjABAF8w5jD8MMYwozDqMMYwozCoMOowogBfMGcAX1xeYCcwpDDzMLkw2jCvML8w/ABfMJKVizBEMGYwTzBgMFUwRDAC- +ACEAWw-Label Attributes+AF0-(assets/label+AF8-attributes.png)
-1. +AGA-Text+AGBcXmAnMJIwxzDVMKkw6zDIMG4AYA-Text+AGAwaDBEMEYw1zDsMPwwuTDbMOswwDD8MEswiQBg-Have a question?+AGAwa1kJZvQwVzBmME8wYDBVMEQwAg- +MFMwjDBvMAEwojDXMOowTJWLMEswjDCLMF8wczBriGh5OjBVMIwwizDHMNUwqTDrMMgwbjDGMK0wuTDIMGswajCKMH4wWTAC- +ACEAWw-Change Label Text+AF0-(assets/change+AF8-label+AF8-text.png)
-1. +ZbAwXzBqMMYwrTC5MMgwa1QIMI8wWzBmMOkw2TDrMG4wtTCkMLowklkJZvQwVzBmME8wYDBVMEQwAg- +ACEAWw-Resize Label+AF0-(assets/resize+AF8-label.png)
-1. +AF9cXmAnMKQw8zC5MNowrzC/MPwAXw- +MGcwATDGMK0wuTDIMG4wojDpMKQw4TDzMMgwkgBf-Center+AF8wa1kJZvQwVzBmME8wYDBVMEQwAg- +ACEAWw-Change Text Alignment+AF0-(assets/change+AF8-text+AF8-alignment.png)
-1. +ZwBfjDBrMAEAXw-Font+AF8wblxeYCcwkgBg-System 17.0+AGAwSzCJAGA-System Bold 28.0+AGAweDBoWQlm9DBXMGYwTzBgMFUwRDAC- +ACEAWw-Change Font+AF0-(assets/change+AF8-font+AF8-attribute.png)
+> [action]
+1. ラベルを選択して、ユーティリティエリアで属性インスペクターを開いてください。![Label Attributes](assets/label_attributes.png)
+1. `Text`属性をデフォルトの`Text`というプレースホルダーから`Have a question?`に変更してください。これは、アプリが開かれるたびに表示されるデフォルトのテキストになります。![Change Label Text](assets/change_label_text.png)
+1. 新たなテキストに合わせてラベルのサイズを変更してください。![Resize Label](assets/resize_label.png)
+1. 属性インスペクターで、テキストのアライメントを _Center_ に変更してください。![Change Text Alignment](assets/change_text_alignment.png)
+1. 最後に、 _Font_ の属性を`System 17.0`から`System Bold 28.0`へと変更してください。![Change Font](assets/change_font_attribute.png)
 
-+ecEwXzBhMG4wojDXMOowbg-UI+ii1bmjBMW4xOhjBXMH4wVzBfMAKQMmNXcrZswTCSeLqKjTBZMIswXzCBMAEwYTCHMGMwaDDTMOswyTBXMGYwAVufiEwwVzBmMH8wfjBXMIcwRjAC-
+私たちのアプリのUI設定が完了しました。進捗状況を確認するため、ちょっとビルドして、実行してみましょう。
 
-+AD4- +AFs-action+AF0-
-iPhone 7+MG4wtzDfMOUw7DD8ML8w/E4KMGcwojDXMOowkjDTMOswyTBXMAFbn4hMMFcwfjBZMAI- +ayEwblGFW7kwTIhoeTowVTCMMH4wWf8a-
-+AD4-
-+ACEAWw-Storyboard UI Finished+AF0-(assets/storyboard+AF8-ui+AF8-finished.png)
+> [action]
+iPhone 7のシミュレーター上でアプリをビルドし、実行します。次の内容が表示されます：
+>
+![Storyboard UI Finished](assets/storyboard_ui_finished.png)
 
-+MKQw8zC/MPww1TCnMKQwuTDTMOswwDD8MJJPfzBjMGY-UI+MJJegzBSMH4wVzBfMAI- +ayEwazDTMOUw/DBo-Swift+ML0w/DC5MNUwoTCkMOswkjBkMGowUjCLZbls1TCSW2YwczB+MFcwhzBGMAI- +MFRg81DPMG6QGjCKMAE-Storyboard+MG4wqjDWMLgwpzCvMMgwkjCzMPwwyTBrY6V9mjBXMGowUTCMMHAwATCiMNcw6jBrMG8wQjB+MIowZzBNMIswUzBoMG8wQjCKMH4wWzCTMAI-
+インターフェイスビルダーを使ってUIを広げました。次にビューとSwiftソースファイルをつなげる方法を学びましょう。ご想像の通り、Storyboardのオブジェクトをコードに接続しなければ、アプリにはあまりできることはありません。

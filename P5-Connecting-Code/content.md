@@ -1,302 +1,302 @@
----
-title: +ACIwszD8MMkwbmOlfZoAIg-
+﻿---
+title: "コードの接続"
 slug: connecting-code
 ---
 
-+MFMwbjC7MK8wtzDnMPMwZzBvMAE-Storyboard+MGgwszD8MMkwTDBpMEYwZDBqMEwwizBuMEswkomLMGYwfzB+MFkwAg- +c/5mQnC5MGcwojDXMOowklufiEwwWTCLMGgwATC3MN8w5TDsMPwwvzD8UYUwZwBfMLcwpzD8MK8w3DC/MPMAXzCSMK8w6jDDMK8wVzBmMIJPVTCCjXcwUzCJMGowRDBTMGgwa2wXMGUwTzBnMFcwhzBGMAI-
+このセクションでは、Storyboardとコードがどうつながるのかを見てみます。現時点でアプリを実行すると、シミュレーター内でシェークボタンをクリックしても何も起こらないことに気づくでしょう。
 
-+MFMwjDBvMAFPVTCCMLMw/DDJMJJm+DBLMGowRDBoMAF5wTBfMGEwbjCiMNcw6jBvT1UwgjBXMGowRDBLMIkwZzBZMAI- +MEIwajBfMExm+DBPMLMw/DDJMG8wATDmMPwwtjD8MEwwojDXMOowkk9/MGMwZjBEMIswaDBNMGswATCiMNcw6jB4T1UwkjBZMHkwTTBLTx0wSDCLYwd5OjBuMIgwRjBqMIIwbjBnMFkwAg- +Ywd5OjBMMGowRDBoMAEwojDXMOowb09VMIIwVzB+MFswkzAC-
+これは、何もコードを書かないと、私たちのアプリは何もしないからです。あなたが書くコードは、ユーザーがアプリを使っているときに、アプリへ何をすべきか伝える指示のようなものです。指示がないと、アプリは何もしません。
 
-+MNwwvzDzMG4wvzDDMNcwa1v+X9wwWTCLT4swZzBvMAEw5jD8MLYw/DBMAF8wtzCnMPwwrzDcML8w8wBfMJIwvzDDMNcwVzBfZkIwazABMKIw1zDqMGtPVTCSMFkweTBNMGowbjBLMJJPHTBIMIswszD8MMkwkmb4ME9fxYmBMEwwQjCKMH4wWTAC-
+ボタンのタップに対応する例では、ユーザーがシェークボタンをタップした時に、アプリに何をすべきなのかを伝えるコードを書く必要があります。
 
-+ACM- +MGkwRmOlfZowVTCMMGYwRDB+MFkwS/8f-
+# どう接続されていますか？
 
-+Uh1fw4AFMExnADCCMGQwfjBlME0whDBZMERwuTBuTgAwZDBvMAEwszD8MMkwTA-Storyboard+MGgwaTBGMGQwajBMMIswbjBLMJJ0BonjMFkwizBTMGgwZzBZMAI- Xcode+MGcwbwBfMKIwpDDHMPMwxjCjMMYwozCkMPMwuTDaMK8wvzD8AF8wAQ- +AF8-IBOutlets+AF8wXTBXMGYAXw-IBActions+AF8wbn1EMH9UCDCPMFswkk9/MGMwZjAB-Storyboard+MJI-Swift+MLMw/DDJMGswZDBqMFIwfjBZMAI-
+初心者が最もつまづきやすい点の一つは、コードがStoryboardとどうつながるのかを理解することです。Xcodeではアイデンティティインスペクター、 _IBOutlets_ そして _IBActions_ の組み合わせを使って、StoryboardをSwiftコードにつなげます。
 
-+MFMwjDCSdAaJ4zBZMIswazBvMAEwfjBaAF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMGswZDBEMGZbZjB2X8WJgTBMMEIwijB+MFkwAg-
+これを理解するには、まずアシスタントエディタについて学ぶ必要があります。
 
-+MMQw/DDrMNAw/DBuU/NQdDBrMG8wATDIMLAw6zBnME0wiw-3+MGQwbjDcML8w8zBrMIgwYzBmactiEDBVMIwwZjBEMIswsDDrMPww1zBM-2+MGQwQjCKMH4wWTAC- +MH4wWjBvXeZQdDBuZwBSHTBuMLAw6zD8MNcwa2zodu4wVzB+MFkwAg-
+ツールバーの右側には、トグルできる3つのボタンによって構成されているグループが2つあります。まずは左側の最初のグループに注目します。
 
-+ACEAWw-Editor Modes+AF0-(assets/editor+AF8-modes.png)
+![Editor Modes](assets/editor_modes.png)
 
-+TuVOCjBnMM8wpDDpMKQwyDBVMIwwZjBEMIs-3+MGQwbjDcML8w8zBrMIgwijABMKgwxzCjML8w4jD8MMkwkjDIMLAw6zBnME0wfjBZMAI- +TgBepjBrMKIwrzDGMKMw1jBqcrZhSzBrMGowjDCLMG4wbzABMFMwjDCJMG4w4jD8MMkwbjBGMGFOADBkMGAwUTBnMFkwAg-
+以上でハイライトされている3つのボタンにより、エディタモードをトグルできます。一度にアクティブな状態になれるのは、これらのモードのうち一つだけです。
 
-+MFSJpzBukBowijABZwBSHTBuMNwwvzDzMAEwfjBfMG8AXzC5ML8w8zDAMPwwyTCoMMcwozC/AF8wbzBZMGcwazCiMK8wxjCjMNYwanK2YUswZzBZMAI- +MFMwjDBvMAFOyjB+MGcwWjBjMGgAXzC5ML8w8zDAMPwwyTCoMMcwozC/AF8wkk9/MGMwZjBNMF8wSzCJMGcwWTAC- +AF8wuTC/MPMwwDD8MMkwqDDHMKMwvwBf- +MG9PVTCCYkswbo+8MJMwYDBTMGgwkjBXMH4wWzCTMAI- +MFMwbjCoMMcwozC/MG9TWH0UMGswAVNYTgAwZ1knV4swbjCoMMcwozC/MKYwozDzMMkwpjCSiGh5OjBXMGYwAVNYTgAwbjDVMKEwpDDrMJJT1jCKYnEwRDB+MFkwAg-
+ご覧の通り、最初のボタン、またはスタンダードエディタはすでにアクティブな状態です。これは、今までずっとスタンダードエディタを使ってきたからです。スタンダードエディタは何も手の込んだことをしません。このエディタは単純に、単一で大型のエディタウィンドウを表示して、単一のファイルを取り扱います。
 
-2+MGR27jBuMNwwvzDzMG8wATCoMMcwozC/MOIw/DDJMJIAXzCiMLcwuTC/MPMwyDCoMMcwozC/AF8wa4otW5owVzB+MFkwAg- +MFMwbjCoMMcwozC/MOIw/DDJMG8wAYkHZXAwbjDVMKEwpDDrMJKVizBEMGaWozCKVAgwjzBbMGd96JbGMFkwizBfMIEwbjCCMG4wZzBZMAI-
+2つ目のボタンは、エディタモードをアシスタントエディタに設定します。このエディタモードは、複数のファイルを開いて隣り合わせで編集するためのものです。
 
-+AD4- +AFs-action+AF0-
-+MH4wYDBuWDRUCDBvMAEAXzC5ML8w8zDAMPwwyTCoMMcwozC/AF8wSzCJAF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMHgwaDDcML8w8zCSMMgwsDDrMFcwZjBPMGAwVTBEMAI- +ayEwbjCIMEYwa4hoeTowVTCMMH4wWTAC-
-+AD4-
-+ACEAWw-Assistant Editor Active+AF0-(assets/assistant+AF8-editor+AF8-active.png)
+> [action]
+まだの場合は、スタンダードエディタからアシスタントエディタへとボタンをトグルしてください。次のように表示されます。
+>
+![Assistant Editor Active](assets/assistant_editor_active.png)
 
-+ZwBSHTBrbBcwZTBPMEswgjBXMIwwfjBbMJMwTDABAF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMJJPfzBGZkIwAZWLMEQwZjBEMItUBDDVMKEwpDDrMG51O5diMLkw2jD8MLkwTGsgWYIwVzBmMEQwfjBZMAI- +MFMwbnK2YUswkmU5VYQwWTCLMGswbzABAF8wyjDTMLIw/DC/MPwAXzBuMIgwRjBqTg2JgTBq-Xcode+MMQw/DDrMJKXXohoeTowazBXMH4wVzCHMEYwAg- +MFMwjDBvMAEwxDD8MOsw0DD8MG5nAFPzeu8wazBCMIs-2+MGR27jBuMLAw6zD8MNcwbjDcML8w8zCST38wYzBmW59lvTBnME0wfjBZMAI-
+最初に気づくかもしれませんが、アシスタントエディタを使う時、開いている各ファイルの画面スペースが欠如しています。この状態を改善するには、ナビゲーターのような不要なXcodeツールを非表示にしましょう。これは、ツールバーの最右端にある2つ目のグループのボタンを使って実施できます。
 
-+ACEAWw-Display Xcode Areas+AF0-(assets/display+AF8-xcode+AF8-areas.png)
+![Display Xcode Areas](assets/display_xcode_areas.png)
 
-+MFMwjDCJMG4w3DC/MPMwkk9/MGMwZjABAF8wyjDTMLIw/DC/MPwAXzABAF8wxzDQMMMwrDD8AF8wAQBfMOYw/DDGMKMw6jDGMKMAXzBul16IaHk6MGiIaHk6MJIwyDCwMOswZzBNMH4wWTAC- +MF0wjDBnMG8wATCCMEZcETBXdTuXYjBrT1mI1TCSYwEwXzBbMIswXzCBMAEAXzDKMNMwsjD8ML8w/DCoMOowogBfMJKViTBYMH4wVzCHMEYwAg-
+これらのボタンを使って、ナビゲーター、デバッガー、ユーティリティの非表示と表示をトグルできます。それでは、もう少し画面に余裕を持たせるため、ナビゲーターエリアを閉じましょう。
 
-+AD4- +AFs-action+AF0-
-+ZwBSHTBuMNwwvzDzMJIwrzDqMMMwrzBXMGY- +AF8wyjDTMLIw/DC/MPwAXw- +MHowpDDzMJKViTBYMH4wVzCHMEYwAg- +AF8w5jD8MMYwozDqMMYwozCoMOowogBfMG8wWTBQMGtfxYmBMGswajCLMG4wZzABlYswRDBfMH4wfjBrMFcwZjBKMEQwZjBPMGAwVTBEMAI-
-+AD4-
-+ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-connecting-code/hide+AF8-navigator.mp4)
+> [action]
+最初のボタンをクリックして ナビゲーターぺインを閉じましょう。ユーティリティエリアはすぐに必要になるので、開いたままにしておいてください。
+>
+![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/05-connecting-code/hide_navigator.mp4)
 
-+AF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMGdPXGltMJIwVzBmMEQwi2ZCMAFPfzBjMGYwRDBqMEQ-Xcode+MG4wqDDqMKIwkpdeiGh5OjBrMFkwizBoMAF1O5diMG4wuTDaMPwwuTCSMIIwYzBoeLpP3TBnME0wizBuMGdPv1IpMGAwaDBEMEYwUzBoMEwwiDBPMEIwijB+MFkwAg-
+アシスタントエディタで作業をしている時、使っていないXcodeのエリアを非表示にすると、画面のスペースをもっと確保できるので便利だということがよくあります。
 
-2+MGQwbjDVMKEwpDDrMJJOJjB5MGaIaHk6MFkwi2W5bNUwTFIGMEswYzBfMG4wZzAB-Xcode+MEwwaTBGMIQwYzBm-Storyboard+MNMw5TD8MLMw8zDIMO0w/DDpMPwwaABg-ViewController.swift+AGAwvTD8MLkw1TChMKQw6zBuY6V9mjCSio2LWDBZMIswbjBLiYswZjB/MH4wVzCHMEYwAg-
+2つのファイルを並べて表示する方法が分かったので、XcodeがどうやってStoryboardビューコントローラーと`ViewController.swift`ソースファイルの接続を認識するのか見てみましょう。
 
-+ACM- +MKIwpDDHMPMwxjCjMMYwozCkMPMwuTDaMK8wvzD8-
+# アイデンティティインスペクター
 
-+AD4- +AFs-action+AF0-
-1. Storyboard+MG4AXw-Document Outline+AF8wZzABAF8-View Controller+AF8wbg-Storyboard+MKow1jC4MKcwrzDIMJKQeGKeMFcwZjBPMGAwVTBEMAI- +ACEAWw-Document Outline+AF0-(assets/document+AF8-outline+AF8-select+AF8-vc.png)
-2. +ayEwazABAF8w5jD8MMYwozDqMMYwozCoMOowogBfMGcAXzCiMKQwxzDzMMYwozDGMKMwpDDzMLkw2jCvML8w/ABfMJKVizBEMGYwTzBgMFUwRDAC- +ACEAWw-Identity Inspector Active+AF0-(assets/identity+AF8-inspector+AF8-active.png)
+> [action]
+1. Storyboardの _Document Outline_ で、 _View Controller_ のStoryboardオブジェクトを選択してください。![Document Outline](assets/document_outline_select_vc.png)
+2. 次に、ユーティリティエリアでアイデンティティインスペクターを開いてください。![Identity Inspector Active](assets/identity_inspector_active.png)
 
-+MKIwpDDHMPMwxjCjMMYwozCkMPMwuTDaMK8wvzD8AF8wZzBvMAFz/lcokHhinjBVMIwwZjBEMIs-Storyboard+MNMw5TD8MLMw8zDIMO0w/DDpMPwwbjCrMLkwvzDgMK8w6TC5MJJjB1uaMFkwizC7MK8wtzDnMPMwTIhoeTowVTCMMIswbzBaMGcwWTAC-
+アイデンティティインスペクター_では、現在選択されているStoryboardビューコントローラーのカスタムクラスを指定するセクションが表示されるはずです。
 
-+ACEAWw-Custom Class Section+AF0-(assets/custom+AF8-class+AF8-section.png)
+![Custom Class Section](assets/custom_class_section.png)
 
-+AGA-ViewController.swift+AGAw1TChMKQw6zBoAF8wojCkMMcw8zDGMKMwxjCjMKQw8zC5MNowrzC/MPwAXzBuTiFluTCSU8JxZzBZMIswaDABAF8wrzDpMLkAX1QNMExOAIH0MFkwizBTMGgwTDCPMEswizBnMFcwhzBGMAI- +MFMwjDBMMAE-Storyboard+MKow1jC4MKcwrzDIMG4wqzC5ML8w4IhMUtUwkootW5owVzABW5p/qTBZMItluWzVMGcwWTAC-
+`ViewController.swift`ファイルとアイデンティティインスペクターの両方を参照すると、クラス名が一致することがわかるでしょう。これが、Storyboardオブジェクトのカスタム行動を設定し、定義する方法です。
 
-+ACEAWw-Connected Class+AF0-(assets/connected+AF8-class.png)
+![Connected Class](assets/connected_class.png)
 
-+AD4- +AFs-info+AF0-
-+AF8-Single View App+AF8- +MMYw8zDXMOww/DDIMEwwQjCJMEswWDCBii1bmjCSiEwwajBjMGYwRDBfMG4wZzABMFMwbjDXMO0wuDCnMK8wyDBnMG+KLVuaMG5fxYmBMG8wQjCKMH4wWzCTMAI- +TspfjDBuMNcw7TC4MKcwrzDIMGcwbzABAF8wojCkMMcw8zDGMKMwxjCjMKQw8zC5MNowrzC/MPwAXzBrVCswfjCMMItUBDCrMLkwvzDgMNMw5TD8MLMw8zDIMO0w/DDpMPwwbjCvMOkwuTCSactiEDBXMGYwAQ-Storyboard+MNMw5TD8MLMw8zDIMO0w/DDpMPwwkjBdMIwwXjCMMG4-Swift+ML0w/DC5MNUwoTCkMOswa2OlfZowWTCLX8WJgTBMMEIwijB+MFkwAg-
+> [info]
+_Single View App_ テンプレートがあらかじめ設定を行なっていたので、このプロジェクトでは設定の必要はありません。今後のプロジェクトでは、アイデンティティインスペクターに含まれる各カスタムビューコントローラーのクラスを構成して、StoryboardビューコントローラーをそれぞれのSwiftソースファイルに接続する必要があります。
 
-+ACM- IBOutlets
+# IBOutlets
 
-Storyboard+MNMw5TD8MLMw8zDIMO0w/DDpMPwwZzABUk0wazDpMNkw6zBoMNwwvzDzMJKP/VKgMFcwfjBXMF8wAg- +MO0wuDDDMK//CA-Magic 8-Ball+MGtb/jBZMItjB3k6/wkwklufiMUwWTCLMGswbzABMOkw2TDrMGgw3DC/MPMwklPCcWcwWTCLZbls1TBMX8WJgTBnMFkwAg-
+Storyboardビューコントローラーで、前にラベルとボタンを追加しました。ロジック（Magic 8-Ballに対する指示）を実装するには、ラベルとボタンを参照する方法が必要です。
 
-+MFMwblVPmEwwkonjbHowWTCLMGswbzAB-IBOutlets+MJJPXGIQMFkwi1/FiYEwTDBCMIowfjBZMAI-
+この問題を解決するには、IBOutletsを作成する必要があります。
 
-IBOutlets +MG8wAQ-Storyboard+MLUw1jDTMOUw/DCqMNYwuDCnMK//CE+LMEgwcDABMOkw2TDrMAEw3DC/MPMwAXU7UM8w0zDlMPwwajBp/wkwSzCJMAE-Swift+MLMw/DDJMGtb/jBZMIswszDNMK8wtzDnMPMwkk9cYhAwVzB+MFkwAg- +MFMwjDBrMIgwijABMNcw7TCwMOkw4DBnU8JxZzBuZM1PXDBMU++A/TBrMGowijB+MFkwAg-
+IBOutlets は、Storyboardサブビューオブジェク（例えば、ラベル、ボタン、画像ビューなど）から、Swiftコードに対するコネクションを作成します。これにより、プログラムで参照の操作が可能になります。
 
-+AD4- +AFs-action+AF0-
-+MH4wWjABdTuXYjBuMLkw2jD8MLkwkjCCMGMwaFiXMIQwWTBfMIEwATDEMPww6zDQMPwwkk9/MGMwZgBfMOYw/DDGMKMw6jDGMKMAXzDaMKQw8zCSlYkwWDB+MFcwhzBGMAI- Xcode IDE+MG9rITBuMIgwRjBriGh5OjBVMIwwizBvMFowZzBZMAI-
-+AD4-
-+ACEAWw-Assistant Editor Active+AF0-(assets/assistant+AF8-editor+AF8-active+AF8-2.png)
+> [action]
+まず、画面のスペースをもっと増やすため、ツールバーを使ってユーティリティペインを閉じましょう。Xcode IDEは次のように表示されるはずです。
+>
+![Assistant Editor Active](assets/assistant_editor_active_2.png)
 
-+AGA-Main.storyboard+AGAwaABg-ViewController.swift+AGAw1TChMKQw6zBMTiYwkzBnlYswSzCMMGYwRDCLcrZhSzBnMAE- +ZwBSHTBu-IBOutlet+MJJPXGIQMFcwfjBXMIcwRjAC-
+`Main.storyboard`と`ViewController.swift`ファイルが並んで開かれている状態で、 最初のIBOutletを作成しましょう。
 
-+AD4- +AFs-action+AF0-
-+Vt57VDDpMNkw63UoMGs-IBOutlet+MJJPXGIQMFcwfjBXMIcwRjAC-
-+AD4-
-+AF8wpDDzML8w/DDVMKcw/DC5MNMw6zDAMPwAXzBnVt57VDDpMNkw6zCSkHhinjBXMH4wVzCHMEYwAg- +ayEwazABMLMw8zDIMO0w/DDrMJJivDBXMGowTDCJMAE-Storyboard+MOkw2TDrMEswiQBg-ViewController.swift+AGAw1TChMKQw6zB4MGgwrzDqMMMwrzBXMGowTDCJMMkw6TDDMLAwVzBmME8wYDBVMEQwAg- +fVBnnDBuMNcw7TDzMNcwyDBnMAFlsDBXMEQ-IBOutlet+AGA-answerLabel+AGAwa1QNUk0wkk7YMFEwZjBPMGAwVTBEMAI- +ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-connecting-code/answer+AF8-label+AF8-iboutlet.mp4)
+> [action]
+回答ラベル用にIBOutletを作成しましょう。
+>
+インターフェースビルダーで回答ラベルを選択しましょう。次に、コントロールを押しながら、Storyboardラベルから`ViewController.swift`ファイルへとクリックしながらドラッグしてください。結果のプロンプトで、新しいIBOutlet`answerLabel`に名前を付けてください。![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/05-connecting-code/answer_label_iboutlet.mp4)
 
- +AF8wtzCnMPwwrzDcML8w8wBfMGswZDBEMGYwglQMMFhiS5gGMJJ+cDCKj9QwVzBmME8wYDBVMEQwAg-
+ シェークボタンについても同じ手順を繰り返してください。
 
-+AD4- +AFs-challenge+AF0-
-Storyboard+MNwwvzDzdSgwawBg-shakeButton+AGAwaDBEMEZlsDBXMEQ-IBOutlet+MJIAYA-ViewController.swift+AGAw1TChMKQw61GFMGdPXGIQMFcwZjBPMGAwVTBEMAI-
+> [challenge]
+Storyboardボタン用に`shakeButton`という新しいIBOutletを`ViewController.swift`ファイル内で作成してください。
 
-+ADwAIQ--- break --+AD4-
+<!-- break -->
 
-+AD4- +AFs-solution+AF0-
-+AF8wpDDzML8w/DDVMKcw/DC5MNMw6zDAMPwAXzBnMLcwpzD8MK8w3DC/MPMwkpB4Yp4wVzBmME8wYDBVMEQwAg- +MF0wjDBLMIkwszDzMMgw7TD8MOsw3DC/MPMwkmK8MFcwajBMMIkwAQ-Storyboard+MNwwvzDzMEswiQBg-ViewController.swift+AGAw1TChMKQw6zB4MAEwrzDqMMMwrzBXMGowTDCJMMkw6TDDMLAwVzBmME8wYDBVMEQwAg-
-+AD4-
-+ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-connecting-code/button+AF8-iboutlet.mp4)
+> [solution]
+インターフェースビルダーでシェークボタンを選択してください。それからコントロールボタンを押しながら、Storyboardボタンから`ViewController.swift`ファイルへ、クリックしながらドラッグしてください。
+>
+![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/05-connecting-code/button_iboutlet.mp4)
 
-+AGA-ViewController.swift+AGAw1TChMKQw6zBnMAEw6TDZMOswhDDcML8w8zCSU8JxZzBXMAEwojCvMLswuTBMMGcwTTCLMIgwRjAB-IBOutlet+MJJOIWW5T1xiEDBXMH4wVzBfMAI-
+`ViewController.swift`ファイルで、ラベルやボタンを参照し、アクセスができるよう、IBOutletを両方作成しました。
 
-+ayEwazABMOYw/DC2MPwwTABfMLcwpzD8MK8w3DC/MPMAXzCSML8wwzDXMFcwX2ZCMG5TzV/cMJIwAQ-IBAction+MJJPfzBjMGZpHIoOMFcwZjBEME0wfjBZMAI-
+次に、ユーザーがシェークボタンをタップした時の反応を、IBActionを使って検討していきます。
 
-+ACM- IBAction
+# IBAction
 
-IBAction +MG8wATDmMPwwtjD8MEw-UI+MKow1jC4MKcwrzDIMGgwhDCKMGgwijCSMFkwi2ZCMGtUfDBzUfowVTCMMIsw4TC9MMMwyTBnMFkwAg-  IBAction +MG5PXGIQMG8wAQ-IBOutlet+MG5PXGIQMGswaDBmMIIwiDBPTzwwZjBEMH4wWTAC-
+IBAction は、ユーザーがUIオブジェクトとやりとりをする時に呼び出されるメソッドです。 IBAction の作成は、IBOutletの作成にとてもよく似ています。
 
-+MOYw/DC2MPwwTABfMLcwpzD8MK8w3DC/MPMAXzCSML8wwzDXMFcwX2ZCMG4wXzCBMG4-IBAction+MJJPXGIQMFcwfjBXMIcwRjAC-
+ユーザーがシェークボタンをタップした時のためのIBActionを作成しましょう。
 
-+AD4- +AFs-action+AF0-
-Create a IBAction from your +AF8-shake button+AF8- in your view controller source file: +ACEAWw-ms-video+AF0-(https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/0-connecting-code/button+AF8-ibaction.mp4)
-+AD4-
-+MLkwxjDDMNcw0DCkMLkwxjDDMNf/Gg-
-+AD4-
-1.  +AF8wtzCnMPwwrzDcML8w8wBfMJKQeGKeMFcwZjBPMGAwVTBEMAI-
-1. +MLMw8zDIMO0w/DDrMNwwvzDzMJJivDBVMEgwAQ-IBOutlet+MJJPXGIQMFkwizBLMG4wiDBGMGswAQ-Storyboard+MNwwvzDzMEswiTDTMOUw/DCzMPMwyDDtMPww6TD8ML0w/DC5MNUwoTCkMOsweDABMK8w6jDDMK8wVzBmMMkw6TDDMLAwVzBmME8wYDBVMEQwAg-
-1. IBOutlet+MGtUDVJNMJJO2DBRMIsw1zDtMPMw1zDIMExR+jBfMIkwATDJMO0wwzDXMMAwpjDzMOEwyzDlMPwwkk9/MGMwZjABMLMwzTCvMLcw5zDzMG4wvzCkMNcwkgBg-Outlet+AGAwSzCJAGA-Action+AGAwa1kJZvQwVzBmME8wYDBVMEQwAg-
-1. IBAction+MGsAYA-shakeButtonTapped+AGAwaFQNTtgwUTBmME8wYDBVMEQwAg-
+> [action]
+ビューコントローラーのソースファイルで、シェークボタンのIBActionを作成しましょう：![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/05-connecting-code/button_ibaction.mp4)
+>
+ステップバイステップ：
+>
+1. シェークボタンを選択してください。
+1. コントロールボタンを押さえ、IBOutletを作成するかのように、Storyboardボタンからビューコントローラーソースファイルへ、クリックしてドラッグしてください。
+1. IBOutletに名前を付けるプロンプトが出たら、ドロップダウンメニューを使って、コネクションのタイプを`Outlet`から`Action`に変更してください。
+1. IBActionに`shakeButtonTapped`と名付けてください。
 
-+MF0wRjBZMIswaDABMNMw5TD8MLMw8zDIMO0w/DDpMPwwbk4tMGtlsDBXMERqX4D9MExPXGIQMFUwjDCLMFMwaDBrbBcwZTBPMGcwVzCHMEYwAg- +AF8wtzCnMPwwrzDcML8w8wBfMEwwvzDDMNcwVTCMMIswaDABMEQwZDBnMIIwUzBulaJlcDBMVHwwc1H6MFUwjDB+MFkwAg-
+そうすると、ビューコントローラーの中に新しい機能が作成されることに気づくでしょう。シェークボタンがタップされると、いつでもこの関数が呼び出されます。
 
-+MFMwjDBMW5+WmzBrUtUwT1n/MJJ4uoqNMFkwizBfMIEwAQBfMLcwpzD8MK8w3DC/MPMAXzBMML8wwzDXMFUwjDCLMF8wczBrMAEwxzDQMMMwsDCzMPMwvTD8MOswazDGMK0wuTDIMJKIaHk6MFUwWzCLMIgwRjBrMFcwfjBXMIcwRjAC-
+これが実際に動く姿を確認するため、シェークボタンがタップされるたびに、デバッグコンソールにテキストを表示させるようにしましょう。
 
-+ACMAIw- +MMcw0DDDMLAwbjDXMOow8zDI-
+## デバッグのプリント
 
-+MFMwjDB+MGcwATDHMNAwwzCsMPwwazBkMEQwZopxMFcwXzCKMAEwUzCMMJJPfzBjMF8wijBZMIswUzBoMG8wQjCKMH4wWzCTMGcwVzBfMAI- +MMcw0DDDMKww/DBvMAEwSzBqMIpfN1KbMGowxDD8MOswZzABMKIw1zDqMGtUKzB+MIwwizDQMLAwknZ6iYswZzBNMIswiDBGMGswVzBmME8wjDB+MFkwAjBTMG5YNFQIMAEw5jD8MLYw/DBMMNwwvzDzMGgwhDCKMGgwijBXMF8waDBNMGswATDHMNAwwzCwMLMw8zC9MPww6zB4fCFTWDBqMO0wsDCSiGh5OjBZMIswYDBRMGcwWTAC-
+これまで、デバッガーについて話したり、これを使ったりすることはありませんでした。デバッガーは、かなり強力なツールで、アプリに含まれるバグを発見できるようにしてくれます。この場合、ユーザーがボタンとやりとりしたときに、デバッグコンソールへ簡単なログを表示するだけです。
 
-+MH4wWjBvMAE-IBAction +MG4AYA-shakeButtonTapped+AGBRhTBnMAE-print+MLkwxjD8MMgw4TDzMMgwko/9UqAwWTCLX8WJgTBMMEIwijB+MFkwAg-
+まずは、IBAction の`shakeButtonTapped`内で、printステートメントを追加する必要があります。
 
-+AD4- +AFs-action+AF0-
-+AGA-ViewController.swift+AGAwZzABAGA-shakeButtonTapped(+AF8-:)+AGAwkmshMG4wiDBGMGtZCWb0MFcwZjBPMGAwVTBE/xo-
-+AD4-
-+AGAAYABg-
-+AEA-IBAction func shakeButtonTapped(+AF8- sender: Any) +AHs-
-    print(+ACI-shake it like a polaroid picture+ACEAIg-)
-+AH0-
-+AGAAYABg-
+> [action]
+`ViewController.swift`で、`shakeButtonTapped(_:)`を次のように変更してください：
+>
+```
+@IBAction func shakeButtonTapped(_ sender: Any) {
+    print("shake it like a polaroid picture!")
+}
+```
 
-+MFUwZjABMKIw1zDqMJJbn4hMMFcwZopmMFcwZjB/MH4wVzCHMEYwAg-
+さて、アプリを実行して試してみましょう。
 
-+MKIw1zDqMEyNd1LVMFUwjDBm-UI+MEyIaHk6MFUwjDBfMIkwAQBfMLcwpzD8MK8w3DC/MPMAXzCSMK8w6jDDMK8wVzBmME8wYDBVMEQwAg- Xcode+MMcw0DDDMKww/DBnMG8wATC3MKcw/DCvMNwwvzDzMJJivDBZMF8wczBr-print+MLkwxjD8MMgw4TDzMMgwTIhoeTowVTCMMIswbzBaMGcwWf8B-
+アプリが起動されてUIが表示されたら、シェークボタンをクリックしてください。Xcodeデバッガーでは、シェークボタンを押すたびにprintステートメントが表示されるはずです！
 
-+ACEAWw-Print Debugging+AF0-(assets/print+AF8-debugging.png)
+![Print Debugging](assets/print_debugging.png)
 
-+MFSJpzBukBowijABMOYw/DC2MPwwTDDcML8w8zCSML8wwzDXMFkwizBfMHMwawBg-shakeButtonTapped(+AF8-:)+AGAwTFR8MHNR+jBVMIwwfjBZMAI-
+ご覧の通り、ユーザーがボタンをタップするたびに`shakeButtonTapped(_:)`が呼び出されます。
 
-+ACM- +MOkw2TDrMG4wxjCtMLkwyDCSWQlm9A-
+# ラベルのテキストを変更
 
-+MNwwvzDzMEwwvzDDMNcwVTCMMF8waDBNMGswATCzMPMwvTD8MOswazDtMLAwkohoeTowZzBNMIswiDBGMGswVzB+MFcwXzAC- +MIIwRk4Aa2lRSDBrkDIwkzBnMAEw3DC/MPMwvzDDMNdOCjBuMOkw2TDrMMYwrTC5MMgwklkJZvQwVzB+MFcwhzBGMAI-
+ボタンがタップされたときに、コンソールにログを表示できるようにしました。もう一歩先に進んで、ボタンタップ上のラベルテキストを変更しましょう。
 
-+AD4- +AFs-action+AF0-
-+AGA-ViewController.swift+AGAwZzABTuVOCzBuMLMw/DDJMG6ITDCSAGA-shakeButtonTapped(+AF8-:)+AGAwa4/9UqAwVzB+MFcwhzBG/xo-
-+AD4-
-+AGAAYABg-
-+AEA-IBAction func shakeButtonTapped(+AF8- sender: Any) +AHs-
-    print(+ACI-shake it like a polaroid picture+ACEAIg-)
-+AD4-
-    answerLabel.text +AD0- +ACI-button was tapped+ACI-
-+AH0-
-+AGAAYABg-
+> [action]
+`ViewController.swift`で、以下のコードの行を`shakeButtonTapped(_:)`に追加しましょう：
+>
+```
+@IBAction func shakeButtonTapped(_ sender: Any) {
+    print("shake it like a polaroid picture!")
+>
+    answerLabel.text = "button was tapped"
+}
+```
 
-+MKIw1zDqMJIwgjBGTgBepjDTMOswyTBXMGZbn4hMMFcwfjBXMIcwRjAC- +AF8wtzCnMPwwrzDcML8w8wBfMJIwvzDDMNcwWTCLMGgwAVbee1Qw6TDZMOswb2shMG4wxjCtMLkwyDBrWQlTFjBXMGaIaHk6MFUwjDCLMG8wWjBnMFn/Gg-
+アプリをもう一度ビルドして実行しましょう。シェークボタンをタップすると、回答ラベルは次のテキストに変化して表示されるはずです：
 
-+ACEAWw-Changed Text+AF0-(assets/changed+AF8-text.png)
+![Changed Text](assets/changed_text.png)
 
-+MFMwjDB+MGcwazABayEwbk9caW0wkm4IMH4wWzB+MFcwX/8a-
+これまでに、次の作業を済ませました：
 
-+VAQAYA-UILabel+AGAwazBvMAFZCWb0MAFm9GWwMFkwizBTMGgwbjBnME0wizDGMK0wuTDIXF5gJzBMMEIwijB+MFkwAg- +dTuXYk4KMG4-UI+MIJm9GWwMFcwfjBZMAI- +AGA-shakeButtonTapped(+AF8-:)+AGAwTFR8MHNR+jBVMIwwXzBoME0wATDpMNkw6zBuMMYwrTC5MMgw1zDtMNEwxjCjMJJlsDBfMGplh1tXUhcwa4otW5owVzB+MFcwXzAC-
+各`UILabel`には、変更、更新することのできるテキスト属性があります。画面上のUIも更新します。`shakeButtonTapped(_:)`が呼び出されたとき、ラベルのテキストプロパティを新たな文字列に設定しました。
 
-+MNwwvzDzMG5S1U9cMIQw6TDZMOswxjCtMLkwyDBuWQlm9DBrlaIwWTCLZbAwVzBEd+WLWDCST38wYzBmMAE-Magic 8-Ball+MG5W3ntUMJJxIU9ccLowa5B4Yp4wV4hoeTowWTCLMO0wuDDDMK8wklufiMUwWTCLMFMwaDBMMGcwTTB+MFkwAg-
+ボタンの動作やラベルテキストの変更に関する新しい知識を使って、Magic 8-Ballの回答を無作為に選択し表示するロジックを実装することができます。
 
-+ACM- +MO0wuDDDMK8wblufZb0-
+# ロジックの実施
 
-+MFMwjDBnMAE-Magic 8-Ball+MJJbn4jFMFkwizDEMPww6zBMMFkweTBmY8MwRDB+MFcwXzAC- +MH4wWjABAF8wojC3MLkwvzDzMMgwqDDHMKMwvwBfMJKViTBYMAEAXzC5ML8w8zDAMPwwyTCoMMcwozC/AF8wa2I7MIowfjBZMAI-
+これで、Magic 8-Ballを実装するツールがすべて揃いました。まず、アシスタントエディタを閉じ、スタンダードエディタに戻ります。
 
-+AD4- +AFs-action+AF0-
-+AF8wuTC/MPMwwDD8MMkwqDDHMKMwvwBfMGswZwBg-ViewController.swift+AGAwkohoeTowWTCLMGswbzABAF8w1zDtMLgwpzCvMMgwyjDTMLIw/DC/MPwAXzCST391KDBXMH4wWTAC-
+> [action]
+スタンダードエディタにで`ViewController.swift`を表示するには、プロジェクトナビゲーターを使用します。
 
-+ayEwazDtMLgwwzCvMJJbn4jFMFcwfjBXMIcwRjAC- +MH4wWjBvMAEwpDDzMLkwvzDzMLlZCWVwMJKP/VKgMFcwfjBZMAIwUzCMMG8wAQ-Magic 8-Ball+MG5T74D9MGpW3ntUMFkweTBmMJJUKzCAZYdbV1IXMG6RTVIXMGcwWTAC- +MGkwRjBeMFSB6nUxMGty7IHqMG4wgjBuMJKP/VKgMFcwZjBPMGAwVTBE/wE-
+次にロジックを実装しましょう。まずは、インスタンス変数を追加します。これは、Magic 8-Ballの可能な回答すべてを含む文字列の配列です。どうぞご自由に独自のものを追加してください！
 
-+AD4- +AFs-action+AF0-
-IBOutlets+MG5OCjBrMAFrITBuZYdbV1IXMG6RTVIXMJKP/VKgMFcwZjBPMGAwVTBE/xo-
-+AD4-
-+AGAAYABg-
-class ViewController: UIViewController +AHs-
-+AD4-
-    // MARK: - +MNcw7TDRMMYwow-
-+AD4-
-    let answers +AD0- +AFsAIjBvMEQwATCCMGEwjTCTACI-, +ACJ4ulufMGcwWQAi-, +ACKVk5BVMEQwQjCKMH4wWzCTACI-, +ACIwbzBEACI-, +ACIwSzBqMIowbni6c4cwZzBZACI-, +ACIwSDBIMAEwXTBGMFcwfjBXMIcwRjBL/x8AIg-, +ACJUDDBYMGcwWQAi-, +ACIwgjBjMGiAXjBLMFswZjBPMGAwVTBEACI-, +ACIwYTCHMGMwaDBKMEswVzBEACI-, +ACIwYTCHMGMwaGAqMFcwRDBuMGcwATCCMEZOAF6mimYwVzBmMH8wZjBPMGAwVTBEACI-, +ACIwQjBoMGcwgjBGTgBepozqVU8wVzBmME8wYDBVMEQAIg-, +ACIwsTD8MK0wajCTMGZWGAAi-, +ACI-42+ACI-, +ACIwXTCMMG+KADBEkE4wTgAi-, +ACIwSzBqMIp1kTCPMFcwRAAi-, +ACJP4XUoMFcwajBEMGcAIg-, +ACJ7VDBIMG8wzjD8MGcwWQAi-, +ACJ9dlv+MGsw4DDqACIAXQ-
-+AD4-
-    +AEA-IBOutlet weak var answerLabel: UILabel+ACE-
-    +AEA-IBOutlet weak var shakeButton: UIButton+ACE-
-+AD4-
-    // ... +a4swijBuMLMw/DDJ-
-+AH0-
-+AGAAYABg-
-+AD4-
-+U8KAAzB+MGcwazABTuVOCjBuVt57VDBukU1SFzBuMNcw7DD8MPMwxjCtMLkwyHJIMG9rITBukBowijBnMFn/Gg-
-+AD4-
-let answers +AD0- +AFsAIjBvMEQwATCCMGEwjTCTACI-, +ACJ4ulufMGcwWQAi-, +ACKVk5BVMEQwQjCKMH4wWzCTACI-, +ACIwbzBEACI-, +ACIwSzBqMIowbni6c4cwZzBZACI-, +ACIwSDBIMAEwXTBGMFcwfjBXMIcwRjBL/x8AIg-, +ACJUDDBYMGcwWQAi-, +ACIwgjBjMGiAXjBLMFswZjBPMGAwVTBEACI-, +ACIwYTCHMGMwaDBKMEswVzBEACI-, +ACIwYTCHMGMwaGAqMFcwRDBuMGcwATCCMEZOAF6mimYwVzBmMH8wZjBPMGAwVTBEACI-, +ACIwQjBoMGcwgjBGTgBepozqVU8wVzBmME8wYDBVMEQAIg-, +ACIwsTD8MK0wajCTMGZWGAAi-, +ACI-42+ACI-, +ACIwXTCMMG+KADBEkE4wTgAi-, +ACIwSzBqMIp1kTCPMFcwRAAi-, +ACJP4XUoMFcwajBEMGcAIg-, +ACJ7VDBIMG8wzjD8MGcwWQAi-, +ACJ9dlv+MGsw4DDqACIAXQ-
+> [action]
+IBOutletsの上に、次の文字列の配列を追加してください：
+>
+```
+class ViewController: UIViewController {
+>
+    // MARK: - プロパティ
+>
+    let answers = ["はい、もちろん", "確実です", "間違いありません", "はい", "かなりの確率です", "ええ、そうしましょうか？", "同じです", "もっと聞かせてください", "ちょっとおかしい", "ちょっと怪しいので、もう一度試してみてください", "あとでもう一度質問してください", "ケーキなんて嘘", "42", "それは言い過ぎ", "かなり疑わしい", "信用しないで", "答えはノーです", "絶対にムリ"]
+>
+    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var shakeButton: UIButton!
+>
+    // ... 残りのコード
+}
+```
+>
+参考までに、以上の回答の配列のプレーンテキスト版は次の通りです：
+>
+let answers = ["はい、もちろん", "確実です", "間違いありません", "はい", "かなりの確率です", "ええ、そうしましょうか？", "同じです", "もっと聞かせてください", "ちょっとおかしい", "ちょっと怪しいので、もう一度試してみてください", "あとでもう一度質問してください", "ケーキなんて嘘", "42", "それは言い過ぎ", "かなり疑わしい", "信用しないで", "答えはノーです", "絶対にムリ"]
 
-+Vt57VDBukU1SFzCSZbAwXzBrdShhDzBXMF8waDBTMI0wZzABMLcwpzD8MK8w3DC/MPMwTDC/MMMw1zBVMIwwX1g0VAgwazABMFMwbpFNUhcwa1QrMH4wjDCLmAV27jCScSFPXHC6MGuQeGKeMFcwAYhoeTowVTCMMItW3ntUMOkw2TDrMG4wxjCtMLkwyDCSWQlm9DBnME0wizCIMEYwazBqMIowfjBZMAI-
+回答の配列を新たに用意したところで、シェークボタンがタップされた場合に、この配列に含まれる項目を無作為に選択し、表示される回答ラベルのテキストを変更できるようになります。
 
-+AD4- +AFs-action+AF0-
-+cSFPXHC6MGtW3ntUMJKQeGKeMFkwizBrMG8wAQBg-arc4random+AF8-uniform(+AF8-:)+AGAw4TC9MMMwyTCST38wRjBTMGgwTDBnME0wfjBZMAI- +MNMw5TD8MLMw8zDIMO0w/DDpMPwwbgBg-shakeButtonTapped+AGAwkk7lTgswa1kJZvQwVzBmME8wYDBVMET/Gg- 
-+AD4-
-+AGAAYABg-
-+AEA-IBAction func shakeButtonTapped(+AF8- sender: UIButton) +AHs-
+> [action]
+無作為に回答を選択するには、`arc4random_uniform(_:)`メソッドを使うことができます。ビューコントローラーの`shakeButtonTapped`を以下に変更してください：
+>
+```
+@IBAction func shakeButtonTapped(_ sender: UIButton) {
     // 1
-    let maxIndex +AD0- UInt32(answers.count)
+    let maxIndex = UInt32(answers.count)
     // 2
-    let randomIndex +AD0- Int(arc4random+AF8-uniform(maxIndex))
-+AD4-
+    let randomIndex = Int(arc4random_uniform(maxIndex))
+>
     // 3
-    answerLabel.text +AD0- answers+AFs-randomIndex+AF0-
-+AH0-
-+AGAAYABg-
-+AD4-
-+MFMwjDB+MGcwbjCzMPwwyTCSMLkwxjDDMNcwVDBoMGtSBonjMFcwfjBXMIcwRv8a-
-+AD4-
-1. +Vt57VDBukU1SF1GFMGdxIU9ccLowazCkMPMwxzDDMK8wuTCSdR9iEDBZMIuWmzABTgqWUDCScnlbmjBZMIswXzCBMGtPf3UoMFUwjDCLAGA-maxIndex+AGAwkmx6W5owVzB+MFkwAg- +AGA-arc4random+AF8-uniform+AGAw4TC9MMMwyTBvAGA-UInt32+AGBXizBuXxVlcDCSU9cwUVFlMIwwizBfMIEwAQBg-UInt32+AGBXizBrMK0w4zC5MMgwVzBqMFEwjDBwMGowijB+MFswkzAC-
-1. +Vt57VDBuMKQw8zDHMMMwrzC5MJJxIU9ccLowa3UfYhAwWTCLMGswbzABAGA-arc4random+AF8-uniform+AGAwkk9/dSgwVzB+MFkwAg- +YwdbmjBuMKQw8zDHMMMwrzC5MGeRTVIXMG5OLTBumAV27jCSiq0wf1H6MFkwazBvZXRlcDBMX8WJgTBqMG4wZzABAGA-Int+AGBXizBrMK0w4zC5MMgwV3b0MFcwfjBZMAI- 
-1. +ZwBfjDBrMAFW3ntUMOkw2TDrMG4wxjCtMLkwyDBoMAFxIU9ccLowa3UfYhAwVTCMMF9W3ntUMGgwkk4AgfQwVTBbMH4wWTAC-
+    answerLabel.text = answers[randomIndex]
+}
+```
+>
+これまでのコードをステップごとに分解しましょう：
+>
+1. 回答の配列内で無作為にインデックスを生成する際、上限を特定するために使用される`maxIndex`を決定します。`arc4random_uniform`メソッドは`UInt32`型の引数を受け入れるため、`UInt32`型にキャストしなければなりません。
+1. 回答のインデックスを無作為に生成するには、`arc4random_uniform`を使用します。指定のインデックスで配列の中の項目を読み出すには整数が必要なので、`Int`型にキャストし直します。
+1. 最後に、回答ラベルのテキストと、無作為に生成された回答とを一致させます。
 
-+MKIw1zDqMJIw0zDrMMkwVzBmW5+ITDBXMH4wVzCHMEb/AQ-
+アプリをビルドして実行しましょう！
 
-Magic 8-Ball+MGs-2+MGQwezBpjOpVTzCSMFcwZjABUtVPXDCSMMYwuTDIMFcwfjBXMIcwRjAC-
+Magic 8-Ballに2つほど質問をして、動作をテストしましょう。
 
-+MEowgTBnMGgwRjBUMFYwRDB+MFkwAg-Magic 8-Ball+MG5X+mcsdoQwampfgP0wklufiMUwVzB+MFcwXzAC-
+おめでとうございます。Magic 8-Ballの基本的な機能を実装しました。
 
-+ayEwa3n7MItSTTBrMAEwgjBGTgBraVFIMHiQMjCTMGcwAVf6Zyx2hDBq-Magic 8-Ball+MGtO2FxeMFkwizC3MKcw/DCval+A/TCSW5+IxTBXMH4wVzCHMEYwAg-
+次に移る前に、もう一歩先へ進んで、基本的なMagic 8-Ballに付属するシェーク機能を実装しましょう。
 
-+ACM- +MLcwpzD8MK8wbjC4MKcwuTDBMOMw/DBuW59lvQ-
+# シェークのジェスチャーの実施
 
-iPhone+MG8wATDmMPwwtjD8MGt2enUfMFkwi3J5W5owbjCkMNkw8zDIMJJT1zBRU9YwijABMFMwjDBrV/owZTBPiExS1TCSjXcwUzBZMF8wgTBrMKow/DDQMPww6TCkMMkwZzBNMItyeVuaMG4w4TC9MMMwyTCSMMcw1TCpMOswyDBnW5+IxTBXMGYwRDB+MFkwAg-
+iPhoneは、ユーザーに発生する特定のイベントを受け取り、これに基づく行動を起こすためにオーバーライドできる特定のメソッドをデフォルトで実装しています。
 
-+MLcwpzD8MK8wbjC4MKcwuTDBMOMw/DBrlaIwVzBmMG8wATC3MLkwxjDgMGswiDBjMGZbn4jFMFUwjDBflaJlcDCSMKow/DDQMPww6TCkMMkwVzABcuyB6jBual+A/TBoU9Ywimb/MEgwfjBZMAIwUzCMMGswiDCKMAEw5jD8MLYw/DBMMKIw1zDqMJIwtzCnMPwwrzBZMIswaDDpMNkw6zBMWQkwjzCLMIgwRjBrMGowijB+MFkwAg-
+シェークのジェスチャーに関しては、システムによって実装された関数をオーバーライドし、独自の機能と取り替えます。これにより、ユーザーがアプリをシェークするとラベルが変わるようになります。
 
-+AD4- +AFs-action+AF0-
-+TuVOCzBuMOEwvTDDMMkwkjDTMOUw/DCzMPMwyDDtMPww6TD8MGuP/VKgMFcwZjBPMGAwVTBE/xo-
-+AD4-
-+AGAAYABg-
-override func motionEnded(+AF8- motion: UIEventSubtype, with event: UIEvent?) +AHs-
-    guard motion +AD0APQ- .motionShake else +AHs- return +AH0-
-+AD4-
-    let maxIndex +AD0- UInt32(answers.count)
-    let randomIndex +AD0- Int(arc4random+AF8-uniform(maxIndex))
-+AD4-
-    answerLabel.text +AD0- answers+AFs-randomIndex+AF0-
-+AH0-
-+AGAAYABg-
-+AD4-
-+MFSJpzBukBowijABAGA-motionEnded(+AF8-:with:)+AGAwpDDZMPMwyDCSMKow/DDQMPww6TCkMMkwVzABAGA-.motionShake+AGAwpDDZMPMwyDCSMMEwpzDDMK8wVzBmMEQwfjBZMAI- +MMgw6jCsMPwwVTCMMIswaDABVAwwWDDtMLgwwzCvMJJbn4hMMFcwZjABcSFPXHC6MGtW3ntUMJKQeDBziGh5OjBXMH4wWTAC-
+> [action]
+以下のメソッドをビューコントローラーに追加してください：
+>
+```
+override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    guard motion == .motionShake else { return }
+>
+    let maxIndex = UInt32(answers.count)
+    let randomIndex = Int(arc4random_uniform(maxIndex))
+>
+    answerLabel.text = answers[randomIndex]
+}
+```
+>
+ご覧の通り、`motionEnded(_:with:)`イベントをオーバーライドし、`.motionShake`イベントをチェックしています。トリガーされると、同じロジックを実行して、無作為に回答を選び表示します。
 
-+ACM- +Tn5x5XK2YUswkk/dMGQ-
+# DRYを保つ
 
-+MNcw7TCwMOkw3zDzMLAwa5WiMFkwi04Agix2hDBqfUyaE1JHMG8wAQBf-DRY+AF8wkluIMIswUzBoMGcwWTAC- DRY+MGgwbzABMAw-Don't Repeat Yourself+/whUDDBYMFMwaDCSfnAwio/UMFUwajBEMFMwaP8JMA0wkmEPVHMwVzB+MFkwAg- +MGQwfjCKMAEwszD8MMkw2TD8MLkwZzBvVAwwWDCzMPwwyTCST1VepjCCT1VepjCCMLMw1DD8/wYw2jD8MLkwyDBZMHkwTTBnMG8wajBEMGgwRDBGMFMwaDBnMFkwAg-
+プログラミングに関する一般的な経験則は、 _DRY_ を守ることです。DRYとは、「Don't Repeat Yourself（同じことを繰り返さないこと）」を意味します。つまり、コードベースでは同じコードを何度も何度もコピー＆ペーストすべきではないということです。
 
-+AD4- +AFs-info+AF0-
-+MLMw/DDJMJKJB2VwMG5YNGJAMGcwszDUMPz/BjDaMPwwuTDIMFkwizBuMExgqjBEf9JhYzBqMG4wbzABMGowXDBgMGhgHTBEMH4wWTBL/x8-
+> [info]
+コードを複数の場所でコピー＆ペーストするのが悪い習慣なのは、なぜだと思いますか？
 
-+c/5XKDBuMO0wuDDDMK8wZzBvMAE-2+Vt5xIU9ccLowa1bee1QwkpB4MJMwZ4hoeTowWTCLMG4wazABVAwwWDDtMLgwwzCvMEwwQjCLMFMwaDBMMI8wSzCKMH4wWTAC- +MFMwjDCSU1hOADBuMOEwvTDDMMkweDDqMNUwoTCvML8w6jDzMLAwVzBmMAFO4zCPMIowazC3MKcw/DCvMG4wpDDZMPMwyDBoMNwwvzDzMG4wvzDDMNcwbk4hZbkwSzCJMFMwbjDhML0wwzDJMJJUfDBzUfowWTBTMGgwTDBnME0wfjBZMAI-
+現在のロジックでは、2回無作為に回答を選んで表示するのに、同じロジックがあることがわかります。これを単一のメソッドへリファクタリングして、代わりにシェークのイベントとボタンのタップの両方からこのメソッドを呼び出すことができます。
 
-+AD4- +AFs-action+AF0-
-+AGA-ViewController.swift+AGAwazBKMEQwZk7lTgswbmW5Xw8wko/9UqAwVzB+MFn/Gg-
-+AD4-
-+AGAAYABg-
-func generateAnswer() +AHs-
-    let maxIndex +AD0- UInt32(answers.count)
-    let randomIndex +AD0- Int(arc4random+AF8-uniform(maxIndex))
-+AD4-
-    answerLabel.text +AD0- answers+AFs-randomIndex+AF0-
-+AH0-
-+AGAAYABg-
+> [action]
+`ViewController.swift`において以下の方式を追加します：
+>
+```
+func generateAnswer() {
+    let maxIndex = UInt32(answers.count)
+    let randomIndex = Int(arc4random_uniform(maxIndex))
+>
+    answerLabel.text = answers[randomIndex]
+}
+```
 
-+ayEwazABMLMw/DDJMJIw6jDVMKEwrzC/MOow8zCwMFcwZjABZbAwVzBEAGA-generateAnswer+AGAw4TC9MMMwyTCSUil1KDBZMIswUzBoMEwwZzBNMH4wWf8a-
+次に、コードをリファクタリングして、新しい`generateAnswer`メソッドを利用することができます：
 
-+AD4- +AFs-action+AF0-
-+AGA-shakeButtonTapped(+AF8-:)+AGAwSjCIMHMAYA-motionEnded(+AF8-:with:)+AGAwbk4hZbkwkjBdMIwwXjCMMAFrITBuMIgwRjBrWQlm9DBXMGYwTzBgMFUwRP8a-
-+AD4-
-+AGAAYABg-
-+AEA-IBAction func shakeButtonTapped(+AF8- sender: Any) +AHs-
+> [action]
+`shakeButtonTapped(_:)`および`motionEnded(_:with:)`の両方をそれぞれ、次のように変更してください：
+>
+```
+@IBAction func shakeButtonTapped(_ sender: Any) {
     generateAnswer()
-+AH0-
-+AD4-
-override func motionEnded(+AF8- motion: UIEventSubtype, with event: UIEvent?) +AHs-
-    guard motion +AD0APQ- .motionShake else +AHs- return +AH0-
-+AD4-
+}
+>
+override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    guard motion == .motionShake else { return }
+>
     generateAnswer()
-+AH0-
-+AGAAYABg-
+}
+```
 
-+MKIw1zDqMJJbn4hMMFcwZjABZbAwVzBE-Magic 8-Ball+MJIwxjC5MMgwVzB+MFkwAg- +X8UwWjABZbAwVzBEMLcwpzD8MK8wbjC4MKcwuTDBMOMw/DBoZeJbWDBuMNwwvzDzML8wwzDXMG4w7TC4MMMwrzBuTiFluTCSMMYwuTDIMFcwZjBPMGAwVTBEMAI-
+アプリを実行して、新しいMagic 8-Ballをテストします。必ず、新しいシェークのジェスチャーと既存のボタンタップのロジックの両方をテストしてください。
 
-iPhone 7+MLcw3zDlMOww/DC/MPwwZzC3MKcw/DCvMLgwpzC5MMEw4zD8MJIwxjC5MMgwWTCLMGswbzABX8UwWjC3MN8w5TDsMPwwvzD8MExnCVK5MGcwQjCLMFMwaDCSeLqKjTBXMAEwzzD8MMkwpjCnMKIw4TDLMOUw/DCSkHhinjBXMGYwTzBgMFUwRDAC- +MMkw7TDDMNcwwDCmMPMwazBvMAEAYA-Shake Gesture+AGAwbjCqMNcwtzDnMPMwTDBCMIowfjBZMAI-
+iPhone 7シミュレーターでシェークジェスチャーをテストするには、必ずシミュレーターが有効であることを確認し、ハードウェアメニューを選択してください。ドロップダウンには、`Shake Gesture`のオプションがあります。
 
-+ACEAWw-Simulator Shake+AF0-(assets/simulator+AF8-shake.png)
+![Simulator Shake](assets/simulator_shake.png)
 
-+ACMAIw- +MH4waDCB-
+## まとめ
 
-+MFMwbmcAX4wwbjC7MK8wtzDnMPMwZzBvMAE-Storyboard+MGeVi3Z6MFcwXw-UI+MJJT1jCKTgowUjBmMAEwszD8MMkweDBoMGQwajBSMH4wVzBfMAI- Storyboard+MGg-Swift+ML0w/DC5MNUwoTCkMOswbpWiT8IwATBdMFcwZjBTMIwwiTBMV/pnLHaEMGow7DDZMOswZzBpMEaQGk/hMFkwizBuMEswkmkcig4wVzB+MFcwXzAC-
+この最後のセクションでは、Storyboardで開発したUIを取り上げて、コードへとつなげました。StoryboardとSwiftソースファイルの関係、そしてこれらが基本的なレベルでどう通信するのかを検討しました。
 
-+MOYw/DC2MPwwblf6Zyx2hDBqMLgwpzC5MMEw4zD8/wgw3DC/MPMwbjC/MMMw1zBoMLcwpzD8MK//CTBrW/5f3DBZMItluWzVMJJ6gTBNa2IwgTBmMAE-Magic 8-Ball+MJJS1U9cMFUwWzCLMO0wuDDDMK8wkjCIMEYwhDBPW5+IxTBXMH4wVzBfMAI-
+ユーザーの基本的なジェスチャー（ボタンのタップとシェーク）に対応する方法を突き止めて、Magic 8-Ballを動作させるロジックをようやく実装しました。
 
-+ayEwbjC7MK8wtzDnMPMwZzBvMAFOyjB+MGdbZjCTMGAwUzBoMJKJi3b0MFcwZjB+MGgwgTCSiEwwRDB+MFkwAg-
+次のセクションでは、今まで学んだことを見直してまとめを行います。
