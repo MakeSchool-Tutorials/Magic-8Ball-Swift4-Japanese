@@ -1,4 +1,4 @@
-﻿---
+---
 title: "コードの接続"
 slug: connecting-code
 ---
