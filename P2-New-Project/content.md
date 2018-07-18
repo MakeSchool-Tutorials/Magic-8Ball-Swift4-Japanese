@@ -7,7 +7,7 @@ slug: new-xcode-project
 
 ## Xcodeとは何ですか？
 
-Xcodeとは、 Appleのエコシステム内でアプリを開発する_統合開発環（Integrated Development Environment）_（IDE）です。iOS アプリに焦点を当てますがmacOS、watchOS、tvOS のアプリのためにもアプリを作成することができます。IDE（Xcodeなど）には、プログラマーのソフトウェア開発を簡単にしてくれる強力なツールがたくさん含まれ、統合されています。
+Xcodeとは、 Appleのエコシステム内でアプリを開発する_統合開発環境（Integrated Development Environment）_（IDE）です。iOS アプリに焦点を当てますがmacOS、watchOS、tvOS のアプリのためにもアプリを作成することができます。IDE（Xcodeなど）には、プログラマーのソフトウェア開発を簡単にしてくれる強力なツールがたくさん含まれ、統合されています。
 
 Xcodeでのアプリ開発について学ぶ際には、これらのツールの多くを使うことになります。日常的によく使うツールには、次のものが含まれるかもしれません：
 
@@ -18,7 +18,7 @@ Xcodeでのアプリ開発について学ぶ際には、これらのツールの
 - **アシスタントエディタ：** Xcodeの複数のファイルを隣り合わせに並べて編集します
 - **シミュレーター：** コンピューターでシミュレートされたiPhone上でアプリをテストし、実行します
 
-Magic 8-Ballの開発を進めていく中で、これらのツールのそれぞれについて深く学んでいきます。
+マジックエイトボールの開発を進めていく中で、これらのツールのそれぞれについて深く学んでいきます。
 
 > [info]
 Xcodeには上記のツール以外にもまだまだたくさんツールが含まれていることを覚えておきましょう。このチュートリアルではシンプルなiOSアプリを開発するにあたって最も重要となるXcodeのツールだけを学ぶように焦点を絞ります。
@@ -32,10 +32,10 @@ Xcodeには上記のツール以外にもまだまだたくさんツールが含
 > [action]
 新しい Xcode プロジェクトの作成：
 >
-1. コンピューター上で _Xcode_ を開きます。You should see the following launch window after you open Xcode ![Launch Window](assets/xcode_launch_window.png)
+1. コンピューター上で _Xcode_ を開きます。 ![Launch Window](assets/xcode_launch_window.png)
 1. 次に、起動ウィンドウのクイックオプションから `Create a new Xcode project`をクリックしてください！[Create New Project](assets/create_new_project.png)
-1. 新しいプロジェクトのテンプレートを選択するように促す次のようなプロンプトが表示されるはずです。Under _iOS_, select _Single View App_ ![Select Template](assets/select_template.png)
-1. テンプレートを選択した状態で、 _Next_ をクリックしてください。You should see a new prompt for your project details ![Set Project Details](assets/set_project_details.png)
+1. 新しいプロジェクトのテンプレートを選択するように促す次のようなプロンプトが表示されるはずです。 ![Select Template](assets/select_template.png)
+1. テンプレートを選択した状態で、 _Next_ をクリックしてください。 ![Set Project Details](assets/set_project_details.png)
 
 この新しいプロンプトでは、新しいプロジェクトを作成するためにXcodeが必要とする基本情報や詳細を設定します。
 
@@ -47,7 +47,7 @@ Xcodeには上記のツール以外にもまだまだたくさんツールが含
 ステップバイステップの分析が必要な場合は：
 >
 1. _Product Name_ フィールドに、`MagicEightBall`と入力してください。これがファイルディレクトリにおけるあなたのプロジェクトの名前になります。名前に関する潜在的な問題を防ぐため、英数字（文字と数字）を使い、特殊文字を避けるのが一番です。
-1._Team_のドロップダウンメニューは、`None`に設定してください。`Apple Developer Team`がすでにある場合は、これを代わりにを選択することもできます。
+1. _Team_のドロップダウンメニューは、`None`に設定してください。`Apple Developer Team`がすでにある場合は、これを代わりにを選択することもできます。
 1. _Organization Name_ には、次のいずれかを入力できます。自分の名前、仮の会社名、または _Make School_ です。
 1. _Organization Identifier_ は、 _com.makeschool_ と設定してください。ドメイン名を持っている場合は、このフィールドをリバースドメイン名として設定することができます。例えば、 _happycarrot.com_ というドメイン名を持っている場合は、識別子として _com.happycarrot_ と入力することになります。
 1. _Bundle Identifier_ は、あなたの _Organization Identifier_ と _Product Name_ から自動的に生成されます。AppleはバンドルIDを使用して、 _App Store_ で各アプリを一意的に特定します。
@@ -61,7 +61,7 @@ Xcodeには上記のツール以外にもまだまだたくさんツールが含
 >
 1. 上のプロジェクト詳細を記入したら、 _Next_ をクリックしてください。![Project Details Next](assets/project_details_next.png)
 1. Xcodeは次に、どこへプロジェクトを保存したいかたずねます。ファイルナビゲーターを使って、コンピューター上でプロジェクトを保存したい場所を選択してください。特定の場所が思いつかない場合は、`Documents`フォルダを使用することができます。![Select Project Location](assets/select_project_location.png)
-1. _Create Git repository on my Mac(Git保管庫をマイマックに作成する)_ の時は必ずソースコントロールチェックボックスが選択された状態にしていてください。![Enabled Source Control](assets/check_source_control.png)
+1. _Gitレポジトリを自分のMacに作成する_ 時は必ず `Source Control` チェックボックスを選択した状態にしてください。![Enabled Source Control](assets/check_source_control.png)
 1. プロジェクトの位置を選択し、 _Source Control_ チェックボックスが選択された状態であることを確認した後で、`Create`ボタンをクリックしてください。![Create Project](assets/create_project.png)
 
 おめでとうございます！ あなたの初のプロジェクトができました。次のように表示されます。
@@ -72,7 +72,7 @@ Xcodeには上記のツール以外にもまだまだたくさんツールが含
 
 # Xcodeについて知る
 
-Magic 8-Ballアプリの開発を通じて、Xcodeについて、そしてその能力を活用する方法について学んでいきます。次のセクションに移る前に、 Xcodeの主な部分をそれぞれ簡単に紹介していきます。また、新しく作成したアプリをシミュレーター上で実行する方法についても紹介しましょう。
+マジックエイトボールアプリの開発を通じて、Xcodeについて、そしてその能力を活用する方法について学んでいきます。次のセクションに移る前に、 Xcodeの主な部分をそれぞれ簡単に紹介していきます。また、新しく作成したアプリをシミュレーター上で実行する方法についても紹介しましょう。
 
 以前に終了した場所から再開すると、次のような状態になるはずです。
 
@@ -179,9 +179,9 @@ _iPhone 7_ のシミュレーター上でビルド、実行するために、ス
 <!-- break -->
 
 > [info]
-初めてアプリケーションを実行するときに、パスワードを尋ねるダイアログが表示されることがあります。[Debug Permission](assets/debug_dialog.png)
+初めてアプリケーションを実行するときに、パスワードを尋ねるダイアログが表示されることがあります。![Debug Permission](assets/debug_dialog.png)
 >
-パスワードを入力して`続ける`をクリックしてください。デバッガー(これについては後ほど詳しく紹介します）を使用してアプリを実行するには許可が必要です。
+パスワードを入力して`Continue`をクリックしてください。デバッガー(これについては後ほど詳しく紹介します）を使用してアプリを実行するには許可が必要です。
 
 すべてがうまくいくと、アプリの起動時にシミュレーターが表示されます：
 

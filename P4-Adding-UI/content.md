@@ -5,7 +5,7 @@ slug: adding-ui
 
 これまでは、アプリが実行されたときの動作の変更は何もしてきませんでした。シミュレーター上でアプリを実行するとわかるように、空っぽで、真っ白な画面のままです。
 
-このセクションでは、Magic 8-BallのUIを構築します。
+このセクションでは、マジックエイトボールのUIを構築します。
 
 > [info]
 **UIとは何か**
@@ -22,7 +22,7 @@ iOSアプリを開発する計画があるなら、`UIViewController`につい�
 
 ![Root View Highlighted](assets/root_view_highlighted.png)
 
-上から分かる通り、テキストラベルとボタンの両方は、ビューコントローラーのルートビューの上部に配置されるサブビューです。
+上から分かる通り、テキストラベルとボタンは両方とも、ビューコントローラーのルートビューの上に配置されるサブビューです。
 
 初心者としては、アプリの各画面をビューコントローラーとして考えるといいでしょう、 ボタン、テキスト、画像はすべて、対応するビューコントローラーオブジェクトが管理をするサブビューです。ビューコントローラーは、ユーザーがボタンをタップした場合に何が発生するかに関して責任を負います。
 
@@ -47,16 +47,16 @@ iOSアプリを開発する計画があるなら、`UIViewController`につい�
 - ユーティリティエリア（紫）： Storyboard要素のプロパティ、サイズ、その他の詳細を構成します
 - Object Library（ピンク）： Storyboardで使用できる、Apple既成のUIコンポートすべてのリストを表示します
 
-Magic 8-Ballのシェークボタンをビューコントローラーに追加しましょう。
+マジックエイトボールのシェークボタンをビューコントローラーに追加しましょう。
 
 > [action]
 ![ms-video](https://s3.amazonaws.com/mgwu-misc/Magic+8+Ball/04-adding-ui/add_button_to_vc.mp4)
 >
-_Object Library_ で`ボタン`オブジェクトを見つけ、ビューコントローラーのルートビューの上にこれをドラッグし、ドロップしてください。
+_Object Library_ で`Button`オブジェクトを見つけ、ビューコントローラーのルートビューの上にこれをドラッグし、ドロップしてください。
 
 次に、ボタンに正しいタイトルテキストを与えられるようにするため、ユーティリティエリアについてもっと学びましょう。
 
-# ユティリティエリア
+# ユーティリティエリア
 
 ナビゲーターと同じく、ユーティリティのペインには、その上部にインスペクターと呼ばれる複数の異なるタブがあります。
 
@@ -72,8 +72,8 @@ _Object Library_ で`ボタン`オブジェクトを見つけ、ビューコン�
 
 > [action]
 1. しっかりボタンをクリックして、アクティブに選択されていることを確認してください。ユーティリティのペインはコンテクストに依存するものであり、何が選択されたかによって変化するということを覚えておきましょう。![Select Button](assets/select_button.png)
-1. 次に、ユーティリティエリアの属性インスペクタータブに移動してください。左側から数えて4つ目のアイコンです。![Open Attributes Inspector](assets/attributes_inspector.png)
-1. 最後に、タイトルフィールドを見つけて、デフォルトテキストである`Button`から`Shake It!`に変更してください。![Set Button Title](assets/set_btn_title.png)
+2. 次に、ユーティリティエリアの属性インスペクタータブに移動してください。左側から数えて4つ目のアイコンです。![Open Attributes Inspector](assets/attributes_inspector.png)
+3. 最後に、タイトルフィールドを見つけて、デフォルトテキストである`Button`から`Shake It!`に変更してください。![Set Button Title](assets/set_btn_title.png)
 
 すると、`Shake It!`というタイトルが押し込まれたボタンが表示されるはずです。
 
@@ -110,7 +110,7 @@ _Object Library_ で`ボタン`オブジェクトを見つけ、ビューコン�
 
 # ラベルの追加
 
-UIを完成させるには、Magic 8-Ballの回答を表示するラベルも追加する必要があります。
+UIを完成させるには、マジックエイトボールの回答を表示するラベルも追加する必要があります。
 
 > [action]
 _Object Library_ からラベルを見つけ、ビューコントローラーのルートビューにドラッグしてください。
@@ -121,10 +121,10 @@ _Object Library_ からラベルを見つけ、ビューコントローラーの
 
 > [action]
 1. ラベルを選択して、ユーティリティエリアで属性インスペクターを開いてください。![Label Attributes](assets/label_attributes.png)
-1. `Text`属性をデフォルトの`Text`というプレースホルダーから`Have a question?`に変更してください。これは、アプリが開かれるたびに表示されるデフォルトのテキストになります。![Change Label Text](assets/change_label_text.png)
-1. 新たなテキストに合わせてラベルのサイズを変更してください。![Resize Label](assets/resize_label.png)
-1. 属性インスペクターで、テキストのアライメントを _Center_ に変更してください。![Change Text Alignment](assets/change_text_alignment.png)
-1. 最後に、 _Font_ の属性を`System 17.0`から`System Bold 28.0`へと変更してください。![Change Font](assets/change_font_attribute.png)
+2. `Text`属性をデフォルトの`Text`というプレースホルダーから`質問はありますか？`に変更してください。これは、アプリが開かれるたびに表示されるデフォルトのテキストになります。![Change Label Text](assets/change_label_text.png)
+3. 新たなテキストに合わせてラベルのサイズを変更してください。![Resize Label](assets/resize_label.png)
+4. 属性インスペクターで、テキストのアライメントを _Center_ に変更してください。![Change Text Alignment](assets/change_text_alignment.png)
+5. 最後に、 _Font_ の属性を`System 17.0`から`System Bold 28.0`へと変更してください。![Change Font](assets/change_font_attribute.png)
 
 私たちのアプリのUI設定が完了しました。進捗状況を確認するため、ちょっとビルドして、実行してみましょう。
 
