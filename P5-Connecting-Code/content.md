@@ -11,7 +11,7 @@ slug: connecting-code
 
 # どう接続されていますか？
 
-初心者が最もつまづきやすい点の一つは、コードがStoryboardとどうつながるのかを理解することです。Xcodeではアイデンティティインスペクター、 _IBOutlet_ そして _IBActions_ の組み合わせを使って、StoryboardをSwiftコードにつなげます。
+初心者が最もつまづきやすい点の一つは、コードがStoryboardとどうつながるのかを理解することです。Xcodeではアイデンティティインスペクター、 _IBOutlet_ そして _IBAction_ の組み合わせを使って、StoryboardをSwiftコードにつなげます。
 
 これを理解するには、まずアシスタントエディタについて学ぶ必要があります。
 

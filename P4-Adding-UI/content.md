@@ -73,9 +73,9 @@ _Object Library_ で`Button`オブジェクトを見つけ、ビューコント�
 > [action]
 1. しっかりボタンをクリックして、アクティブに選択されていることを確認してください。ユーティリティのペインはコンテクストに依存するものであり、何が選択されたかによって変化するということを覚えておきましょう。![Select Button](assets/select_button.png)
 2. 次に、ユーティリティエリアの属性インスペクタータブに移動してください。左側から数えて4つ目のアイコンです。![Open Attributes Inspector](assets/attributes_inspector.png)
-3. 最後に、タイトルフィールドを見つけて、デフォルトテキストである`Button`から`Shake It!`に変更してください。![Set Button Title](assets/set_btn_title.png)
+3. 最後に、タイトルフィールドを見つけて、デフォルトテキストである`Button`から`振ってみよう！`に変更してください。![Set Button Title](assets/set_btn_title.png)
 
-すると、`Shake It!`というタイトルが押し込まれたボタンが表示されるはずです。
+すると、`振ってみよう！`というタイトルが押し込まれたボタンが表示されるはずです。
 
 ![Squished Button](assets/squished_button.png)
 
